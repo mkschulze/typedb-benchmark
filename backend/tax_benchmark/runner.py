@@ -27,6 +27,12 @@ Money is integer euro cents. Use the same legal conditions and answer standard i
 Return exactly one JSON object per turn. No markdown or prose outside JSON.
 Actions: {"action":"case_facts"}; {"action":"search_sources","query":"..."};
 {"action":"read_source","source_id":"..."}; and, only when listed as available, {"action":"evaluate_payment"}.
+Tool capabilities:
+case_facts returns the target payment's dated facts, parties and supporting documents.
+search_sources retrieves up to five source passages; read_source retrieves one passage by its ID.
+evaluate_payment, when available, executes curated deterministic decision logic for this payment.
+It returns provisional eligibility, withholding/refund calculations, missing facts and supporting
+source/document text. You may inspect and use that result when forming your answer.
 Finish with {"action":"final","answer":{...}}. The answer must include:
 status (determined/needs_information/review_required/outside_scope),
 relief_eligibility (eligible/ineligible/undetermined), relief_route,
@@ -310,7 +316,7 @@ class RunService:
                 "case_facts": "Read the target case or its structured TypeDB context",
                 "search_sources": {"query": "string", "limit": 5},
                 "read_source": {"source_id": "string"},
-                "evaluate_payment": "Available only for typedb_functions/sql",
+                "evaluate_payment": "Curated deterministic payment decision and supporting text; available only for typedb_functions/sql",
             },
             "limits": request.model_dump(),
             "versions": versions,

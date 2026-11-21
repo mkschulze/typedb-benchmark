@@ -94,7 +94,7 @@ async def test_anthropic_uses_native_endpoint_and_separates_system_prompts(monke
     content, usage = await ChatProvider().complete(model, messages)
 
     assert parse_action(content) == {"action": "case_facts"}
-    assert usage == {"_response": {"id": "msg_test", "model": "claude-test"}}
+    assert usage == {"_response": {"id": "msg_test", "model": "claude-test", "stop_reason": "end_turn"}}
     assert len(requests) == 1
     assert str(requests[0].url) == "https://api.anthropic.com/v1/messages"
     assert requests[0].headers["authorization"] == "Bearer stub-anthropic-key"
@@ -147,7 +147,7 @@ async def test_anthropic_concatenates_text_and_counts_all_input_token_categories
         "cache_creation_input_tokens": 30,
         "cache_creation": {"ephemeral_5m_input_tokens": 10, "ephemeral_1h_input_tokens": 20},
         "completion_tokens_details": {"reasoning_tokens": 3},
-        "_response": {"id": "msg_test", "model": "claude-test"},
+        "_response": {"id": "msg_test", "model": "claude-test", "stop_reason": "end_turn"},
     }
 
 
@@ -164,7 +164,7 @@ async def test_openrouter_keeps_openai_bearer_auth_and_json_payload(monkeypatch,
     assert content == '{"action":"case_facts"}'
     assert usage == {
         "prompt_tokens": 5, "completion_tokens": 2,
-        "_response": {"id": "chatcmpl-test", "model": "test-model"},
+        "_response": {"id": "chatcmpl-test", "model": "test-model", "stop_reason": "stop"},
     }
     assert str(requests[0].url) == "https://openrouter.ai/api/v1/chat/completions"
     assert requests[0].headers["authorization"] == "Bearer stub-router-key"
@@ -220,7 +220,7 @@ async def test_invalid_text_preserves_billed_usage_and_response_metadata(mock_ht
             "prompt_tokens": 10, "completion_tokens": 3, "cost": 0.001,
             "prompt_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0},
             "cache_creation_input_tokens": 0,
-            "_response": {"id": "msg_test", "model": "claude-test"},
+            "_response": {"id": "msg_test", "model": "claude-test", "stop_reason": "end_turn"},
         }
     else:
         data = openai_response(
@@ -228,7 +228,7 @@ async def test_invalid_text_preserves_billed_usage_and_response_metadata(mock_ht
         )
         expected = {
             "prompt_tokens": 10, "completion_tokens": 3, "cost": 0.001,
-            "_response": {"id": "chatcmpl-test", "model": "test-model"},
+            "_response": {"id": "chatcmpl-test", "model": "test-model", "stop_reason": "stop"},
         }
     mock_http(data)
     model = ModelDefinition(id="m", name="Model", model="test", protocol=protocol)
@@ -279,8 +279,8 @@ async def test_usage_normalization_preserves_unknown_counters(mock_http, protoco
     _, usage = await ChatProvider().complete(model, [{"role": "user", "content": "JSON please"}])
 
     metadata = (
-        {"id": "msg_test", "model": "claude-test"}
-        if protocol == "anthropic" else {"id": "chatcmpl-test", "model": "test-model"}
+        {"id": "msg_test", "model": "claude-test", "stop_reason": "end_turn"}
+        if protocol == "anthropic" else {"id": "chatcmpl-test", "model": "test-model", "stop_reason": "stop"}
     )
     assert usage == {**expected, "_response": metadata}
 
@@ -299,7 +299,7 @@ async def test_response_metadata_preserves_actual_model_and_routing_without_resp
 
     assert usage == {"_response": {
         "id": "generation-123", "model": "actual-versioned-model", "provider": "Actual host",
-        "service_tier": "standard",
+        "service_tier": "standard", "stop_reason": "end_turn" if protocol == "anthropic" else "stop",
     }}
 
 
@@ -386,3 +386,18 @@ def test_load_models_env_override_precedes_catalogue_and_missing_catalogue_keeps
     assert [model.id for model in load_models()] == ["override"]
     monkeypatch.delenv("MODELS_JSON")
     assert [model.id for model in load_models()] == ["configure-model"]
+
+
+@pytest.mark.parametrize('protocol,reason', [('openai','length'),('anthropic','max_tokens')])
+async def test_empty_billed_response_keeps_stop_reason_for_diagnosis(mock_http,protocol,reason):
+    if protocol=='openai':
+        data=openai_response(content='')
+        data['choices'][0]['finish_reason']=reason
+    else:
+        data=anthropic_response(content=[])
+        data['stop_reason']=reason
+    mock_http(data)
+    model=ModelDefinition(id='diagnostic',name='Diagnostic',model='test',protocol=protocol)
+    with pytest.raises(ProviderError) as error:
+        await ChatProvider().complete(model,[{'role':'user','content':'Return JSON'}])
+    assert error.value.usage['_response']['stop_reason']==reason

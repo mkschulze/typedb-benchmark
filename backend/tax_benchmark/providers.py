@@ -244,6 +244,12 @@ class ChatProvider:
                     name: data[name] for name in ("id", "model", "provider", "service_tier")
                     if isinstance(data.get(name), str)
                 }
+                stop_reason = data.get("stop_reason")
+                choices = data.get("choices")
+                if model.protocol != "anthropic" and isinstance(choices, list) and choices and isinstance(choices[0], dict):
+                    stop_reason = choices[0].get("finish_reason")
+                if isinstance(stop_reason, str):
+                    metadata["stop_reason"] = stop_reason
                 if metadata:
                     usage["_response"] = metadata
                 content = _anthropic_text(data) if model.protocol == "anthropic" else data["choices"][0]["message"]["content"]
