@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/typedb/typedb-skills",
+  "commit": "3f94bacb80206ccdf8988fb27b9c25fb49bc6b9c",
+  "skills": [
+    {
+      "name": "modeling",
+      "source": "modeling.md",
+      "installed": "modeling/SKILL.md",
+      "sha256": "2a0bcf1b03bbb006aca3db979277b5dd70e4633dda4191e5752b7817bf7ca0d6"
+    },
+    {
+      "name": "typeql",
+      "source": "typeql.md",
+      "installed": "typeql/SKILL.md",
+      "sha256": "d8c245ff94023085d9c668b7c1d193b22264437788b0dc6fedd7c903708598f6"
+    }
+  ]
+}

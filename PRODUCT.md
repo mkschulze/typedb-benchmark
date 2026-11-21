@@ -1,0 +1,49 @@
+# German Dividend Withholding Tax Benchmark
+
+<!-- impeccable:product-schema 1 -->
+
+## Platform
+
+web
+
+## Stack
+
+User-selected FastAPI backend and React frontend. TypeDB supplies the structured context and decision functions. The project has the upstream TypeDB modeling and TypeQL skills installed locally and globally, and `typeql-check` is available.
+
+## Users
+
+The first screen serves a client demonstration: lead with a dividend case and explain the comparison. Configuring and inspecting batch benchmark runs is a secondary workflow.
+
+## Product Purpose
+
+Recreate the experimental idea in the Databricks Genie Ontology benchmark for German dividend withholding tax. Measure whether access to structured context and explicit decision logic improves an LLM's answers, token use, and response time. Support different LLMs through a shared runner rather than tying the experiment to one provider.
+
+## Operating Context
+
+Synthetic German dividend payments to foreign corporate shareholders, supported by official legal sources. The demonstration must distinguish relief eligibility from the payer's withholding obligation at payment. Users compare approaches and inspect the sources behind answers.
+
+## Capabilities and Constraints
+
+- User-confirmed scope: Germany, withholding tax, dividends.
+- User-confirmed interface: FastAPI, React, and the Impeccable skill.
+- Proposed experiment and implementation details remain a draft in `docs/superpowers/specs/2026-11-21-german-dividend-benchmark-design.md`.
+- Exact model identifiers, available provider credentials, and a live-run budget remain open. None have been selected by the user.
+- No benchmark has been executed and no accuracy, savings, or speed improvement has been established.
+
+## Brand Commitments
+
+The user requested Deloitte design and supplied https://design.deloitte.com/ as the design system. This is the requested visual authority. Its contents could not be retrieved in the current environment; precise component and token conformance remains unverified. Do not invent design-system rules or label a provisional implementation compliant with that system.
+
+## Evidence on Hand
+
+- Inspiration: https://www.databricks.com/blog/genie-genie-ontology-delivers-16-accuracy-less-half-tokens
+- Legal source starting points: EStG §§ 43a, 43b, 44, 50c, and 50d; SolzG 1995; official BZSt guidance.
+- Installed TypeDB skill provenance: `.agents/skills/typedb-skills-source.json`.
+- The workspace has no application code or measured results yet.
+
+## Product Principles
+
+- Show measured comparisons and traceable evidence.
+- Preserve the difference between an unknown fact and a negative fact.
+- Keep the experimental conditions comparable within each model.
+- Make the first dividend example understandable before exposing batch controls.
