@@ -1,0 +1,417 @@
+{
+  "kind": "exploratory_completed_direct_matrix",
+  "analysis_date": "2026-11-22",
+  "run_id": "d04c2bdf-8231-4e98-a28c-221ae4e48d59",
+  "status": "completed",
+  "case_count": 30,
+  "attempts": 360,
+  "repetitions": 1,
+  "rows": [
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "rag",
+      "trials": 30,
+      "passed": 0,
+      "failed": 30,
+      "errors": 9,
+      "incorrect": 21,
+      "cancelled": 0,
+      "pass_rate": 0.0,
+      "avg_wall_time_ms": 37036.44078377789,
+      "avg_input_tokens": 15252.433333333332,
+      "avg_output_tokens": 3527.133333333333,
+      "avg_total_tokens": 18779.566666666666,
+      "decision_fields_pass": 12,
+      "errors_by_message": {
+        "No valid final answer within the 6-turn budget": 9
+      }
+    },
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "typedb_context",
+      "trials": 30,
+      "passed": 1,
+      "failed": 29,
+      "errors": 12,
+      "incorrect": 17,
+      "cancelled": 0,
+      "pass_rate": 0.03333333333333333,
+      "avg_wall_time_ms": 33126.328845124226,
+      "avg_input_tokens": 14464.5,
+      "avg_output_tokens": 3000.9,
+      "avg_total_tokens": 17465.4,
+      "decision_fields_pass": 10,
+      "errors_by_message": {
+        "No valid final answer within the 6-turn budget": 12
+      }
+    },
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "typedb_functions",
+      "trials": 30,
+      "passed": 25,
+      "failed": 5,
+      "errors": 4,
+      "incorrect": 1,
+      "cancelled": 0,
+      "pass_rate": 0.8333333333333334,
+      "avg_wall_time_ms": 22985.71599003238,
+      "avg_input_tokens": 14388.8,
+      "avg_output_tokens": 1884.9,
+      "avg_total_tokens": 16273.7,
+      "decision_fields_pass": 26,
+      "errors_by_message": {
+        "No valid final answer within the 6-turn budget": 4
+      }
+    },
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "sql",
+      "trials": 30,
+      "passed": 24,
+      "failed": 6,
+      "errors": 1,
+      "incorrect": 5,
+      "cancelled": 0,
+      "pass_rate": 0.8,
+      "avg_wall_time_ms": 24066.020612802822,
+      "avg_input_tokens": 14031,
+      "avg_output_tokens": 1777.6,
+      "avg_total_tokens": 15808.6,
+      "decision_fields_pass": 27,
+      "errors_by_message": {
+        "No valid final answer within the 6-turn budget": 1
+      }
+    },
+    {
+      "model_id": "openai-sol",
+      "configuration": "rag",
+      "trials": 30,
+      "passed": 16,
+      "failed": 14,
+      "errors": 0,
+      "incorrect": 14,
+      "cancelled": 0,
+      "pass_rate": 0.5333333333333333,
+      "avg_wall_time_ms": 19368.19143599132,
+      "avg_input_tokens": 18007.833333333332,
+      "avg_output_tokens": 591.7333333333333,
+      "avg_total_tokens": 18599.566666666666,
+      "decision_fields_pass": 21,
+      "errors_by_message": {}
+    },
+    {
+      "model_id": "openai-sol",
+      "configuration": "typedb_context",
+      "trials": 30,
+      "passed": 16,
+      "failed": 14,
+      "errors": 0,
+      "incorrect": 14,
+      "cancelled": 0,
+      "pass_rate": 0.5333333333333333,
+      "avg_wall_time_ms": 17898.482554836664,
+      "avg_input_tokens": 17773.466666666667,
+      "avg_output_tokens": 592.4,
+      "avg_total_tokens": 18365.866666666665,
+      "decision_fields_pass": 21,
+      "errors_by_message": {}
+    },
+    {
+      "model_id": "openai-sol",
+      "configuration": "typedb_functions",
+      "trials": 30,
+      "passed": 19,
+      "failed": 11,
+      "errors": 1,
+      "incorrect": 10,
+      "cancelled": 0,
+      "pass_rate": 0.6333333333333333,
+      "avg_wall_time_ms": null,
+      "avg_input_tokens": null,
+      "avg_output_tokens": null,
+      "avg_total_tokens": null,
+      "decision_fields_pass": 26,
+      "errors_by_message": {
+        "The process stopped with an unresolved request; this attempt is preserved and its calls will not be replayed": 1
+      }
+    },
+    {
+      "model_id": "openai-sol",
+      "configuration": "sql",
+      "trials": 30,
+      "passed": 18,
+      "failed": 12,
+      "errors": 0,
+      "incorrect": 12,
+      "cancelled": 0,
+      "pass_rate": 0.6,
+      "avg_wall_time_ms": 10835.111360170413,
+      "avg_input_tokens": 7360.533333333334,
+      "avg_output_tokens": 464.56666666666666,
+      "avg_total_tokens": 7825.1,
+      "decision_fields_pass": 25,
+      "errors_by_message": {}
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "rag",
+      "trials": 30,
+      "passed": 4,
+      "failed": 26,
+      "errors": 17,
+      "incorrect": 9,
+      "cancelled": 0,
+      "pass_rate": 0.13333333333333333,
+      "avg_wall_time_ms": 22137.951791402884,
+      "avg_input_tokens": 10649.366666666667,
+      "avg_output_tokens": 3147.9666666666667,
+      "avg_total_tokens": 13797.333333333334,
+      "decision_fields_pass": 10,
+      "errors_by_message": {
+        "Model endpoint returned no text content": 17
+      }
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "typedb_context",
+      "trials": 30,
+      "passed": 2,
+      "failed": 28,
+      "errors": 15,
+      "incorrect": 13,
+      "cancelled": 0,
+      "pass_rate": 0.06666666666666667,
+      "avg_wall_time_ms": 21839.03928126286,
+      "avg_input_tokens": 10655.4,
+      "avg_output_tokens": 3109.4666666666667,
+      "avg_total_tokens": 13764.866666666667,
+      "decision_fields_pass": 12,
+      "errors_by_message": {
+        "Model endpoint returned no text content": 13,
+        "No valid final answer within the 6-turn budget": 2
+      }
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "typedb_functions",
+      "trials": 30,
+      "passed": 19,
+      "failed": 11,
+      "errors": 7,
+      "incorrect": 4,
+      "cancelled": 0,
+      "pass_rate": 0.6333333333333333,
+      "avg_wall_time_ms": 14405.610471203303,
+      "avg_input_tokens": 10726.633333333333,
+      "avg_output_tokens": 1701.3,
+      "avg_total_tokens": 12427.933333333332,
+      "decision_fields_pass": 22,
+      "errors_by_message": {
+        "Model endpoint returned no text content": 7
+      }
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "sql",
+      "trials": 30,
+      "passed": 22,
+      "failed": 8,
+      "errors": 5,
+      "incorrect": 3,
+      "cancelled": 0,
+      "pass_rate": 0.7333333333333333,
+      "avg_wall_time_ms": 13731.007177359425,
+      "avg_input_tokens": 10975.266666666666,
+      "avg_output_tokens": 1766.4,
+      "avg_total_tokens": 12741.666666666666,
+      "decision_fields_pass": 24,
+      "errors_by_message": {
+        "Model endpoint returned no text content": 5
+      }
+    }
+  ],
+  "efficiency_paired": [
+    {
+      "model_id": "claude-sonnet",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "fully_measured_pairs": 30,
+      "mean_baseline_total_tokens": 18779.566666666666,
+      "mean_functions_total_tokens": 16273.699999999999,
+      "token_reduction_fraction": 0.13343580877798034,
+      "wall_time_reduction_fraction": 0.3793756769386919
+    },
+    {
+      "model_id": "openai-sol",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "fully_measured_pairs": 29,
+      "mean_baseline_total_tokens": 18676.965517241377,
+      "mean_functions_total_tokens": 8309.310344827587,
+      "token_reduction_fraction": 0.5551038343377053,
+      "wall_time_reduction_fraction": 0.3947922784265925
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "fully_measured_pairs": 30,
+      "mean_baseline_total_tokens": 13797.333333333334,
+      "mean_functions_total_tokens": 12427.933333333332,
+      "token_reduction_fraction": 0.09925106300734454,
+      "wall_time_reduction_fraction": 0.34927988790735287
+    }
+  ],
+  "comparisons": [
+    {
+      "model_id": "claude-sonnet",
+      "baseline": "rag",
+      "configuration": "sql",
+      "difference": 0.8,
+      "ci95": [
+        0.6190476190476191,
+        0.8837209302325582
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "claude-sonnet",
+      "baseline": "rag",
+      "configuration": "typedb_context",
+      "difference": 0.03333333333333333,
+      "ci95": [
+        0,
+        0.06666666666666667
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "claude-sonnet",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "difference": 0.8333333333333334,
+      "ci95": [
+        0.7307692307692307,
+        0.9375
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openai-sol",
+      "baseline": "rag",
+      "configuration": "sql",
+      "difference": 0.06666666666666667,
+      "ci95": [
+        0,
+        0.24
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openai-sol",
+      "baseline": "rag",
+      "configuration": "typedb_context",
+      "difference": 0,
+      "ci95": [
+        -0.14285714285714285,
+        0.08333333333333333
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openai-sol",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "difference": 0.1,
+      "ci95": [
+        0,
+        0.30303030303030304
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "sql",
+      "difference": 0.6,
+      "ci95": [
+        0.2777777777777778,
+        0.76
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_context",
+      "difference": -0.06666666666666667,
+      "ci95": [
+        -0.13333333333333333,
+        0
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "difference": 0.5,
+      "ci95": [
+        0.14285714285714285,
+        0.717391304347826
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    }
+  ],
+  "frozen_inputs": {
+    "dataset_sha256": "7ead35f4474c4597a15d8168fb3c5092441f9082f97be3f720e9ad406fde5c0e",
+    "sources_sha256": "672ecb6bedbfdaad16d544c12f0e1b381c9f3fcf832db6c22a4002d974494b4a",
+    "gold_sha256": "1f78c8c817f5bee3cb7f8455a9a1d12ab79ae971c0fe04cfbe135c14f11ad4b9"
+  },
+  "raw_export": {
+    "local_path": ".runtime/direct-360-export.json",
+    "sha256": "527db262e6f92d85a8d467a9ec71b5fc5c751195d877ff8d5971fbfded7ed9af"
+  },
+  "interpretation": {
+    "schema_exposed_to_llm": false,
+    "context_design": "TypeDB context is normalized to the same model-visible facts as RAG; all 82 observed comparable case_facts pairs were identical.",
+    "benefit_observed": "Functions provide curated decision logic and supporting evidence. SQL provides equivalent curated logic and similar benefits.",
+    "strict_pass": "All expected decision fields, amounts and evidence checks must pass; execution failures count as failures.",
+    "limitations": [
+      "30 synthetic evaluation cases, one repetition per model and arm; template-cluster bootstrap does not establish population-wide accuracy.",
+      "Some evaluation cases were used in earlier exploratory pilots and output-contract calibration.",
+      "Reference legal decisions are provisional, without independent legal review.",
+      "One interrupted OpenAI/functions attempt remains failed with unknown total usage; efficiency excludes only its unmatched measurement pair, while strict scoring retains all 30 attempts.",
+      "DeepSeek has many empty-content errors; native model effort defaults and OpenRouter routing variation remain confounders.",
+      "No isolated schema-exposure ablation or exclusive TypeDB advantage has been demonstrated."
+    ]
+  }
+}
