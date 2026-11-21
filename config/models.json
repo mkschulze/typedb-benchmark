@@ -5,15 +5,18 @@
     "base_url": "https://api.anthropic.com/v1", "api_key_env": "ANTHROPIC_API_KEY",
     "send_temperature": false, "json_mode": false, "max_output_tokens": 2048,
     "input_price_per_million": 2, "output_price_per_million": 10,
-    "cached_input_price_per_million": 0.1, "price_date": "2026-11-21"
+    "cached_input_price_per_million": 0.1, "cache_write_price_per_million": 4,
+    "price_date": "2026-11-21"
   },
   {
     "id": "openai-sol", "name": "GPT-6.2 Sol", "provider": "OpenAI",
     "model": "gpt-6.2-sol", "protocol": "openai",
     "base_url": "https://api.openai.com/v1", "api_key_env": "OPENAI_API_KEY",
     "send_temperature": false, "json_mode": true, "token_parameter": "max_completion_tokens",
+    "service_tier": "default",
     "max_output_tokens": 2048, "input_price_per_million": 2, "output_price_per_million": 10,
-    "cached_input_price_per_million": 0.1, "price_date": "2026-11-21"
+    "cached_input_price_per_million": 0.1, "cache_write_price_per_million": 5,
+    "price_date": "2026-11-21"
   },
   {
     "id": "openrouter-deepseek", "name": "DeepSeek V4.1 Flash", "provider": "OpenRouter",

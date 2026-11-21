@@ -8,9 +8,10 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
+from .harnesses import available_harnesses
 from .models import CONFIGURATIONS, RunRequest
 from .providers import ModelDefinition, load_models
-from .runner import RunService
+from .runner import RequestKeyConflict, RunRecoveryConflict, RunService
 from .storage import RunStore
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -76,8 +77,10 @@ def create_app(database_path=None, model_definitions=None, provider=None, typedb
 
     @app.get("/api/health")
     async def health():
+        worker_available = service.worker is not None and not service.worker.done()
         return {
-            "status": "ok",
+            "status": "ok" if worker_available else "degraded",
+            "worker": {"available": worker_available},
             "typedb": await database_health(),
             "legal_review": "provisional",
             "retrieval_mode": service.retriever.mode,
@@ -115,12 +118,24 @@ def create_app(database_path=None, model_definitions=None, provider=None, typedb
     def configurations():
         return CONFIGURATIONS
 
+    @app.get("/api/harnesses")
+    def get_harnesses():
+        return available_harnesses()
+
     @app.get("/api/runs")
     def get_runs():
         return store.list()
 
     @app.post("/api/runs", status_code=202)
     async def create_run(request: RunRequest):
+        try:
+            prior = service.prior_request(request)
+        except RequestKeyConflict as error:
+            raise HTTPException(409, str(error)) from error
+        if prior:
+            return prior
+        if not next(item for item in available_harnesses() if item["id"] == request.harness)["available"]:
+            raise HTTPException(503, "The selected agent harness is unavailable; install the orchestration extra")
         unknown_cases = set(request.case_ids) - case_index.keys()
         if unknown_cases:
             raise HTTPException(422, "One or more selected cases do not exist")
@@ -139,6 +154,8 @@ def create_app(database_path=None, model_definitions=None, provider=None, typedb
                 )
         try:
             return await service.enqueue(request)
+        except RequestKeyConflict as error:
+            raise HTTPException(409, str(error)) from error
         except ValueError as error:
             raise HTTPException(429, str(error)) from error
 
@@ -150,6 +167,25 @@ def create_app(database_path=None, model_definitions=None, provider=None, typedb
     async def cancel_run(run_id: str):
         run_or_404(run_id)
         return service.cancel(run_id)
+
+    @app.post("/api/runs/{run_id}/resume", status_code=202)
+    async def resume_run(run_id: str):
+        run = run_or_404(run_id)
+        request = RunRequest.model_validate(run["request"])
+        if any(model_id not in service.models or not service.models[model_id].configured for model_id in request.model_ids):
+            raise HTTPException(422, "Configure the interrupted run's models before continuing")
+        if not next(item for item in available_harnesses() if item["id"] == request.harness)["available"]:
+            raise HTTPException(503, "The interrupted run's agent harness is unavailable")
+        if any(configuration.startswith("typedb_") for configuration in request.configurations):
+            ready = await database_health()
+            if not ready.get("available") or not ready.get("seeded"):
+                raise HTTPException(503, "TypeDB must be connected and seeded before continuing")
+        try:
+            return await service.resume(run_id)
+        except RunRecoveryConflict as error:
+            raise HTTPException(409, str(error)) from error
+        except ValueError as error:
+            raise HTTPException(429, str(error)) from error
 
     @app.get("/api/runs/{run_id}/export")
     def export_run(run_id: str):

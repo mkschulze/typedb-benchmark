@@ -61,6 +61,27 @@ def test_action_parser_rejects_non_objects_and_fenced_prose():
         parse_action('Here is my answer: {"action":"final"}')
 
 
+@pytest.mark.parametrize("price", [0, 2.5, 4, 5])
+def test_model_accepts_a_verified_cache_write_price_ceiling(price):
+    model = ModelDefinition(
+        id="priced", name="Priced", model="test", cache_write_price_per_million=price,
+    )
+
+    assert model.cache_write_price_per_million == price
+
+
+@pytest.mark.parametrize("price", [-1, float("nan"), float("inf"), -float("inf")])
+def test_model_rejects_invalid_cache_write_prices(price):
+    with pytest.raises(ValueError):
+        ModelDefinition(id="priced", name="Priced", model="test", cache_write_price_per_million=price)
+
+
+def test_model_leaves_unverified_cache_write_pricing_unknown():
+    model = ModelDefinition(id="unpriced", name="Unpriced", model="test")
+
+    assert model.cache_write_price_per_million is None
+
+
 def test_hosted_models_require_a_key_and_loopback_models_do_not(monkeypatch):
     monkeypatch.delenv("BENCHMARK_TEST_KEY", raising=False)
     remote = ModelDefinition(
@@ -187,6 +208,18 @@ async def test_openrouter_enforces_configured_dollar_per_million_price_ceiling(m
     assert json.loads(requests[0].content)["provider"] == {
         "max_price": {"prompt": 0.3, "completion": 1.2}, "require_parameters": True,
     }
+
+
+async def test_openai_explicitly_requests_the_configured_standard_service_tier(mock_http):
+    requests = mock_http(openai_response())
+    model = ModelDefinition(id="standard", name="Standard", model="gpt-6.2-sol").model_copy(
+        update={"service_tier": "default"}
+    )
+
+    await ChatProvider().complete(model, [{"role": "user", "content": "JSON please"}])
+
+    assert json.loads(requests[0].content).get("service_tier") == "default"
+    assert model.generation_settings().get("service_tier") == "default"
 
 
 @pytest.mark.parametrize("cost,preserved", [
@@ -401,3 +434,16 @@ async def test_empty_billed_response_keeps_stop_reason_for_diagnosis(mock_http,p
     with pytest.raises(ProviderError) as error:
         await ChatProvider().complete(model,[{'role':'user','content':'Return JSON'}])
     assert error.value.usage['_response']['stop_reason']==reason
+
+
+@pytest.mark.parametrize('protocol',['openai','anthropic'])
+async def test_framework_cache_metadata_is_not_sent_as_provider_message_fields(mock_http,protocol):
+    requests=mock_http(anthropic_response() if protocol=='anthropic' else openai_response())
+    model=ModelDefinition(id='framework',name='Framework',model='test',protocol=protocol)
+    messages=[{'role':'system','content':'Return JSON','cache_breakpoint':True},
+              {'role':'user','content':'Case facts','cache_breakpoint':True}]
+    await ChatProvider().complete(model,messages)
+    payload=json.loads(requests[0].content)
+    assert payload['messages']==([{'role':'user','content':'Case facts'}] if protocol=='anthropic' else [
+        {'role':'system','content':'Return JSON'},{'role':'user','content':'Case facts'}])
+    assert messages[1]['cache_breakpoint'] is True

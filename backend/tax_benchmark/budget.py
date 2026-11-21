@@ -115,10 +115,12 @@ class ExperimentBudget:
         if model.input_price_per_million is None or model.output_price_per_million is None:
             raise BudgetError("Paid models require dated input and output prices")
         input_price = _decimal(model.input_price_per_million, "Input token price")
-        if model.cached_input_price_per_million is not None:
-            input_price = max(
-                input_price, _decimal(model.cached_input_price_per_million, "Cached input token price")
-            )
+        for price, name in (
+            (model.cached_input_price_per_million, "Cached input token price"),
+            (model.cache_write_price_per_million, "Cache write token price"),
+        ):
+            if price is not None:
+                input_price = max(input_price, _decimal(price, name))
         output_price = _decimal(model.output_price_per_million, "Output token price")
         # UTF-8 bytes bound text tokenization; extra framing covers provider-added tokens.
         input_tokens = (

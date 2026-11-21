@@ -175,6 +175,36 @@ def test_chat_reserves_using_the_highest_input_price_even_for_cached_tokens(tmp_
     assert budget.snapshot()["reserved_eur"] == 0.08627
 
 
+def test_chat_reserves_using_the_cache_write_ceiling_before_the_premium_multiplier(tmp_path):
+    budget = budget_for(tmp_path)
+    model = priced_model(max_output_tokens=1000, cached_input_price_per_million=5).model_copy(
+        update={"cache_write_price_per_million": 7}
+    )
+    budget.reserve_chat(model, [{"role": "user", "content": "é"}])
+    # 8227 input tokens at $7 plus 1000 output tokens at $2, all doubled.
+    assert budget.snapshot()["reserved_eur"] == 0.119178
+
+
+@pytest.mark.parametrize("price", [-1, float("nan"), float("inf")])
+def test_chat_refuses_invalid_cache_write_price_ceilings(tmp_path, price):
+    model = priced_model().model_copy(update={"cache_write_price_per_million": price})
+
+    with pytest.raises(BudgetError):
+        budget_for(tmp_path).reserve_chat(model, [{"role": "user", "content": "hello"}])
+
+
+def test_verified_cache_write_prices_expire_with_the_other_token_prices(tmp_path):
+    budget = budget_for(tmp_path)
+    model = priced_model().model_copy(
+        update={"cache_write_price_per_million": 5, "price_date": "2026-11-07"}
+    )
+    messages = [{"role": "user", "content": "hello"}]
+    budget.reserve_chat(model, messages)
+
+    with pytest.raises(BudgetError, match="14 days"):
+        budget.reserve_chat(model.model_copy(update={"price_date": "2026-11-06"}), messages)
+
+
 @pytest.mark.parametrize("price", [-1, float("nan"), float("inf")])
 def test_chat_refuses_invalid_cache_prices(tmp_path, price):
     model = priced_model().model_copy(update={"cached_input_price_per_million": price})

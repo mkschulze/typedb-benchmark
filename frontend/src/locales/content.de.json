@@ -1,0 +1,470 @@
+{
+  "cases": {
+    "dev-01": {
+      "title": "Entlastungsberechtigte Muttergesellschaft; keine Freistellungsbescheinigung",
+      "summary": "Entlastungsberechtigte Muttergesellschaft; keine Freistellungsbescheinigung. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "dev-02": {
+      "title": "Entlastungsberechtigte Muttergesellschaft; erteilte Freistellungsbescheinigung",
+      "summary": "Entlastungsberechtigte Muttergesellschaft; erteilte Freistellungsbescheinigung. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine passende, erteilte BZSt-Freistellungsbescheinigung war zum Zahlungszeitpunkt verfügbar und gültig; die materiellen Voraussetzungen stehen fest. Wenden Sie den von ihr abgedeckten Entlastungsweg an. Eine Minderung nach DBA wird zuerst auf den Solidaritätszuschlag angerechnet; oberhalb der gemeinsamen abkommensrechtlichen Höchstgrenze wird kein Solidaritätszuschlag hinzugerechnet."
+    },
+    "dev-03": {
+      "title": "Ausdrücklicher Ausschluss; beide gesetzlichen Voraussetzungen belegt",
+      "summary": "Ausdrücklicher Ausschluss; beide gesetzlichen Voraussetzungen belegt. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine modellierte Voraussetzung des ausdrücklich angefragten Entlastungswegs ist nicht erfüllt. Es gilt der inländische Steuerabzug. Damit werden andere abkommensrechtliche oder innerstaatliche Erstattungswege außerhalb der Fragestellung nicht ausgeschlossen."
+    },
+    "dev-04": {
+      "title": "Muttergesellschaft mit fünf Prozent Beteiligung; nur §43b",
+      "summary": "Muttergesellschaft mit fünf Prozent Beteiligung; nur §43b. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine modellierte Voraussetzung des ausdrücklich angefragten Entlastungswegs ist nicht erfüllt. Es gilt der inländische Steuerabzug. Damit werden andere abkommensrechtliche oder innerstaatliche Erstattungswege außerhalb der Fragestellung nicht ausgeschlossen."
+    },
+    "dev-05": {
+      "title": "Haltedauer wird erst nach der Zahlung erfüllt",
+      "summary": "Haltedauer wird erst nach der Zahlung erfüllt. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die ununterbrochene Haltedauer von zwölf Monaten ist am Wissensstichtag noch nicht erfüllt. Es gilt der inländische Steuerabzug; §43b kann nach Erfüllung eine Erstattung ermöglichen. Eine Entlastung bei Zahlung darf nicht unterstellt werden."
+    },
+    "dev-06": {
+      "title": "Ansässigkeitsnachweis ist keine BZSt-Freistellungsbescheinigung",
+      "summary": "Ansässigkeitsnachweis ist keine BZSt-Freistellungsbescheinigung. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "dev-07": {
+      "title": "Freistellungsbescheinigung für den DBA-Satz von fünf Prozent",
+      "summary": "Freistellungsbescheinigung für den DBA-Satz von fünf Prozent. Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine passende, erteilte BZSt-Freistellungsbescheinigung war zum Zahlungszeitpunkt verfügbar und gültig; die materiellen Voraussetzungen stehen fest. Wenden Sie den von ihr abgedeckten Entlastungsweg an. Eine Minderung nach DBA wird zuerst auf den Solidaritätszuschlag angerechnet; oberhalb der gemeinsamen abkommensrechtlichen Höchstgrenze wird kein Solidaritätszuschlag hinzugerechnet."
+    },
+    "dev-08": {
+      "title": "Antragsteller nach DBA ist nicht der Nutzungsberechtigte",
+      "summary": "Antragsteller nach DBA ist nicht der Nutzungsberechtigte. Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine modellierte Voraussetzung des ausdrücklich angefragten Entlastungswegs ist nicht erfüllt. Es gilt der inländische Steuerabzug. Damit werden andere abkommensrechtliche oder innerstaatliche Erstattungswege außerhalb der Fragestellung nicht ausgeschlossen."
+    },
+    "dev-09": {
+      "title": "Ungeklärte Tatsachen zur wirtschaftlichen Substanz",
+      "summary": "Ungeklärte Tatsachen zur wirtschaftlichen Substanz. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine rechtliche Prüfung ist erforderlich: ungeklärte Fragen zur Missbrauchsabwehr/AO §42, widersprüchliche Unterlagen oder eine umfassende Entlastungsanfrage, die neben den benannten Wegen auch §44a(9) und KStG §32 erfordert. Eine abschließende Aussage zu allen Erstattungsmöglichkeiten erfolgt nicht automatisiert."
+    },
+    "dev-10": {
+      "title": "Natürliche Person als Empfänger außerhalb des Anwendungsbereichs",
+      "summary": "Natürliche Person als Empfänger außerhalb des Anwendungsbereichs. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Außerhalb des unterstützten Anwendungsbereichs: gewöhnliche Bardividenden einer deutschen GmbH an eine niederländische Kapitalgesellschaft im Quellenstand 2026. Es wird kein vereinfachtes Ergebnis angewandt."
+    },
+    "eval-01": {
+      "title": "Inländischer Steuerabzug auf 48.000 €",
+      "summary": "Inländischer Steuerabzug auf 48.000 €. Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Nur inländischer Steuerabzug: 25 % Kapitalertragsteuer zuzüglich 5,5 % dieser Steuer; Bruchteile eines Cents beim Solidaritätszuschlag bleiben außer Ansatz. Eine Prüfung der materiellen Entlastungsberechtigung und von Erstattungen war nicht angefragt."
+    },
+    "eval-02": {
+      "title": "Bruchteile eines Cents beim Solidaritätszuschlag bleiben außer Ansatz",
+      "summary": "Bruchteile eines Cents beim Solidaritätszuschlag bleiben außer Ansatz. Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Nur inländischer Steuerabzug: 25 % Kapitalertragsteuer zuzüglich 5,5 % dieser Steuer; Bruchteile eines Cents beim Solidaritätszuschlag bleiben außer Ansatz. Eine Prüfung der materiellen Entlastungsberechtigung und von Erstattungen war nicht angefragt."
+    },
+    "eval-03": {
+      "title": "Barausschüttung von null",
+      "summary": "Barausschüttung von null. Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Nur inländischer Steuerabzug: 25 % Kapitalertragsteuer zuzüglich 5,5 % dieser Steuer; Bruchteile eines Cents beim Solidaritätszuschlag bleiben außer Ansatz. Eine Prüfung der materiellen Entlastungsberechtigung und von Erstattungen war nicht angefragt."
+    },
+    "eval-04": {
+      "title": "Hohe, centgenaue Bardividende",
+      "summary": "Hohe, centgenaue Bardividende. Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Nur inländischer Steuerabzug: 25 % Kapitalertragsteuer zuzüglich 5,5 % dieser Steuer; Bruchteile eines Cents beim Solidaritätszuschlag bleiben außer Ansatz. Eine Prüfung der materiellen Entlastungsberechtigung und von Erstattungen war nicht angefragt."
+    },
+    "eval-05": {
+      "title": "Kleine Dividende; Steuerabzug und Steuerabführung",
+      "summary": "Kleine Dividende; Steuerabzug und Steuerabführung. Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Berechnen Sie ausschließlich den inländischen Steuerabzug bei Zahlung; es liegt keine Freistellungsbescheinigung vor. Prüfen Sie weder die materielle Entlastungsberechtigung noch Erstattungen.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Nur inländischer Steuerabzug: 25 % Kapitalertragsteuer zuzüglich 5,5 % dieser Steuer; Bruchteile eines Cents beim Solidaritätszuschlag bleiben außer Ansatz. Eine Prüfung der materiellen Entlastungsberechtigung und von Erstattungen war nicht angefragt."
+    },
+    "eval-06": {
+      "title": "Gesetzliche Grenze von zehn Prozent",
+      "summary": "Gesetzliche Grenze von zehn Prozent. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "eval-07": {
+      "title": "9,99 Prozent an beiden maßgeblichen Stichtagen",
+      "summary": "9,99 Prozent an beiden maßgeblichen Stichtagen. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine modellierte Voraussetzung des ausdrücklich angefragten Entlastungswegs ist nicht erfüllt. Es gilt der inländische Steuerabzug. Damit werden andere abkommensrechtliche oder innerstaatliche Erstattungswege außerhalb der Fragestellung nicht ausgeschlossen."
+    },
+    "eval-08": {
+      "title": "Empfangende Kapitalgesellschaft von niederländischer Gewinnsteuer befreit",
+      "summary": "Empfangende Kapitalgesellschaft von niederländischer Gewinnsteuer befreit. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine modellierte Voraussetzung des ausdrücklich angefragten Entlastungswegs ist nicht erfüllt. Es gilt der inländische Steuerabzug. Damit werden andere abkommensrechtliche oder innerstaatliche Erstattungswege außerhalb der Fragestellung nicht ausgeschlossen."
+    },
+    "eval-09": {
+      "title": "Zwölf Monate nach der Zahlung erfüllt; inzwischen belegt",
+      "summary": "Zwölf Monate nach der Zahlung erfüllt; inzwischen belegt. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-09-01? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die Haltedauer von zwölf Monaten wurde nach der Zahlung, aber bis zum Wissensstichtag erfüllt. §43b(2) sieht in diesem Fall den späteren Erstattungsweg vor und schließt die Freistellung bei Zahlung aus. Die Erstattung bleibt von den verfahrensrechtlichen Voraussetzungen abhängig."
+    },
+    "eval-10": {
+      "title": "Unterbrochene Beteiligung setzt den Beginn der maßgeblichen Haltedauer neu",
+      "summary": "Unterbrochene Beteiligung setzt den Beginn der maßgeblichen Haltedauer neu. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die ununterbrochene Haltedauer von zwölf Monaten ist am Wissensstichtag noch nicht erfüllt. Es gilt der inländische Steuerabzug; §43b kann nach Erfüllung eine Erstattung ermöglichen. Eine Entlastung bei Zahlung darf nicht unterstellt werden."
+    },
+    "eval-11": {
+      "title": "Freistellungsbescheinigung endet am Zahlungstag",
+      "summary": "Freistellungsbescheinigung endet am Zahlungstag. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine passende, erteilte BZSt-Freistellungsbescheinigung war zum Zahlungszeitpunkt verfügbar und gültig; die materiellen Voraussetzungen stehen fest. Wenden Sie den von ihr abgedeckten Entlastungsweg an. Eine Minderung nach DBA wird zuerst auf den Solidaritätszuschlag angerechnet; oberhalb der gemeinsamen abkommensrechtlichen Höchstgrenze wird kein Solidaritätszuschlag hinzugerechnet."
+    },
+    "eval-12": {
+      "title": "Freistellungsbescheinigung einen Tag vor der Zahlung abgelaufen",
+      "summary": "Freistellungsbescheinigung einen Tag vor der Zahlung abgelaufen. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "eval-13": {
+      "title": "Freistellungsbescheinigung nach der Zahlung erteilt",
+      "summary": "Freistellungsbescheinigung nach der Zahlung erteilt. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-07-15? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "eval-14": {
+      "title": "Freistellungsbescheinigung nennt einen anderen Zahlenden",
+      "summary": "Freistellungsbescheinigung nennt einen anderen Zahlenden. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "eval-15": {
+      "title": "Antrag zum Zahlungszeitpunkt noch anhängig",
+      "summary": "Antrag zum Zahlungszeitpunkt noch anhängig. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "eval-16": {
+      "title": "DBA-Grenze von 365 Tagen einschließlich Zahlungstag; Solidaritätszuschlag zuerst mindern",
+      "summary": "DBA-Grenze von 365 Tagen einschließlich Zahlungstag; Solidaritätszuschlag zuerst mindern. Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine passende, erteilte BZSt-Freistellungsbescheinigung war zum Zahlungszeitpunkt verfügbar und gültig; die materiellen Voraussetzungen stehen fest. Wenden Sie den von ihr abgedeckten Entlastungsweg an. Eine Minderung nach DBA wird zuerst auf den Solidaritätszuschlag angerechnet; oberhalb der gemeinsamen abkommensrechtlichen Höchstgrenze wird kein Solidaritätszuschlag hinzugerechnet."
+    },
+    "eval-17": {
+      "title": "DBA-Satz von fünfzehn Prozent; Portfoliobeteiligung von neun Prozent",
+      "summary": "DBA-Satz von fünfzehn Prozent; Portfoliobeteiligung von neun Prozent. Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "eval-18": {
+      "title": "DBA-Ausnahme zum Hauptzweck ohne Freistellung bei Zahlung",
+      "summary": "DBA-Ausnahme zum Hauptzweck ohne Freistellung bei Zahlung. Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "eval-19": {
+      "title": "Nutzungsberechtigung nach DBA nicht bestätigt",
+      "summary": "Nutzungsberechtigung nach DBA nicht bestätigt. Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich die Entlastung für gewöhnliche Dividenden nach Artikel 10 des DBA mit den Niederlanden und den Steuerabzug bei Zahlung auf Grundlage der konsolidierten Abkommensfassung 2026. Erstattungsbeträge setzen einen fristgerechten wirksamen Antrag, die Steuerabführung und eine Steuerbescheinigung voraus. Entscheiden Sie nicht über §43b oder andere innerstaatliche Erstattungswege.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine erforderliche materielle Tatsache ist unbekannt. Fordern Sie die aufgeführten Informationen an; eine unbekannte Tatsache ist keine negative Tatsache. Steht fest, dass bei Zahlung keine Freistellung vorliegt, ist weiterhin der inländische Steuerabzug vorzunehmen."
+    },
+    "eval-20": {
+      "title": "Anfrage nach umfassender Prüfung des günstigsten Entlastungswegs",
+      "summary": "Anfrage nach umfassender Prüfung des günstigsten Entlastungswegs. Prüfen Sie alle möglichen Entlastungswege für Dividenden; gehen Sie nicht davon aus, dass ein benannter Weg §44a(9), KStG §32 oder die Entlastung nach DBA abschließend abdeckt.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie alle möglichen Entlastungswege für Dividenden; gehen Sie nicht davon aus, dass ein benannter Weg §44a(9), KStG §32 oder die Entlastung nach DBA abschließend abdeckt.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine rechtliche Prüfung ist erforderlich: ungeklärte Fragen zur Missbrauchsabwehr/AO §42, widersprüchliche Unterlagen oder eine umfassende Entlastungsanfrage, die neben den benannten Wegen auch §44a(9) und KStG §32 erfordert. Eine abschließende Aussage zu allen Erstattungsmöglichkeiten erfolgt nicht automatisiert."
+    },
+    "eval-21": {
+      "title": "Aktuelle Beteiligungsverhältnisse ersetzen alte Beteiligungsübersicht",
+      "summary": "Aktuelle Beteiligungsverhältnisse ersetzen alte Beteiligungsübersicht. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine modellierte Voraussetzung des ausdrücklich angefragten Entlastungswegs ist nicht erfüllt. Es gilt der inländische Steuerabzug. Damit werden andere abkommensrechtliche oder innerstaatliche Erstattungswege außerhalb der Fragestellung nicht ausgeschlossen."
+    },
+    "eval-22": {
+      "title": "Wissensstichtag liegt vor der Zahlung",
+      "summary": "Wissensstichtag liegt vor der Zahlung. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-01? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Der Wissensstichtag liegt vor der Zahlung. Die tatsächlichen Verhältnisse zum Zahlungszeitpunkt stehen noch nicht fest; fordern Sie die Unterlagen zu diesem Zeitpunkt an."
+    },
+    "eval-23": {
+      "title": "Haltedauer wird erst nach dem Wissensstichtag erfüllt",
+      "summary": "Haltedauer wird erst nach dem Wissensstichtag erfüllt. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-09-01? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die ununterbrochene Haltedauer von zwölf Monaten ist am Wissensstichtag noch nicht erfüllt. Es gilt der inländische Steuerabzug; §43b kann nach Erfüllung eine Erstattung ermöglichen. Eine Entlastung bei Zahlung darf nicht unterstellt werden."
+    },
+    "eval-24": {
+      "title": "Freistellungsbescheinigung dem Zahlenden erst im Juli verfügbar",
+      "summary": "Freistellungsbescheinigung dem Zahlenden erst im Juli verfügbar. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-07-10? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "eval-25": {
+      "title": "Freistellungsbescheinigung vor der Zahlung widerrufen",
+      "summary": "Freistellungsbescheinigung vor der Zahlung widerrufen. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die materielle Entlastungsberechtigung für den angefragten Entlastungsweg steht fest. Zum Zahlungszeitpunkt war keine passende, erteilte BZSt-Freistellungsbescheinigung verfügbar; daher gilt der inländische Steuerabzug. Die angegebene Erstattung ist bei fristgerechtem wirksamem Antrag, Steuerabführung und Vorlage einer Steuerbescheinigung möglich."
+    },
+    "eval-26": {
+      "title": "Bestand an Freistellungsbescheinigungen ausdrücklich unbekannt",
+      "summary": "Bestand an Freistellungsbescheinigungen ausdrücklich unbekannt. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Die Vollständigkeit des Bestands an Freistellungsbescheinigungen zum Zahlungszeitpunkt ist nicht bestätigt, und eine passende Bescheinigung steht nicht fest. Fordern Sie die Bestandsübersicht an; ein unbekannter Bescheinigungsstatus begründet weder einen vollen Steuerabzug noch einen Steuerabzug von null."
+    },
+    "eval-27": {
+      "title": "Begünstigte Rechtsform nicht festgestellt",
+      "summary": "Begünstigte Rechtsform nicht festgestellt. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine erforderliche materielle Tatsache ist unbekannt. Fordern Sie die aufgeführten Informationen an; eine unbekannte Tatsache ist keine negative Tatsache. Steht fest, dass bei Zahlung keine Freistellung vorliegt, ist weiterhin der inländische Steuerabzug vorzunehmen."
+    },
+    "eval-28": {
+      "title": "Voraussetzungen der Missbrauchsabwehr erfordern rechtliche Prüfung",
+      "summary": "Voraussetzungen der Missbrauchsabwehr erfordern rechtliche Prüfung. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Eine rechtliche Prüfung ist erforderlich: ungeklärte Fragen zur Missbrauchsabwehr/AO §42, widersprüchliche Unterlagen oder eine umfassende Entlastungsanfrage, die neben den benannten Wegen auch §44a(9) und KStG §32 erfordert. Eine abschließende Aussage zu allen Erstattungsmöglichkeiten erfolgt nicht automatisiert."
+    },
+    "eval-29": {
+      "title": "Schweizer Empfänger außerhalb des zunächst abgedeckten Länderkreises",
+      "summary": "Schweizer Empfänger außerhalb des zunächst abgedeckten Länderkreises. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Außerhalb des unterstützten Anwendungsbereichs: gewöhnliche Bardividenden einer deutschen GmbH an eine niederländische Kapitalgesellschaft im Quellenstand 2026. Es wird kein vereinfachtes Ergebnis angewandt."
+    },
+    "eval-30": {
+      "title": "Investmentfonds außerhalb des Anwendungsbereichs für gewöhnliche Kapitalgesellschaften",
+      "summary": "Investmentfonds außerhalb des Anwendungsbereichs für gewöhnliche Kapitalgesellschaften. Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "question": "Welchen Steuerabzug muss der Zahlende am 2026-06-30 vornehmen, und wie ist der Stand der Entlastung nach dem Kenntnisstand vom 2026-06-30? Prüfen Sie ausschließlich den Entlastungsweg nach §43b und den Steuerabzug bei Zahlung. Erstattungsbeträge geben die mögliche Entlastung auf diesem Weg an, sofern die Steuer abgeführt wurde, ein fristgerechter wirksamer Antrag gestellt wird und die erforderliche Steuerbescheinigung vorliegt; entscheiden Sie nicht über andere Entlastungswege nach DBA/§44a(9)/KStG §32.",
+      "reference_reasoning": "Vorläufige deterministische Referenzerläuterung; kein gemessenes LLM-Ergebnis. Außerhalb des unterstützten Anwendungsbereichs: gewöhnliche Bardividenden einer deutschen GmbH an eine niederländische Kapitalgesellschaft im Quellenstand 2026. Es wird kein vereinfachtes Ergebnis angewandt."
+    }
+  },
+  "sources": {
+    "estg-43a": {
+      "title": "EStG §43a — inländischer Steuersatz",
+      "text": "Zusammenfassung: Gewöhnliche Dividenden von Kapitalgesellschaften unterliegen einem Kapitalertragsteuerabzug von 25 Prozent der Bruttoerträge. Diese Testfälle vermeiden Bemessungsgrundlagen, bei denen die Kapitalertragsteuer Bruchteile eines Cents ergibt. Es handelt sich um den Steuerabzug durch den Zahlenden, nicht um die endgültige Steuerbelastung."
+    },
+    "estg-43b": {
+      "title": "EStG §43b — Entlastungsweg für EU-Muttergesellschaften",
+      "text": "Zusammenfassung: Auf Antrag können Dividenden an begünstigte EU-Muttergesellschaften vorbehaltlich §50d(3) freigestellt werden. Erforderlich ist eine unmittelbare Beteiligung von 10 Prozent; ist diese bei Entstehung der Steuer nicht gegeben, ist der Zeitpunkt des Gewinnverteilungsbeschlusses maßgeblich. Die Beteiligung muss zwölf Monate ununterbrochen bestehen. Wird die Haltedauer erst nach Entstehung der Steuer erfüllt, gilt die Erstattung nach §50c(3); die Freistellung bei Zahlung nach §50c(2) ist ausgeschlossen. Ausschüttungen aufgrund von Liquidation oder Umwandlung sind ausgeschlossen."
+    },
+    "estg-annex2": {
+      "title": "EStG Anlage 2 — begünstigte Gesellschaften",
+      "text": "Zusammenfassung: Anlage 2 führt die niederländischen Rechtsformen naamloze vennootschap und besloten vennootschap met beperkte aansprakelijkheid sowie die deutsche GmbH auf. Erforderlich sind die steuerliche Ansässigkeit in der EU ohne abkommensrechtliche Ansässigkeit in einem Drittstaat sowie die Unterwerfung unter die aufgeführten Unternehmensteuern ohne Wahlmöglichkeit oder Befreiung, darunter die niederländische vennootschapsbelasting. Die Testfälle geben diese Voraussetzungen ausdrücklich an; die bloße Bezeichnung BV ist kein ausreichender Nachweis."
+    },
+    "estg-44": {
+      "title": "EStG §44 — Steuerentstehung und Zahlender",
+      "text": "Zusammenfassung: Die Kapitalertragsteuer entsteht bei Zufluss; der Schuldner der Dividende behält sie für den Empfänger ein. Die Abrundung auf volle Euro in Satz 6 betrifft die zusammen abzuführende Steuer. Sie ist keine Anweisung, den Steuerabzug für jeden Empfänger auf volle Euro abzurunden. Dieser Benchmark weist den Steuerabzug je Zahlung aus, nicht die zusammengefasste Anmeldung der abzuführenden Steuer."
+    },
+    "estg-50c": {
+      "title": "EStG §50c — Freistellungsbescheinigung und Erstattung",
+      "text": "Zusammenfassung: Die Entlastungsberechtigung nach §43b oder einem DBA beseitigt für sich genommen nicht die Pflicht zum Steuerabzug. Eine BZSt-Freistellungsbescheinigung kann den Steuerabzug innerhalb ihres Geltungsbereichs und ihrer Gültigkeitsdauer beseitigen oder mindern; ein Antrag oder Ansässigkeitsnachweis ist keine solche Bescheinigung. Bescheinigungen können höchstens fünf Jahre abdecken und frühestens mit dem Eingang des Antrags beginnen. Eine später erteilte Bescheinigung kann unter den gesetzlichen Voraussetzungen eine Korrektur ermöglichen, bedeutet aber nicht, dass sie dem Zahlenden bereits bei Zahlung vorlag. Eine Erstattung setzt einen fristgerechten Antrag, die Steuerabführung und die erforderliche Steuerbescheinigung voraus; sie ist an Bedingungen geknüpft und erfolgt nie automatisch."
+    },
+    "estg-50d3": {
+      "title": "EStG §50d(3) — Einschränkungen und Ausnahmen",
+      "text": "Zusammenfassung: Die Einschränkung setzt sowohl nicht entlastungsberechtigte, hinter der Gesellschaft stehende Personen als auch einen fehlenden wesentlichen Zusammenhang zwischen der Einkunftsquelle und der wirtschaftlichen Tätigkeit voraus. Die Vorschrift sieht Ausnahmen bei Nachweis, dass kein Hauptzweck in einem steuerlichen Vorteil bestand, sowie bei wesentlichem und regelmäßigem Handel der Hauptgattung der Anteile an einer anerkannten Börse vor; AO §42 bleibt anwendbar. Allein ein fehlender Substanznachweis begründet keine Versagung. Ungeklärte rechtliche Wertungen erfordern eine Prüfung."
+    },
+    "estg-44a9": {
+      "title": "EStG §44a(9) — zusätzliche Erstattung für Kapitalgesellschaften",
+      "text": "Zusammenfassung: Eine nicht ansässige Kapitalgesellschaft im Sinne von KStG §2 Nr.1 kann eine Erstattung von zwei Fünfteln der einbehaltenen und abgeführten Kapitalertragsteuer erhalten; §50c(3),(5) und §50d(3) gelten entsprechend. Weitergehende Ansprüche nach §43b und DBA bleiben bestehen. Ein erfolgloser Anspruch nach §43b belegt nicht, dass jede innerstaatliche Erstattung ausgeschlossen ist."
+    },
+    "kstg-32": {
+      "title": "KStG §32 — Abgeltungswirkung und Erstattungsregeln",
+      "text": "Zusammenfassung: KStG §32 enthält zusätzliche Regeln zur Abgeltungswirkung des Kapitalertragsteuerabzugs und zur Erstattung für begünstigte empfangende Kapitalgesellschaften unter detaillierten Voraussetzungen. Die Implementierung automatisiert keine umfassende Anspruchsprüfung nach dieser Vorschrift; abschließende Erstattungsfragen erfordern eine rechtliche Prüfung, statt ein Ergebnis nach DBA oder §43b als endgültig anzusehen."
+    },
+    "solzg-3": {
+      "title": "SolzG §3 — Bemessungsgrundlage des Solidaritätszuschlags",
+      "text": "Zusammenfassung: Beim Steuerabzug vom Kapitalertrag bemisst sich der Solidaritätszuschlag nach der einzubehaltenden Kapitalertragsteuer. Jährliche Freigrenzen bei der Einkommensteuer natürlicher Personen begründen keine Befreiung vom Steuerabzug auf Dividenden für Kapitalgesellschaften."
+    },
+    "solzg-4": {
+      "title": "SolzG §4 — Zuschlagssatz und Rundung",
+      "text": "Zusammenfassung: Der Solidaritätszuschlag beträgt 5,5 Prozent der maßgeblichen Bemessungsgrundlage. Bruchteile eines Cents bleiben außer Ansatz. Berechnen Sie den Solidaritätszuschlag aus der Kapitalertragsteuer, nicht unmittelbar als gerundete 1,375 Prozent des Bruttobetrags."
+    },
+    "solzg-5": {
+      "title": "SolzG §5 — Reihenfolge der Minderung nach DBA",
+      "text": "Zusammenfassung: Wird die nach diesem Gesetz erhobene Einkommensteuer durch ein DBA gemindert, ist die Minderung zuerst auf den Solidaritätszuschlag anzurechnen. Eine gemeinsame abkommensrechtliche Höchstgrenze von 5 oder 15 Prozent wird nicht um zusätzlich aufgeschlagene 5,5 Prozent erhöht; diese Höchstgrenzen für gewöhnliche Dividenden liegen unter der inländischen Kapitalertragsteuer von 25 Prozent, sodass der Solidaritätszuschlag nach der Entlastung nach DBA null beträgt."
+    },
+    "bzst-exemption": {
+      "title": "BZSt — Hinweise zur Freistellungsbescheinigung",
+      "text": "Zusammenfassung: Die Hinweise des BZSt unterscheiden zwischen Anträgen, erteilten Freistellungsbescheinigungen, künftigen Minderungen und möglichen Korrekturen nach rückwirkender Erteilung. Bescheinigungen können für ein bis fünf Jahre gelten und frühestens am Tag der Antragstellung beginnen. Inländische Anmeldungspflichten bestehen auch bei einem Steuerabzug von null fort."
+    },
+    "bzst-refund": {
+      "title": "BZSt — Hinweise zur Erstattung der Kapitalertragsteuer",
+      "text": "Zusammenfassung: Das BZSt beschreibt den gewöhnlichen deutschen Steuerabzug auf Dividenden mit 25 Prozent zuzüglich 5,5 Prozent Solidaritätszuschlag und benennt bedingte abkommensrechtliche und gesetzliche Entlastungs- und Erstattungswege. Diese Verfahrenszusammenfassung begründet für sich genommen keine Entlastungsberechtigung."
+    },
+    "dba-nl-2026": {
+      "title": "DBA Deutschland–Niederlande, konsolidierte Fassung 2026",
+      "text": "Zusammenfassung: Für einen in den Niederlanden ansässigen Nutzungsberechtigten begrenzt Artikel 10(2)(a) die Steuer auf gewöhnliche Dividenden auf 5 Prozent, wenn eine Gesellschaft über einen Zeitraum von 365 Tagen einschließlich des Zahlungstags mindestens 10 Prozent des Kapitals unmittelbar hält; für andere gewöhnliche Fälle mit Kapitalgesellschaften gelten nach (c) 15 Prozent. Beteiligungskontinuität bei Umstrukturierungen, Fonds, Pensionsfonds, REITs, die Zurechnung zu einer deutschen Betriebsstätte und ungeklärte Fragen zur Missbrauchsabwehr werden hier nicht automatisiert behandelt. Artikel 2 erfasst Zuschläge zur Einkommensteuer. Die Bedingung von 365 Tagen entspricht nicht den zwölf Kalendermonaten nach §43b."
+    },
+    "dba-nl-register": {
+      "title": "BMF — Verzeichnis der Fassungen des DBA mit den Niederlanden",
+      "text": "Zusammenfassung: Das amtliche BMF-Verzeichnis hält fest, dass das Protokoll vom 14. April 2025 am 31. Dezember 2025 in Kraft trat und seit dem 1. Januar 2026 anzuwenden ist. Die am 11. Mai 2026 bekannt gemachte konsolidierte Fassung berücksichtigt dieses Protokoll; der ursprüngliche Text von 2012 allein ist nicht die für 2026 geltende Fassung."
+    },
+    "implementation-rules": {
+      "title": "Veröffentlichte kuratierte Implementierungsregeln",
+      "text": "Implementierungszusammenfassung: Anwendungsbereich und ausführbare Regeln der Implementierung (vorläufig, keine Rechtsberatung): gewöhnliche Bardividende, deutsche GmbH als Zahlende, niederländische Kapitalgesellschaft als Empfängerin, keine Betriebsstättenzurechnung, Zahlungen im Jahr 2026 bis einschließlich 21. November. Unbekannte Werte getrennt von falsch speichern. Geldbeträge werden als ganzzahlige Eurocent eingegeben; die Kapitalertragsteuer im Korpus ist centgenau (Bruttobetrag durch vier teilbar); der Solidaritätszuschlag beträgt floor(Kapitalertragsteuer in Cent *55/1000). Andere Bemessungsgrundlagen, bei denen die Kapitalertragsteuer Bruchteile eines Cents ergibt, erfordern eine Prüfung. Der Steuerabzug unterscheidet sich von der Zusammenfassung und Abführung auf volle Euro. §43b: begünstigte Rechtsform, Ansässigkeit und Unternehmensteuerstatus, unmittelbare Beteiligung >=10% bei Zahlung oder Gewinnverteilungsbeschluss, ununterbrochene Haltedauer von zwölf Kalendermonaten, ausdrückliche Ausnahme nach §50d(3) oder Tatsachen, die mindestens eine der kumulativen Ausschlussvoraussetzungen verneinen, keine ungeklärten Fragen zu AO42. Die spätere Erfüllung der Haltedauer ermöglicht eine bedingte Erstattung auf Antrag; sie begründet niemals eine Freistellung zum Zahlungszeitpunkt. Eine Freistellungsbescheinigung muss bei Zahlung erteilt und verfügbar sein, aktuell gültig sein, den richtigen Zahlenden, Empfänger und Entlastungsweg abdecken und darf nicht widerrufen sein; eine leere Liste bedeutet nur bei ausdrücklich vollständigem Bestand, dass keine Bescheinigung vorliegt. DBA: konsolidierte Fassung 2026 verwenden, ansässige nutzungsberechtigte Kapitalgesellschaft; eine unmittelbare Beteiligung >=10% über mindestens 365 Tage bis zur Zahlung ermöglicht 5%, andernfalls 15%; bei einer kurzen Haltedauer, die später erfüllt werden könnte, bleibt es bei Zahlung bei 15%, und eine künftige Erstattung auf 5% wird nicht automatisiert. Eine gültige Freistellungsbescheinigung nach DBA setzt nach §50c(2) eine unmittelbare Beteiligung >=10% voraus und deckt ihren Entlastungsweg ab. Solidaritätszuschlag zuerst mindern: Die abkommensrechtliche Gesamthöchstgrenze enthält keinen Solidaritätszuschlag, wenn sie unter 25% des Bruttobetrags liegt. Die Erstattung nach DBA betrifft ausschließlich den benannten Weg und setzt Steuerabführung, fristgerechten Antrag und Steuerbescheinigung voraus; kein pauschaler Solidaritätszuschlag oberhalb der Höchstgrenze. Fehlende Angaben zu Voraussetzungen erfordern weitere Informationen; ungeklärte Fragen zur Missbrauchsabwehr, Widersprüche, AO42 und umfassende Fragen zum günstigsten Entlastungsweg (§44a(9), KStG32) erfordern eine Prüfung. Gold-Ergebnisse gehören nicht zum Werkzeugkontext."
+    }
+  },
+  "document_titles": {
+    "BZSt application receipt": "BZSt-Eingangsbestätigung des Antrags",
+    "Certificate inventory statement": "Erklärung zum Bestand an Freistellungsbescheinigungen",
+    "Dated synthetic ownership evidence": "Datierter synthetischer Beteiligungsnachweis",
+    "Dutch residence document": "Niederländischer Ansässigkeitsnachweis",
+    "Earlier holding ended": "Frühere Beteiligung beendet",
+    "Superseded 2024 ownership note": "Überholter Beteiligungsvermerk von 2024",
+    "Synthetic BZSt exemption certificate": "Synthetische BZSt-Freistellungsbescheinigung",
+    "Synthetic payment and company record": "Synthetische Zahlungs- und Gesellschaftsunterlagen",
+    "Synthetic statutory exception facts": "Synthetische Tatsachen zu gesetzlichen Ausnahmen"
+  },
+  "fact_labels": {
+    "ao42_concern": "Bedenken nach AO §42",
+    "beneficial_owner": "Nutzungsberechtigung",
+    "certificate_inventory_complete": "Bestand an Freistellungsbescheinigungen vollständig",
+    "direct_holding_basis_points": "Unmittelbare Beteiligung bei Zahlung (Basispunkte)",
+    "distribution_kind": "Ausschüttungsart",
+    "economic_link": "Wesentlicher wirtschaftlicher Zusammenhang",
+    "listed_exception": "Ausnahme bei Börsenhandel",
+    "main_purpose_exception": "Ausnahme bei fehlendem steuerlichen Hauptzweck",
+    "owners_entitled": "Entlastungsberechtigung der unmittelbar Beteiligten",
+    "ownership_continuous": "Beteiligung ununterbrochen",
+    "ownership_since": "Beginn der maßgeblichen Beteiligung",
+    "payer_unlimited_taxable": "Unbeschränkte Steuerpflicht des Zahlenden",
+    "permanent_establishment_attribution": "Zurechnung zu einer deutschen Betriebsstätte",
+    "recipient_eu_resident": "Empfänger in der EU ansässig",
+    "recipient_kind": "Art des Empfängers",
+    "recipient_qualifying_form": "Begünstigte Rechtsform des Empfängers",
+    "recipient_subject_to_tax": "Empfänger der Unternehmensteuer unterworfen",
+    "records_conflict": "Widersprüchliche Unterlagen",
+    "requested_route": "Angefragter Entlastungsweg",
+    "resolution_holding_basis_points": "Unmittelbare Beteiligung beim Gewinnverteilungsbeschluss (Basispunkte)",
+    "payment_time_facts": "Tatsachen zum Zahlungszeitpunkt",
+    "id": "Kennung",
+    "title": "Titel",
+    "summary": "Zusammenfassung",
+    "question": "Fragestellung",
+    "category": "Kategorie",
+    "split": "Datensatzaufteilung",
+    "template_group": "Fallgruppe",
+    "gross_amount_cents": "Bruttobetrag (Cent)",
+    "payment_date": "Zahlungsdatum",
+    "knowledge_date": "Wissensstichtag",
+    "payer": "Zahlender",
+    "recipient": "Empfänger",
+    "name": "Name",
+    "country": "Land",
+    "legal_form": "Rechtsform",
+    "facts": "Sachverhalt",
+    "documents": "Unterlagen",
+    "source_ids": "Quellenkennungen",
+    "review_status": "Prüfstatus",
+    "recorded_at": "Erfasst am",
+    "kind": "Art",
+    "route": "Entlastungsweg",
+    "issued_at": "Erteilt am",
+    "available_at": "Verfügbar ab",
+    "valid_from": "Gültig ab",
+    "valid_until": "Gültig bis",
+    "payer_id": "Kennung des Zahlenden",
+    "recipient_id": "Kennung des Empfängers",
+    "revoked": "Widerrufen",
+    "text": "Text",
+    "status": "Status",
+    "relief_eligibility": "Entlastungsberechtigung",
+    "relief_route": "Entlastungsweg",
+    "withholding_tax_cents": "Kapitalertragsteuer (Cent)",
+    "solidarity_surcharge_cents": "Solidaritätszuschlag (Cent)",
+    "total_withholding_cents": "Gesamter Steuerabzug (Cent)",
+    "net_payment_cents": "Nettozahlung (Cent)",
+    "refund_status": "Erstattungsstatus",
+    "refund_amount_cents": "Erstattungsbetrag (Cent)",
+    "missing_facts": "Fehlende Angaben",
+    "evidence_ids": "Belegkennungen",
+    "reasoning": "Begründung",
+    "calculation_backend": "Berechnungsbasis",
+    "url": "Quellenadresse",
+    "raw_path": "Pfad zum Original",
+    "retrieved_at": "Abgerufen am",
+    "sha256": "SHA-256-Prüfsumme",
+    "locator": "Fundstelle",
+    "application_date": "Anwendungsdatum",
+    "version_note": "Hinweis zur Fassung"
+  },
+  "value_labels": {
+    "queued": "In Warteschlange",
+    "running": "Läuft",
+    "completed": "Abgeschlossen",
+    "failed": "Fehlgeschlagen",
+    "cancelled": "Abgebrochen",
+    "interrupted": "Unterbrochen",
+    "demonstration": "Demonstration",
+    "benchmark": "Benchmark",
+    "sources": "Quellen",
+    "direct": "Direkt",
+    "crewai": "CrewAI",
+    "determined": "Ermittelt",
+    "needs_information": "Weitere Informationen erforderlich",
+    "review_required": "Rechtliche Prüfung erforderlich",
+    "outside_scope": "Außerhalb des Anwendungsbereichs",
+    "eligible": "Entlastungsberechtigt",
+    "ineligible": "Nicht entlastungsberechtigt",
+    "undetermined": "Nicht festgestellt",
+    "not_assessed": "Nicht geprüft",
+    "potential_on_application": "Auf Antrag möglich",
+    "not_needed": "Nicht erforderlich",
+    "unavailable_under_requested_route": "Über den angefragten Entlastungsweg nicht verfügbar",
+    "conditional_on_holding_completion": "Von der Erfüllung der Haltedauer abhängig",
+    "requires_review": "Prüfung erforderlich",
+    "section43b": "§43b",
+    "treaty": "Doppelbesteuerungsabkommen",
+    "domestic_withholding": "Inländischer Steuerabzug",
+    "comprehensive_relief": "Umfassende Entlastungsprüfung",
+    "ordinary_cash_dividend": "Gewöhnliche Bardividende",
+    "corporation": "Kapitalgesellschaft",
+    "individual": "Natürliche Person",
+    "fund": "Investmentfonds",
+    "anti_abuse_record": "Unterlagen zur Missbrauchsabwehr",
+    "application": "Antrag",
+    "bzst_exemption": "BZSt-Freistellungsbescheinigung",
+    "company_record": "Gesellschaftsunterlagen",
+    "inventory": "Bestandsübersicht",
+    "ownership_record": "Beteiligungsunterlagen",
+    "residence": "Ansässigkeitsnachweis",
+    "stale_record": "Überholte Unterlagen",
+    "base_math": "Grundberechnung",
+    "certificates": "Freistellungsbescheinigungen",
+    "dates_stale": "Stichtage und überholte Angaben",
+    "eu_eligibility": "EU-Entlastungsvoraussetzungen",
+    "missing_review": "Fehlende Angaben und Prüfung",
+    "treaty_relief": "Entlastung nach DBA",
+    "anti_abuse": "Missbrauchsabwehr",
+    "certificate_status": "Status der Freistellungsbescheinigung",
+    "company_qualification": "Gesellschaftsvoraussetzungen",
+    "comprehensive_routes": "Umfassende Entlastungswege",
+    "dated_ownership": "Beteiligung nach Stichtag",
+    "domestic_math": "Inländische Steuerberechnung",
+    "holding_period": "Haltedauer",
+    "knowledge_cutoff": "Wissensstichtag",
+    "treaty_conditions": "DBA-Voraussetzungen",
+    "unsupported_scope": "Nicht unterstützter Anwendungsbereich",
+    "evaluation": "Auswertung",
+    "development": "Entwicklung",
+    "provisional": "Vorläufig",
+    "sql_reference": "Deterministische SQL-Referenz",
+    "sql_control": "SQL-Kontrolle",
+    "typedb": "TypeDB",
+    "typedb_functions": "TypeDB + Funktionen",
+    "typedb_context": "TypeDB-Kontext",
+    "rag": "Quellenrecherche",
+    "sql": "SQL-Kontrolle",
+    "true": "Ja",
+    "false": "Nein",
+    "null": "Unbekannt",
+    "DE": "Deutschland",
+    "NL": "Niederlande",
+    "CH": "Schweiz",
+    "GmbH": "GmbH",
+    "BV": "BV"
+  }
+}

@@ -254,8 +254,12 @@ async def test_restart_keeps_partial_trace_without_replaying_calls(tmp_path):
     try:
         saved = restarted.store.get(run["id"])
         assert saved["status"] == "interrupted"
-        assert len(saved["active_trial"]["trace"]) == 2
-        assert saved["active_trial"]["metrics"]["input_tokens"] == 10
+        trace = saved["active_trial"]["trace"]
+        assert len([event for event in trace if event["kind"] == "model"]) == 1
+        assert len([event for event in trace if event["kind"] == "tool"]) == 1
+        assert len([event for event in trace if event["kind"] == "model_request"]) == 2
+        assert next(event for event in trace if event["kind"] == "model")["usage"]["prompt_tokens"] == 10
+        assert saved["active_trial"]["metrics"]["input_tokens"] is None
         assert not saved["active_trial"]["usage_complete"]
         assert provider.calls == 2
     finally:
@@ -379,3 +383,19 @@ async def test_decision_tool_delivers_the_text_behind_its_citations(tmp_path):
     result = next(item["result"] for item in trial["trace"] if item["kind"] == "tool")
     assert result["supporting_sources"][0]["text"] == "Withholding law."
     assert result["supporting_documents"][0]["text"] == "Synthetic payment evidence."
+
+
+async def test_request_key_retries_do_not_queue_or_replay_paid_work(tmp_path):
+    from tax_benchmark.runner import RequestKeyConflict
+    service=service_for(tmp_path)
+    request=RunRequest(case_ids=['case'],model_ids=['local'],configurations=['rag'],request_key='followup-unique')
+    first=await service.enqueue(request)
+    repeated=await service.enqueue(request)
+    assert repeated['id']==first['id']
+    assert service.queue.qsize()==1
+    assert len(service.store.list())==1
+    restarted=service_for(tmp_path)
+    assert (await restarted.enqueue(request))['id']==first['id']
+    assert restarted.queue.empty()
+    with pytest.raises(RequestKeyConflict):
+        await service.enqueue(request.model_copy(update={'max_steps':1}))

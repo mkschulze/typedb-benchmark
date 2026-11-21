@@ -59,3 +59,14 @@ Frontend development uses Vite's `/api` proxy to FastAPI on port 8001. Productio
 Cost fields: trial `metrics.cost_usd` is retained as a catalogue estimate alias of `estimated_cost_usd`; `provider_reported_cost_usd` is null unless every response reported a valid charge. Unknown cache-write counts remain null. Each `embedding_events` entry persists its reservation before dispatch and updates reported usage/cost or failure, including setup errors.
 
 `TaxAnswer.relief_route` is the canonical assessed route code, copied from `case_facts.facts.requested_route` or the decision result. Descriptive route wording belongs in `reasoning`. This contract is supplied equally to all four approaches.
+
+
+## Harnesses, retries and explicit recovery
+
+`GET /api/harnesses` returns `id`, `name`, `available`, `description` and optional version fields. `RunRequest.harness` is `direct` (default/legacy) or `crewai`; this is independent of the four configurations. A missing pinned CrewAI dependency returns503 before work. Manifests record framework settings, version and absolute provider deadline; `model_request` trace events preserve portable messages and removed framework metadata keys.
+
+An optional `request_key` (1–100 letters/digits/`_.:-`) makes creation idempotent. The same canonical request returns its original run, including terminal states; a different body with that key returns409. SQLite enforces uniqueness. No replay occurs on a retry.
+
+`POST /api/runs/{id}/resume` explicitly continues an interrupted run only after verifying its frozen case/source/gold/prompt inputs and configured services. An unresolved checkpoint is retained as a failed execution attempt with unknown aggregate usage and full fee reservation; the original checkpoint is copied into `continuations`. Existing trial keys are skipped. Cancellation/failed setup is not automatically resumed. `/api/health.worker.available` reports the local consumer's liveness.
+
+Language is a frontend presentation preference. No locale field is sent to the benchmark runner or model provider.

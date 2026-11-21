@@ -3,6 +3,23 @@
   "claude-sonnet": "https://platform.claude.com/docs/en/about-claude/pricing",
   "openai-sol": "https://developers.openai.com/api/docs/models/gpt-6.2-sol",
   "openrouter-deepseek": "https://openrouter.ai/api/v1/models",
+  "cache_write_pricing": {
+    "verified_at": "2026-11-21",
+    "openai-sol": {
+      "source": "https://developers.openai.com/api/docs/models/gpt-6.2-sol",
+      "standard_usd_per_million": {"30_minutes": 2.5, "12_hours": 5},
+      "configured_ceiling_usd_per_million": 5,
+      "scope": "Standard short-context requests up to 272000 input tokens; larger native Sol requests retain their reservation."
+    },
+    "claude-sonnet": {
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "standard_usd_per_million": {"5_minutes": 2.5, "1_hour": 4},
+      "configured_ceiling_usd_per_million": 4
+    },
+    "note": "TTL is not consistently reported, so estimates use the highest verified retention rate. Write tokens replace regular input charges and are never charged twice. Unknown positive write pricing retains the full reservation. OpenRouter DeepSeek write pricing remains unverified and unset. These are conservative catalogue estimates, not invoices."
+  },
+  "openai_service_tier_source": "https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create",
+  "openai_service_tier_note": "Explicit service_tier=default requests standard pricing and performance; other model profiles leave this parameter unset.",
   "openrouter_pricing_note": "Uses the higher timed peak rates as conservative ceilings; displayed USD costs are catalogue estimates, not invoices.",
   "usd_per_eur": 1.0990,
   "exchange_rate_date": "2026-11-20",

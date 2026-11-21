@@ -71,3 +71,41 @@ def test_production_frontend_serves_self_hosted_fonts(tmp_path, monkeypatch):
         assert client.get("/").status_code == 200
         assert client.get("/fonts/open-sans.ttf").content == b"font-data"
         assert client.get("/api/unknown").status_code == 404
+
+
+def test_request_retries_are_idempotent_and_explicit_continuation_does_not_replay(tmp_path):
+    from tax_benchmark.providers import ProviderError
+
+    class Offline:
+        calls = 0
+
+        async def complete(self, model, messages):
+            self.calls += 1
+            raise ProviderError("Offline test")
+
+    provider = Offline()
+    models = [{"id": "local", "name": "Local", "model": "test", "base_url": "http://localhost:1234/v1"}]
+    app = create_app(database_path=tmp_path / "runs.sqlite", model_definitions=models, provider=provider)
+    with TestClient(app) as client:
+        case = client.get("/api/cases").json()[0]["id"]
+        request = {
+            "case_ids": [case],
+            "model_ids": ["local"],
+            "configurations": ["rag"],
+            "request_key": "stable-workflow",
+        }
+        first = client.post("/api/runs", json=request)
+        again = client.post("/api/runs", json=request)
+        assert first.status_code == again.status_code == 202
+        assert first.json()["id"] == again.json()["id"]
+        assert client.post("/api/runs", json={**request, "max_steps": 1}).status_code == 409
+        client.portal.call(app.state.service.queue.join)
+        run = app.state.service.store.get(first.json()["id"])
+        run["status"] = "interrupted"
+        app.state.service.store.save(run)
+        resumed = client.post("/api/runs/" + run["id"] + "/resume")
+        assert resumed.status_code == 202
+        client.portal.call(app.state.service.queue.join)
+        assert provider.calls == 1
+        assert client.post("/api/runs/" + run["id"] + "/resume").status_code == 409
+        assert client.get("/api/health").json()["worker"]["available"]

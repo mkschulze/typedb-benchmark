@@ -34,10 +34,12 @@ class ModelDefinition(BaseModel):
     token_parameter: Literal["max_tokens", "max_completion_tokens"] = "max_tokens"
     send_temperature: bool = True
     json_mode: bool = True
+    service_tier: str | None = None
     anthropic_version: str = Field(default="2026-10-21", pattern=r"^\d{4}-\d{2}-\d{2}$")
     input_price_per_million: float | None = Field(default=None, ge=0)
     output_price_per_million: float | None = Field(default=None, ge=0)
     cached_input_price_per_million: float | None = Field(default=None, ge=0)
+    cache_write_price_per_million: float | None = Field(default=None, ge=0)
     price_date: str | None = None
 
     @model_validator(mode="before")
@@ -96,6 +98,8 @@ class ModelDefinition(BaseModel):
         }
         if native_claude:
             settings["anthropic_version"] = self.anthropic_version
+        elif self.service_tier is not None:
+            settings["service_tier"] = self.service_tier
         return settings
 
 
@@ -194,8 +198,14 @@ def _anthropic_text(data: dict) -> str:
     return "".join(texts)
 
 
+def provider_messages(messages: list[dict]) -> list[dict]:
+    """Keep framework hints outside the portable text-message API contract."""
+    return [{"role": message["role"], "content": message["content"]} for message in messages]
+
+
 class ChatProvider:
     async def complete(self, model: ModelDefinition, messages: list[dict]) -> tuple[str, dict]:
+        messages = provider_messages(messages)
         key = os.environ.get(model.api_key_env)
         headers = {"Authorization": f"Bearer {key}"} if key else {}
         settings = model.generation_settings()
@@ -210,6 +220,8 @@ class ChatProvider:
                 payload["system"] = "\n\n".join(system)
             # API version 2026-10-21 rejects temperature, top_p and top_k.
         else:
+            if "service_tier" in settings:
+                payload["service_tier"] = settings["service_tier"]
             if settings["temperature"] is not None:
                 payload["temperature"] = settings["temperature"]
             if settings["json_mode"]:

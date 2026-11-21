@@ -203,9 +203,9 @@ Status badges use paired neutral, green, amber, and red background/text tokens. 
 
 The header and main content share a centered maximum width (1440px) and desktop gutters (48px). The header minimum height is (80px). Spacing repeatedly uses (8–32px) internal intervals, with larger gutters rather than a rigid modular grid.
 
-The case/answer region is a bordered split grid (.88fr / 1.12fr). Its fact side has a muted fill and a dividing rule; the answer side stays white. Comparison controls use (1.5fr / .95fr / auto) columns and (22px) gaps. Benchmark settings/history use (1.1fr / .9fr); source entries use (.75fr / 1.25fr). Approach explanations use four columns; inline evidence uses two equal columns with a (60px) gap.
+The case/answer region is a bordered split grid (.88fr / 1.12fr). Its fact side has a muted fill and a dividing rule; the answer side stays white. Comparison controls use (1.5fr / .95fr / .7fr / auto) columns for case, model, harness, and action, with (22px) gaps; at (1180px) these become (1.3fr / .9fr / .7fr / auto) with (16px) gaps. Benchmark settings/history use (1.1fr / .9fr); source entries use (.75fr / 1.25fr). Approach explanations use four columns; inline evidence uses two equal columns with a (60px) gap.
 
-At (1180px), gutters reduce to (32px), the header status disappears, and panel padding tightens. At (900px), the compare action moves below two control columns, approach explanations become two columns, and evidence gaps reduce. At (680px), gutters become (22px), the header stacks with minimum height (110px), controls and working regions stack, and the compare action spans the available width. Evidence, benchmark, and source regions also stack. Result tables preserve a (490px) minimum width inside a horizontally scrollable, keyboard-focusable container. The page supports a minimum viewport width (320px).
+At (1180px), gutters reduce to (32px), the header status disappears, and panel padding tightens. At (900px), comparison controls form two columns (1.3fr / 1fr), approach explanations become two columns, and evidence gaps reduce. At (680px), gutters become (22px), the header becomes a two-column grid with minimum height (110px), wordmark left and language switch right, with navigation across the next row, controls and working regions stack, and the compare action spans the available width. Evidence, benchmark, and source regions also stack. Result tables preserve a (490px) minimum width inside a horizontally scrollable, keyboard-focusable container. The page supports a minimum viewport width (320px).
 
 ## Elevation & Depth
 
@@ -242,6 +242,20 @@ Native selects and search fields use white fill, dark text, a muted green-gray (
 ### Navigation
 
 Header navigation uses subdued light labels on black; hover and selected labels become white. Selection adds the green bottom rule. Phone navigation remains visible beneath the wordmark. Inline evidence navigation uses understated buttons and a darker selected label with a green underline.
+
+### Language Switch and Localized Content
+
+The black header carries a compact DE/EN button group with an accessible language label. The barely rounded outer border and internal divider use the same muted gray-green stroke; each button has a (40px) minimum width and height, bold (.76rem) text, and an explicit `aria-pressed` state. Selected language uses the primary green/dark-text pair; hover uses a dark neutral fill and white text. Keyboard focus retains the global outline with a (3px) offset. At phone widths the switch stays beside the wordmark while navigation spans the next row.
+
+German is the default; DE/EN persists through `tax-benchmark-language` when storage is available and updates `html.lang`. Dates, money, percentages, durations, and counts follow `de-DE` or `en-GB`. Visible controls, case titles/questions/summaries, fact labels and values, document titles, source titles/summaries, and curated reference reasoning change language without altering identifiers or stored evidence. Current German copy includes “Budgetlimit”, “Angerechnet”, and “Beispielauswertung”.
+
+Model answer reasoning, original document bodies, raw JSON, traces, and manifests retain their recorded content, with visible original-answer/document/record labels; IDs and hashes remain intact. Original-content captions use muted bold (.72rem) text with (10px) top and (5px) bottom margins. Reference reasoning is translated separately from measured model answers. Unknown errors retain their message behind a localized original-message label. These boundaries preserve provenance while allowing the working interface to read naturally in either language.
+
+### Agent Harness Selector
+
+A native labeled select chooses the run-level harness independently of the four context approaches. “Direkter Agent” / “Direct agent” and “CrewAI” use the existing field shape, typography, hover, focus, and disabled treatments. Capability data controls availability; an unavailable option stays visible with a translated suffix and is disabled. A missing capability endpoint falls back to the direct harness, with CrewAI unavailable. The selected description is linked through `aria-describedby` and uses muted (.76rem) text with (9px) top margin. Benchmark settings place this field above the selection groups with (26px) bottom margin.
+
+The selector is disabled while a run is being submitted or remains active; launch actions also require an available harness. Both demonstration and benchmark requests carry the selected stable harness ID, independently of locale. Run history and results identify the recorded harness; legacy records without a harness display Direct agent. The four approach checkboxes remain a separate comparison axis: Quellenrecherche / RAG, TypeDB context, TypeDB + functions, and SQL control. This is an execution control, not another approach or navigation tab.
 
 ### Inline Evidence
 

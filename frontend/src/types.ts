@@ -11,6 +11,8 @@ export interface Source {
   retrieved_at: string; sha256: string; [key: string]: unknown;
 }
 export interface Model { id: string; name: string; configured: boolean; provider: string }
+export type HarnessId = 'direct' | 'crewai';
+export interface Harness { id: HarnessId; name: string; available: boolean; description: string }
 export interface Configuration { id: string; name: string; description: string }
 export interface TaxAnswer {
   status: string; relief_eligibility: string; relief_route: string | null;
@@ -33,7 +35,7 @@ export interface Summary {
 }
 export interface Run {
   id: string; status: string; created_at: string; updated_at: string; completed_trials: number;
-  total_trials: number; request: { case_ids?: string[]; model_ids?: string[]; configurations?: string[] };
+  total_trials: number; request: { case_ids?: string[]; model_ids?: string[]; configurations?: string[]; harness?: HarnessId };
   manifest: Record<string, unknown>; trials: Trial[]; summary: Summary[];
   error?: string | null; cancellation_requested?: boolean;
   active_trial?: {
@@ -43,7 +45,7 @@ export interface Run {
   } | null;
 }
 export interface RunRequest {
-  case_ids: string[]; model_ids: string[]; configurations: string[]; repetitions: number; max_steps: number;
+  case_ids: string[]; model_ids: string[]; configurations: string[]; repetitions: number; max_steps: number; harness: HarnessId;
 }
 export interface Health { status: string; typedb: Record<string, unknown>; legal_review: string }
 export interface Budget {

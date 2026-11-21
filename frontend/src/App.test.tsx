@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
+import contentDe from './locales/content.de.json';
 import type { Run } from './types';
 
 const payment = { id: 'case-1', title: 'A valid exemption certificate', summary: 'A Dutch parent receives an ordinary dividend.', category: 'certificate', split: 'development', question: 'What must the payer withhold?', gross_amount_cents: 10000000, payment_date: '2026-06-30', knowledge_date: '2026-06-30', payer: { id: 'payer', name: 'Example GmbH', country: 'DE' }, recipient: { id: 'recipient', name: 'Example Holding BV', country: 'NL' }, facts: { direct_ownership_percent: 100, exemption_certificate: true, unknown_fact: null }, documents: [{ id: 'doc-1', title: 'Exemption certificate', text: 'A synthetic certificate, valid on the payment date.' }], source_ids: ['estg-50c'], review_status: 'provisional' };
@@ -14,16 +15,31 @@ let polledRun: Run = run;
 let budgetSnapshot = { limit_eur: 30, spent_eur: 5, reserved_eur: 2, committed_eur: 7, remaining_eur: 23, blocked: false };
 let budgetUnavailable = false;
 let cancelledRun: Run = run;
+let crewaiAvailable = true;
+let harnessesUnavailable = false;
+let savedRuns: Run[] = [];
+let caseSnapshot = payment;
 
 beforeEach(() => {
+  const preferences = new Map<string, string>();
+  vi.stubGlobal('localStorage', {
+    getItem: (key: string) => preferences.get(key) ?? null,
+    setItem: (key: string, value: string) => preferences.set(key, String(value)),
+    removeItem: (key: string) => preferences.delete(key),
+    clear: () => preferences.clear(),
+  });
+  window.localStorage.setItem('tax-benchmark-language', 'en');
   configured = true;
   rejectRun = false;
   createdRun = run; polledRun = run; cancelledRun = run;
   budgetSnapshot = { limit_eur: 30, spent_eur: 5, reserved_eur: 2, committed_eur: 7, remaining_eur: 23, blocked: false };
   budgetUnavailable = false;
+  crewaiAvailable = true; harnessesUnavailable = false; savedRuns = [];
+  caseSnapshot = payment;
   vi.stubGlobal('fetch', vi.fn(async (path: string, options?: RequestInit) => {
     const url = String(path);
     if (url === '/api/budget') return new Response(JSON.stringify(budgetUnavailable ? { detail: 'Budget unavailable' } : budgetSnapshot), { status: budgetUnavailable ? 503 : 200 });
+    if (url === '/api/harnesses') return new Response(JSON.stringify(harnessesUnavailable ? { detail: 'Not found' } : [{ id: 'direct', name: 'Direct agent', available: true, description: 'Direct tool-calling agent.' }, { id: 'crewai', name: 'CrewAI', available: crewaiAvailable, description: 'Single agent; memory/delegation/planning disabled' }]), { status: harnessesUnavailable ? 404 : 200 });
     if (url === '/api/runs' && options?.method === 'POST') {
       if (rejectRun) return new Response(JSON.stringify({ detail: 'TypeDB is unavailable. Start the database and retry.' }), { status: 503 });
       return new Response(JSON.stringify(createdRun), { status: 202 });
@@ -31,12 +47,12 @@ beforeEach(() => {
     if (url === '/api/runs/run-1/cancel') return new Response(JSON.stringify(cancelledRun));
     const data: Record<string, unknown> = {
       '/api/health': { status: 'ok', typedb: { available: true }, legal_review: 'provisional' },
-      '/api/cases': [payment],
+      '/api/cases': [caseSnapshot],
       '/api/models': [{ id: 'local', name: 'Local model', configured, provider: 'OpenAI-compatible' }],
       '/api/configurations': [{ id: 'rag', name: 'Retrieval baseline', description: 'Source retrieval.' }, { id: 'sql', name: 'SQL control', description: 'Equivalent structured rules.' }],
       '/api/sources': [{ id: 'estg-50c', title: 'EStG §50c', locator: 'Section 50c', url: 'https://www.gesetze-im-internet.de/estg/__50c.html', text: 'A source summary about the exemption procedure.', retrieved_at: '2026-11-21', sha256: 'abc123' }],
-      '/api/runs': [],
-      '/api/cases/case-1/reference': { answer, kind: 'reference', review_status: 'provisional' },
+      '/api/runs': savedRuns,
+      [`/api/cases/${caseSnapshot.id}/reference`]: { answer, kind: 'reference', review_status: 'provisional' },
       '/api/runs/run-1': polledRun,
     };
     if (!(url in data)) return new Response(JSON.stringify({ detail: 'Not found' }), { status: 404 });
@@ -45,6 +61,105 @@ beforeEach(() => {
 });
 
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+
+describe('language selection', () => {
+  it('defaults to German and presents translated cases, reference reasoning and source summaries', async () => {
+    window.localStorage.removeItem('tax-benchmark-language');
+    caseSnapshot = { ...payment, id: 'dev-01' };
+    const user = userEvent.setup();
+    render(<App />);
+    expect(await screen.findByRole('heading', { name: 'Deutscher Steuerabzug auf Dividenden' })).toBeTruthy();
+    expect(await screen.findByRole('heading', { name: contentDe.cases['dev-01'].title })).toBeTruthy();
+    expect(await screen.findByText(contentDe.cases['dev-01'].reference_reasoning)).toBeTruthy();
+    expect(screen.getAllByText('100.000,00 €')).toHaveLength(2);
+    expect(screen.getAllByText('30. Juni 2026')).toHaveLength(2);
+    expect(screen.getByRole('button', { name: 'Deutsch' }).getAttribute('aria-pressed')).toBe('true');
+    expect(document.documentElement.lang).toBe('de');
+    expect(window.localStorage.getItem('tax-benchmark-language')).toBe('de');
+    await user.click(screen.getByRole('button', { name: 'Referenzbelege prüfen' }));
+    const evidence = screen.getByRole('dialog', { name: 'Belege und Antwort' });
+    expect(within(evidence).getByText(contentDe.sources['estg-50c'].text)).toBeTruthy();
+    expect(within(evidence).getByText('Originalbeleg')).toBeTruthy();
+    expect(within(evidence).getByText(payment.documents[0].text)).toBeTruthy();
+    const source = within(evidence).getByRole('link', { name: contentDe.sources['estg-50c'].title });
+    expect(source.getAttribute('href')).toBe('https://www.gesetze-im-internet.de/estg/__50c.html');
+    expect(vi.mocked(fetch).mock.calls.some(([, options]) => options?.method === 'POST')).toBe(false);
+  });
+
+  it('switches in place and restores the persisted language after remounting', async () => {
+    window.localStorage.removeItem('tax-benchmark-language');
+    const user = userEvent.setup();
+    const mounted = render(<App />);
+    await screen.findByRole('heading', { name: 'Beispielauswertung' });
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Agenten-Framework' }), 'crewai');
+    await user.click(screen.getByRole('button', { name: 'English' }));
+    expect(screen.getByRole('heading', { name: 'German dividend withholding tax' })).toBeTruthy();
+    expect((screen.getByRole('combobox', { name: 'Agent harness' }) as HTMLSelectElement).value).toBe('crewai');
+    expect(window.localStorage.getItem('tax-benchmark-language')).toBe('en');
+    expect(document.documentElement.lang).toBe('en');
+    mounted.unmount();
+    render(<App />);
+    expect(await screen.findByRole('heading', { name: 'Reference walkthrough' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'English' }).getAttribute('aria-pressed')).toBe('true');
+    await user.click(screen.getByRole('button', { name: 'Deutsch' }));
+    expect(screen.getByRole('heading', { name: 'Beispielauswertung' })).toBeTruthy();
+    expect(window.localStorage.getItem('tax-benchmark-language')).toBe('de');
+  });
+
+  it.each(['Demonstration', 'Benchmark'])('keeps the %s harness payload unchanged in German', async (page) => {
+    window.localStorage.removeItem('tax-benchmark-language');
+    createdRun = { ...run, request: { harness: 'crewai' } };
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByText('Example GmbH');
+    if (page === 'Benchmark') {
+      await user.click(screen.getByRole('button', { name: 'Benchmark' }));
+      await user.selectOptions(screen.getByRole('combobox', { name: 'Datensatzaufteilung filtern' }), 'development');
+      await user.click(screen.getByRole('button', { name: 'Angezeigte auswählen' }));
+    }
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Agenten-Framework' }), 'crewai');
+    await user.click(screen.getByRole('button', { name: page === 'Benchmark' ? 'Benchmark starten' : 'Ansätze vergleichen' }));
+    await screen.findByRole('heading', { name: page === 'Benchmark' ? 'Laufergebnisse' : 'Gemessener Vergleich' });
+    const post = vi.mocked(fetch).mock.calls.find(([, options]) => options?.method === 'POST');
+    expect(JSON.parse(String(post?.[1]?.body))).toEqual({ case_ids: ['case-1'], model_ids: ['local'], configurations: ['rag', 'sql'], repetitions: 1, max_steps: 6, harness: 'crewai' });
+    await user.click(screen.getByRole('button', { name: 'Antwort für Quellenrecherche prüfen' }));
+    const evidence = screen.getByRole('dialog', { name: 'Belege und Antwort' });
+    expect(within(evidence).getByRole('heading', { name: 'Originalantwort' })).toBeTruthy();
+    expect(within(evidence).getByText(answer.reasoning)).toBeTruthy();
+    await user.click(within(evidence).getByRole('button', { name: 'Werkzeugprotokoll' }));
+    expect(within(evidence).getByText(/read_source/)).toBeTruthy();
+  });
+
+  it('keeps German controls usable when saved preferences cannot be read or written', async () => {
+    vi.stubGlobal('localStorage', { getItem: () => { throw new Error('blocked'); }, setItem: () => { throw new Error('blocked'); } });
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByRole('heading', { name: 'Beispielauswertung' });
+    await user.click(screen.getByRole('button', { name: 'English' }));
+    expect(screen.getByRole('heading', { name: 'Reference walkthrough' })).toBeTruthy();
+  });
+
+  it('formats recorded German metrics and preserves structured embedding usage as an original record', async () => {
+    window.localStorage.removeItem('tax-benchmark-language');
+    createdRun = { ...run, trials: [{ ...run.trials[0], metrics: { ...run.trials[0].metrics, cached_tokens: 1000, estimated_cost_usd: 0.012345, provider_reported_cost_usd: 0.02, embedding_usage: [{ model: 'embed-1', tokens: 12 }] } }] } as unknown as Run;
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByText('Example GmbH');
+    await user.click(screen.getByRole('button', { name: 'Ansätze vergleichen' }));
+    await user.click(await screen.findByRole('button', { name: 'Antwort für Quellenrecherche prüfen' }));
+    await user.click(screen.getByRole('button', { name: 'Strukturierte Antwort' }));
+    expect(screen.getByText('Tokens aus dem Cache')).toBeTruthy();
+    expect(screen.getByText('1.000')).toBeTruthy();
+    expect(screen.getByText('Geschätzte Kosten (USD)')).toBeTruthy();
+    expect(screen.getByText('0,012345 $')).toBeTruthy();
+    expect(screen.getByText('0,020000 $')).toBeTruthy();
+    const usage = screen.getByText('Embedding-Verbrauch').closest('div')!;
+    expect(within(usage).getByText('Originalaufzeichnung')).toBeTruthy();
+    await user.click(within(usage).getByText('Originalaufzeichnung'));
+    expect(within(usage).getByText(/embed-1/)).toBeTruthy();
+    expect(within(usage).queryByText('NaN')).toBeNull();
+  });
+});
 
 describe('the demonstration', () => {
   it('shows one provider-shared budget and refreshes it during active polling and terminal interruption', async () => {
@@ -107,7 +222,62 @@ describe('the demonstration', () => {
     await user.click(within(evidence).getByRole('button', { name: 'Tool trace' }));
     expect(within(evidence).getByText(/read_source/)).toBeTruthy();
     const createCall = vi.mocked(fetch).mock.calls.find(([, options]) => options?.method === 'POST');
-    expect(JSON.parse(String(createCall?.[1]?.body))).toEqual({ case_ids: ['case-1'], model_ids: ['local'], configurations: ['rag', 'sql'], repetitions: 1, max_steps: 6 });
+    expect(JSON.parse(String(createCall?.[1]?.body))).toEqual({ case_ids: ['case-1'], model_ids: ['local'], configurations: ['rag', 'sql'], repetitions: 1, max_steps: 6, harness: 'direct' });
+  });
+
+  it.each(['Demonstration', 'Benchmark'])('starts a %s run with the selected harness and the same approaches', async (page) => {
+    createdRun = { ...run, request: { harness: 'crewai' } };
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByText('Example GmbH');
+    if (page === 'Benchmark') {
+      await user.click(screen.getByRole('button', { name: 'Benchmark' }));
+      await user.selectOptions(screen.getByRole('combobox', { name: 'Filter dataset split' }), 'development');
+      await user.click(screen.getByRole('button', { name: 'Select shown' }));
+    }
+    const harness = screen.getByRole('combobox', { name: 'Agent harness' });
+    expect((harness as HTMLSelectElement).value).toBe('direct');
+    await user.selectOptions(harness, 'crewai');
+    expect(screen.getByText('Single agent; memory/delegation/planning disabled')).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: page === 'Benchmark' ? 'Start benchmark' : 'Compare approaches' }));
+    await screen.findByRole('heading', { name: page === 'Benchmark' ? 'Run results' : 'Measured comparison' });
+    const createCall = vi.mocked(fetch).mock.calls.find(([, options]) => options?.method === 'POST');
+    expect(JSON.parse(String(createCall?.[1]?.body))).toEqual({ case_ids: ['case-1'], model_ids: ['local'], configurations: ['rag', 'sql'], repetitions: 1, max_steps: 6, harness: 'crewai' });
+    if (page === 'Demonstration') await user.click(screen.getByRole('button', { name: 'Benchmark' }));
+    expect(screen.getByRole('button', { name: /run-1.*CrewAI/ }).textContent).toContain('CrewAI');
+    expect(screen.getByText('run-1 · CrewAI · Provisional evaluation')).toBeTruthy();
+  });
+
+  it.each(['unavailable CrewAI', 'missing harness endpoint'])('keeps direct runs available with %s', async (state) => {
+    crewaiAvailable = false;
+    harnessesUnavailable = state === 'missing harness endpoint';
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByText('Example GmbH');
+    expect((screen.getByRole('combobox', { name: 'Agent harness' }) as HTMLSelectElement).value).toBe('direct');
+    expect((screen.getByRole('option', { name: /CrewAI/ }) as HTMLOptionElement).disabled).toBe(true);
+    await user.click(screen.getByRole('button', { name: 'Benchmark' }));
+    expect((screen.getByRole('option', { name: /CrewAI/ }) as HTMLOptionElement).disabled).toBe(true);
+    await user.click(screen.getByRole('button', { name: 'Demonstration' }));
+    await user.click(screen.getByRole('button', { name: 'Compare approaches' }));
+    await screen.findByRole('heading', { name: 'Measured comparison' });
+    const createCall = vi.mocked(fetch).mock.calls.find(([, options]) => options?.method === 'POST');
+    expect(JSON.parse(String(createCall?.[1]?.body)).harness).toBe('direct');
+    expect(screen.queryByRole('alert')).toBeNull();
+  });
+
+  it('identifies older saved runs as direct in history and both result views', async () => {
+    savedRuns = [run];
+    const user = userEvent.setup();
+    render(<App />);
+    await screen.findByText('Example GmbH');
+    await user.click(screen.getByRole('button', { name: 'Benchmark' }));
+    const savedRun = screen.getByRole('button', { name: /run-1.*Direct agent/ });
+    await user.click(savedRun);
+    expect(await screen.findByText('run-1 · Direct agent · Provisional evaluation')).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: 'Demonstration' }));
+    const results = screen.getByRole('heading', { name: 'Measured comparison' }).closest('section')!;
+    expect(within(results).getByText(/Direct agent · Same case/)).toBeTruthy();
   });
 
   it('keeps the reference accessible when no model is configured', async () => {

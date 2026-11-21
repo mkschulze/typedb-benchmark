@@ -56,6 +56,8 @@ class TaxAnswer(BaseModel):
 
 
 class RunRequest(BaseModel):
+    harness: Literal["direct", "crewai"] = "direct"
+    request_key: str | None = Field(default=None, pattern=r"^[a-zA-Z0-9_.:-]{1,100}$")
     model_config = ConfigDict(extra="forbid")
 
     case_ids: list[str] = Field(min_length=1, max_length=100)

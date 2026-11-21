@@ -28,7 +28,8 @@ Synthetic German dividend payments to foreign corporate shareholders, supported 
 - User-confirmed interface: FastAPI, React, and the Impeccable skill.
 - The user approved implementation of the design in `docs/superpowers/specs/2026-11-21-german-dividend-benchmark-design.md`.
 - The user approved Claude, OpenAI and OpenRouter providers and a EUR30 total experiment limit. An explicit dated model catalogue and persistent shared budget guard are implemented; usable server-side keys are required for live evaluation.
-- No benchmark has been executed and no accuracy, savings, or speed improvement has been established.
+- A48-trial direct exploratory pilot has been executed across Claude, OpenAI and OpenRouter. A user-started360-trial direct batch is followed by a48-trial CrewAI pilot under the same EUR30 allowance; broader performance claims remain unestablished.
+- The user requested a German-default DE/EN interface; display translation preserves original benchmark inputs and evidence.
 
 ## Brand Commitments
 
@@ -40,7 +41,7 @@ The user requested Deloitte design and supplied https://design.deloitte.com/ as 
 - Legal source starting points: EStG §§ 43a, 43b, 44, 50c, and 50d; SolzG 1995; official BZSt guidance.
 - Installed TypeDB skill provenance: `.agents/skills/typedb-skills-source.json`.
 - The implemented FastAPI and React application includes a case-led reference walkthrough, comparison and batch-run controls, inline evidence, source provenance, and real TypeDB/SQL decision tools. The corpus contains 40 synthetic cases and 16 preserved source snapshots.
-- Backend, TypeDB integration, and frontend interaction checks exercise the implementation. No real-model comparison has been executed; no measured accuracy or savings claim is available.
+- Backend, TypeDB integration, and frontend interaction checks exercise the implementation. Real-model pilot exports are preserved under `results/`. Outcomes remain provisional; TypeDB context-only is a backend parity control and the SQL arm tests equivalent decision logic.
 
 ## Product Principles
 

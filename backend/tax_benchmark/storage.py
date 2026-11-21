@@ -16,6 +16,11 @@ class RunStore:
         with self.connection() as connection:
             connection.execute("PRAGMA journal_mode=WAL")
             connection.execute("CREATE TABLE IF NOT EXISTS runs (id TEXT PRIMARY KEY, payload TEXT NOT NULL)")
+            connection.execute(
+                "CREATE UNIQUE INDEX IF NOT EXISTS runs_request_key "
+                "ON runs(json_extract(payload, '$.request.request_key')) "
+                "WHERE json_extract(payload, '$.request.request_key') IS NOT NULL"
+            )
 
     @contextmanager
     def connection(self):
@@ -36,6 +41,14 @@ class RunStore:
     def get(self, run_id: str) -> dict | None:
         with self.connection() as connection:
             row = connection.execute("SELECT payload FROM runs WHERE id=?", (run_id,)).fetchone()
+        return json.loads(row[0]) if row else None
+
+    def get_request_key(self, request_key: str) -> dict | None:
+        with self.connection() as connection:
+            row = connection.execute(
+                "SELECT payload FROM runs WHERE json_extract(payload, '$.request.request_key')=?",
+                (request_key,),
+            ).fetchone()
         return json.loads(row[0]) if row else None
 
     def list(self) -> list[dict]:
