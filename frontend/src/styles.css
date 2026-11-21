@@ -63,6 +63,13 @@ button { transition: color 160ms ease-out, background 160ms ease-out, border-col
 .workspace-status { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: .81rem; color: var(--muted); }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #9ca293; }
 .status-dot.available { background: #507c17; }
+.budget-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; background: var(--surface); padding: 14px 18px; margin-bottom: 28px; }
+.budget-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.budget-heading h2 { font-size: .88rem; letter-spacing: 0; }
+.budget-values { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 0 0 0 auto; font-size: .8rem; }
+.budget-values > div { display: flex; gap: 7px; }
+.budget-values dd { font-weight: 700; font-variant-numeric: tabular-nums; }
+.budget-note { width: 100%; color: var(--muted); font-size: .74rem; line-height: 1.7; }
 
 .button { min-height: 45px; padding: 11px 20px; display: inline-flex; align-items: center; justify-content: center; gap: 18px; border: 1px solid transparent; border-radius: 2px; font-weight: 700; font-size: .9rem; text-decoration: none; line-height: 1.5; }
 .button.primary { background: var(--green); color: #182108; }
@@ -184,7 +191,11 @@ details > summary::marker { color: #65734e; font-size: .75rem; }
 .error-notice > .text-button { white-space: nowrap; color: #873c27; padding: 3px 0; }
 .amber-notice { background: #faf4e7; color: #7a6027; display: block; }
 .run-progress { padding: 0 0 22px; }
-.run-progress-copy { display: flex; align-items: center; gap: 11px; color: var(--muted); font-size: .8rem; }
+.run-progress-copy { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; color: var(--muted); font-size: .8rem; }
+.checkpoint { margin: 20px 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.checkpoint h3 { font-size: .95rem; margin-bottom: 8px; }
+.checkpoint p { font-size: .8rem; margin-bottom: 10px; overflow-wrap: anywhere; }
+.checkpoint details { margin-top: 14px; }
 .cancel-button { margin-left: auto; font-size: .75rem; }
 progress { appearance: none; width: 100%; height: 3px; border: 0; background: #e9ede3; display: block; margin-top: 14px; }
 progress::-webkit-progress-bar { background: #e9ede3; }
@@ -362,6 +373,9 @@ code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: .9em; }
   .page-heading h1 { font-size: 1.8rem; line-height: 1.35; max-width: 19ch; }
   .page-heading p { font-size: .83rem; max-width: 44ch; line-height: 1.7; }
   .workspace-status { margin-top: 14px; padding: 0; }
+  .budget-strip { gap: 12px; padding: 14px 16px; margin-bottom: 24px; }
+  .budget-values { width: 100%; margin-left: 0; gap: 8px 18px; font-size: .75rem; }
+  .budget-note { font-size: .71rem; }
   .comparison-controls { grid-template-columns: 1fr; gap: 16px; }
   .comparison-controls label { font-size: .79rem; margin-bottom: 7px; }
   .comparison-controls select { min-height: 46px; }

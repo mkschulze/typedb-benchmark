@@ -11,6 +11,7 @@ COPY pyproject.toml uv.lock ./
 COPY backend/ ./backend/
 COPY data/ ./data/
 COPY typedb/ ./typedb/
+COPY config/ ./config/
 RUN uv sync --frozen --no-dev
 COPY --from=frontend /app/frontend/dist ./frontend/dist
 EXPOSE 8000

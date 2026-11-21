@@ -1,0 +1,26 @@
+[
+  {
+    "id": "claude-sonnet", "name": "Claude Sonnet 5.5", "provider": "Anthropic",
+    "model": "claude-sonnet-5-5", "protocol": "anthropic",
+    "base_url": "https://api.anthropic.com/v1", "api_key_env": "ANTHROPIC_API_KEY",
+    "send_temperature": false, "json_mode": false, "max_output_tokens": 2048,
+    "input_price_per_million": 2, "output_price_per_million": 10,
+    "cached_input_price_per_million": 0.1, "price_date": "2026-11-21"
+  },
+  {
+    "id": "openai-sol", "name": "GPT-6.2 Sol", "provider": "OpenAI",
+    "model": "gpt-6.2-sol", "protocol": "openai",
+    "base_url": "https://api.openai.com/v1", "api_key_env": "OPENAI_API_KEY",
+    "send_temperature": false, "json_mode": true, "token_parameter": "max_completion_tokens",
+    "max_output_tokens": 2048, "input_price_per_million": 2, "output_price_per_million": 10,
+    "cached_input_price_per_million": 0.1, "price_date": "2026-11-21"
+  },
+  {
+    "id": "openrouter-deepseek", "name": "DeepSeek V4.1 Flash", "provider": "OpenRouter",
+    "model": "deepseek/deepseek-v4.1-flash-1017", "protocol": "openai",
+    "base_url": "https://openrouter.ai/api/v1", "api_key_env": "OPENROUTER_API_KEY",
+    "send_temperature": true, "json_mode": true, "max_output_tokens": 2048,
+    "input_price_per_million": 0.3, "output_price_per_million": 1.2,
+    "cached_input_price_per_million": 0.006, "price_date": "2026-11-21"
+  }
+]

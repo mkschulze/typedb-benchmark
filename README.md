@@ -20,7 +20,7 @@ Alternatively, run the complete application in containers:
 docker compose up --build
 ```
 
-The app uses port 8001; TypeDB uses local ports 1730 (gRPC) and 8002 (HTTP). Compose persists the benchmark database and recorded runs in named volumes. The database credentials in `.env.example` are local development defaults.
+The app uses port 8001; TypeDB uses local ports 1730 (gRPC) and 8002 (HTTP). Compose persists TypeDB in a named volume and runs/budget in the host `.runtime/` directory shared with `dev.sh`. The database credentials in `.env.example` are local development defaults.
 
 For frontend development:
 
@@ -36,32 +36,25 @@ Vite serves http://localhost:5173 and proxies `/api` to FastAPI on port 8001.
 
 ## Connect models
 
-The reference walkthrough works without an API key. Live comparisons require a configured endpoint and explicit model ID. No hosted key or local Ollama endpoint was detected during setup, so a real-model evaluation has not been executed.
+The reference walkthrough works without an API key. Add any of `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, and `OPENROUTER_API_KEY` to the ignored local `.env`, then recreate the app (`docker compose up -d --force-recreate app`). Never put credentials in `.env.example`. The default `config/models.json` supplies explicit Claude, OpenAI and OpenRouter model IDs, dated prices and protocol settings. `config/model-sources.json` records their verification sources. `MODELS_JSON` can override the catalogue. Only model names and readiness reach the browser.
 
-Copy `.env.example` to `.env` and add your model catalogue and key. For an OpenAI-compatible provider:
+Claude uses the native Messages API; OpenAI and OpenRouter use Chat Completions. All use the same JSON-action protocol and output cap. Generation settings are recorded per model, including omission of sampling parameters when unsupported. Other compatible endpoints can be configured, but compatibility is only established after testing that endpoint. Each run allows 1–5 repetitions, 1–12 model turns per trial, at most 1,800 trials, and one active worker. Cancellation prevents new work after the current request is recorded.
 
-```dotenv
-MODELS_JSON='[{"id":"primary","name":"My model","model":"YOUR_MODEL_ID","base_url":"https://YOUR_PROVIDER/v1","api_key_env":"MODEL_API_KEY","provider":"OpenAI-compatible"}]'
-MODEL_API_KEY=YOUR_KEY
-```
+One **€30 total experiment allowance** is shared by every provider, every run and optional embeddings. Atomic SQLite reservations happen before network requests and persist across restarts. The guard uses verified prices, conservative token bounds, a recorded USD/EUR conversion and a 1.3 safety margin. Unknown or failed-response charges retain the entire reservation. Complete reported usage releases the unused part; a charge exceeding its reservation permanently blocks further calls. The API and interface show allocated, reserved and remaining amounts. These are conservative application estimates, not provider invoices. Other applications or copies using separate databases are outside this ledger. Do not delete the run database/volume to reset spending.
 
-For a local OpenAI-compatible endpoint such as Ollama, use a loopback base URL (`http://localhost:11434/v1`) and an installed model's exact ID. Local loopback endpoints do not require a key. When running the app inside Docker, the model service must be reachable from that container; `localhost` refers to the app container, not your host. Restart FastAPI after changing the model configuration. The browser receives model names and readiness only; keys stay on the backend.
+Live calls require nonnegative input/output prices verified within 14 days. Missing or stale prices stop paid work. Cached and reasoning counts remain separate; cache-write costs with unimplemented TTL pricing remain unknown and keep their full reservation. `cost_usd`/`estimated_cost_usd` are catalogue estimates; `provider_reported_cost_usd` preserves actual returned charge metadata. Settlement uses the greater known cost. Catalogue-based USD costs are estimates; the OpenRouter entry deliberately uses the higher timed rates. The allowance cannot be increased via an environment variable.
 
-The adapter uses chat completions with a common JSON-action protocol, temperature 0, and a per-turn output cap. Endpoints must support that request shape. Other provider protocols require an adapter; this version does not claim every LLM has been tested. Per-run limits are 1–5 repetitions, 1–12 model turns per trial, at most 1,800 trials, and one active local worker. The UI shows the planned trial count before starting. Cancellation prevents new trials; an already running provider request may finish and remains recorded.
-
-Optional `EMBEDDING_BASE_URL`, `EMBEDDING_MODEL`, and `EMBEDDING_API_KEY` enable hybrid BM25 + dense retrieval with reciprocal-rank fusion. Without them, the run manifest explicitly says `lexical`; it is not presented as a configured hybrid baseline. Source summaries are the retrieval units, with links to preserved original snapshots.
-
-Optional dated model prices (`input_price_per_million`, `output_price_per_million`, `cached_input_price_per_million`, `price_date`) enable model-call cost calculation only when the necessary usage is reported. Unknown usage and cost remain null. Source curation, database loading, and embedding/index preparation are separate setup costs, not a claim of free preparation.
+Optional `EMBEDDING_BASE_URL`, `EMBEDDING_MODEL`, `EMBEDDING_API_KEY`, `EMBEDDING_INPUT_PRICE_PER_MILLION` and `EMBEDDING_PRICE_DATE` enable budgeted hybrid BM25 + dense retrieval with reciprocal-rank fusion. Otherwise the manifest explicitly says `lexical`. Source summaries are the retrieval units. Source curation, database loading and embedding/index preparation are separate setup work; embedding calls still consume the same €30 allowance.
 
 ## Legal and experimental scope
 
-The corpus contains 10 development and 30 held-out synthetic cases. Public case records and source summaries are separate from `data/gold.json`. Scenario template groups do not cross the development/evaluation boundary. Benchmark selection defaults to the evaluation cases.
+The corpus contains 10 development and 30 held-out synthetic cases. Public case records and source summaries are separate from `data/gold.json`. Related counterfactuals share actual template groups, and those groups do not cross the development/evaluation boundary. Use the explicit split metadata; stable legacy case ID prefixes do not determine the split. Benchmark selection defaults to the evaluation cases. Presentation labels and outcome hints are excluded from model-facing facts.
 
 The implemented core is ordinary 2026 German GmbH dividends to Dutch corporate recipients, with mechanical §43b conditions and the §50c distinction between withholding at payment and a conditional refund. Cases exercise participation and holding periods, issued certificates and their coverage/dates, missing evidence, and explicit review/scope outcomes. Treaty material and other relief routes are available as sources; unsupported or judgment-dependent treaty/comprehensive-relief requests receive `review_required`. Questions limited to §43b state that limitation. The result is not a complete German tax-advice engine.
 
 The TypeDB configuration executes real TypeQL functions. It fails explicitly if the database is unavailable; it never substitutes a Python calculation and calls it TypeDB. The SQL control exposes equivalent supported decision logic. TypeDB context alone returns relationships and evidence without computed tax outcomes. A benefit over retrieval establishes a contribution from that system configuration; it does not establish that the same logic cannot be implemented in SQL.
 
-Every run records dataset/source/gold hashes, prompts, limits, dependency and model identifiers, settings, deterministic scheduling, raw model/tool traces, errors, and provider-reported token counts. Invalid answers and failed attempts remain in the scoring denominator. Cached and reasoning tokens remain separate, and reasoning tokens are not added twice. Interrupted jobs are not automatically replayed after restart. Exports contain paired pass-rate differences with template-cluster bootstrap intervals when at least two matched clusters are available; this small dataset is a pilot, not a universal performance claim.
+Every run records dataset/source/gold hashes, prompts, limits, dependency and model identifiers, settings, deterministic scheduling, raw model/tool traces, errors, and provider-reported token counts. A strict pass requires the requested relief route and source/document text actually delivered during that trial. Invalid answers and failed attempts remain in the scoring denominator, while incorrect answers, execution errors, and cancelled attempts are displayed separately. Cached and reasoning tokens remain separate, and reasoning tokens are not added twice. Budget-stopped incomplete trials are preserved as checkpoints and excluded from accuracy comparisons. Interrupted jobs are not automatically replayed after restart. A browser refresh can reopen saved runs from Benchmark → Run history. Exports contain paired pass-rate differences with template-cluster bootstrap intervals when at least two matched clusters are available; this small dataset is a pilot, not a universal performance claim.
 
 ## Verify
 

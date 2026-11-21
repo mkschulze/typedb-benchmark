@@ -27,6 +27,7 @@ export interface Trial {
 }
 export interface Summary {
   model_id: string; configuration: string; trials: number; passed: number; failed: number;
+  errors?: number; incorrect?: number; cancelled?: number;
   pass_rate: number; avg_wall_time_ms: number | null; avg_input_tokens: number | null;
   avg_output_tokens: number | null; avg_total_tokens: number | null;
 }
@@ -34,8 +35,18 @@ export interface Run {
   id: string; status: string; created_at: string; updated_at: string; completed_trials: number;
   total_trials: number; request: { case_ids?: string[]; model_ids?: string[]; configurations?: string[] };
   manifest: Record<string, unknown>; trials: Trial[]; summary: Summary[];
+  error?: string | null; cancellation_requested?: boolean;
+  active_trial?: {
+    case_id: string; model_id: string; configuration: string; repetition: number;
+    status: string; usage_complete?: boolean; trace?: unknown[];
+    metrics?: Record<string, number | null>;
+  } | null;
 }
 export interface RunRequest {
   case_ids: string[]; model_ids: string[]; configurations: string[]; repetitions: number; max_steps: number;
 }
 export interface Health { status: string; typedb: Record<string, unknown>; legal_review: string }
+export interface Budget {
+  limit_eur: number; spent_eur: number; reserved_eur: number;
+  committed_eur: number; remaining_eur: number; blocked: boolean;
+}

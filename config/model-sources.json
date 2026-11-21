@@ -1,0 +1,11 @@
+{
+  "verified_at": "2026-11-21",
+  "claude-sonnet": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "openai-sol": "https://developers.openai.com/api/docs/models/gpt-6.2-sol",
+  "openrouter-deepseek": "https://openrouter.ai/api/v1/models",
+  "openrouter_pricing_note": "Uses the higher timed peak rates as conservative ceilings; displayed USD costs are catalogue estimates, not invoices.",
+  "usd_per_eur": 1.0990,
+  "exchange_rate_date": "2026-11-20",
+  "exchange_rate_source": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html",
+  "budget_note": "One persistent EUR30 allowance shared by all providers and embeddings; 1.3 conversion/safety margin; unknown usage retains the full reservation. Prices expire after14 days."
+}

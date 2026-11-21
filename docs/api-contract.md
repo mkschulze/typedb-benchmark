@@ -35,9 +35,11 @@ Domain module interface:
 
 `POST /runs/{id}/cancel` returns updated run. Stops new trials and requests cancellation; completed trials are preserved. Run states: `queued`, `running`, `completed`, `cancelled`, `interrupted`, `failed`.
 
-A run has `id`, `status`, `created_at`, `updated_at`, `total_trials`, `completed_trials`, `request`, `manifest`, `trials`, `summary`. A trial has `id`, `case_id`, `model_id`, `configuration`, `repetition`, `status`, `answer` (nullable), `error` (nullable string), `passed` (boolean), `grading` (object), `metrics` (object), `trace` (list).
+A run has `id`, `status`, `created_at`, `updated_at`, `total_trials`, `completed_trials`, `request`, `manifest`, `trials`, `summary`. It may have `error`, `active_trial`, and `cancellation_requested`. A running cancellation remains active until its in-flight response is recorded; no subsequent tool or model call starts. A trial has `id`, `case_id`, `model_id`, `configuration`, `repetition`, `status`, `answer` (nullable), `error` (nullable string), `passed` (boolean), `grading` (object), `metrics` (object), `trace` (list).
 
-Trial metrics: `wall_time_ms`, `provider_time_ms`, `tool_time_ms`, `tool_calls`, `input_tokens`, `output_tokens`, `cached_tokens`, `reasoning_tokens`, `cost_usd`. Unknown usage/cost is null. Summary rows: `{model_id, configuration, trials, passed, failed, pass_rate, avg_wall_time_ms, avg_input_tokens, avg_output_tokens, avg_total_tokens}`. Expose numeric scores as provisional; do not fabricate benchmark data before runs.
+Trial metrics: `wall_time_ms`, `provider_time_ms`, `tool_time_ms`, `tool_calls`, `input_tokens`, `output_tokens`, `cached_tokens`, `reasoning_tokens`, `cost_usd`, and separate `embedding_usage`. Unknown usage/cost is null. Summary rows include `{model_id, configuration, trials, passed, failed, incorrect, errors, cancelled, pass_rate, avg_wall_time_ms, avg_input_tokens, avg_output_tokens, avg_total_tokens}`. `incorrect` means valid completed answers missing the rubric; `errors` means execution/protocol failures; `failed` is all nonpasses for compatibility. Expose numeric scores as provisional; do not fabricate benchmark data before runs.
+
+Model-facing case context excludes presentation titles, summaries, split labels, and template groups. Full TypeDB and SQL tools normalize to equivalent decision content and attach the actual supporting source/document text. A strict pass requires the requested relief route and citations to passages/documents that the trial's tools actually returned; guessing corpus-wide IDs is insufficient.
 
 Manifest records dataset/source/gold hashes, model IDs, public generation settings, prompts/tool definitions, dependency versions, limits, schedule seed, retrieval mode, and review status. No keys or other secrets.
 
@@ -48,3 +50,10 @@ Manifest records dataset/source/gold hashes, model IDs, public generation settin
 Optional `EMBEDDING_BASE_URL`, `EMBEDDING_MODEL`, `EMBEDDING_API_KEY` enable dense retrieval, combined with lexical ranking. Without them, report `lexical` as retrieval mode and state that hybrid retrieval is not configured.
 
 Frontend development uses Vite's `/api` proxy to FastAPI on port 8001. Production serves the frontend build from FastAPI. Default frontend dev port is 5173. Backend operational storage defaults to `.runtime/benchmark.sqlite3` and may be overridden with `BENCHMARK_DB_PATH`.
+
+
+## Shared experiment budget
+
+`GET /api/budget` returns `limit_eur`, `spent_eur`, `reserved_eur`, `committed_eur`, `remaining_eur`, `usd_per_eur`, `safety_multiplier`, `blocked`, `pending_reservations`, and `unreported_reservations`. `spent_eur` includes the safety margin and is not an invoice total. The fixed default cap is EUR30 across all runs/providers/embeddings on the persisted run store. Calls reserve before dispatch; absent usage keeps the full bound. Prices older than14 days fail closed. A budget stop yields run status `interrupted` and a readable `error`; an incomplete paid trial remains in `active_trial`, outside scored trials. Model manifests include `generation_settings`; budget reservations are correlated in traces.
+
+Cost fields: trial `metrics.cost_usd` is retained as a catalogue estimate alias of `estimated_cost_usd`; `provider_reported_cost_usd` is null unless every response reported a valid charge. Unknown cache-write counts remain null. Each `embedding_events` entry persists its reservation before dispatch and updates reported usage/cost or failure, including setup errors.

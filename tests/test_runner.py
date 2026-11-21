@@ -46,7 +46,7 @@ CASE = {
     "payment_date": "2026-06-30",
     "knowledge_date": "2026-06-30",
     "gross_amount_cents": 100,
-    "documents": [{"id": "record"}],
+    "documents": [{"id": "record", "text": "Synthetic payment evidence."}],
     "template_group": "template",
 }
 
@@ -64,7 +64,14 @@ class TestDatabase:
 
 class FinalProvider:
     async def complete(self, model, messages):
-        return json.dumps({"action": "final", "answer": ANSWER}), {
+        action = (
+            {"action": "case_facts"}
+            if len(messages) == 2
+            else {"action": "read_source", "source_id": "law"}
+            if len(messages) == 4
+            else {"action": "final", "answer": ANSWER}
+        )
+        return json.dumps(action), {
             "prompt_tokens": 10,
             "completion_tokens": 5,
         }
@@ -77,7 +84,7 @@ def service_for(tmp_path, provider=None):
         [{"id": "law", "title": "Law", "text": "Withholding law."}],
         {
             "case": {
-                "expected": {"total_withholding_cents": 26},
+                "expected": {"total_withholding_cents": 26, "relief_route": "section43b"},
                 "required_source_ids": ["law"],
                 "required_evidence_ids": ["record"],
             }
@@ -102,7 +109,7 @@ async def test_run_persists_trials_and_complete_manifest(tmp_path):
         assert result["status"] == "completed"
         assert result["completed_trials"] == 4
         assert all(trial["passed"] for trial in result["trials"])
-        assert result["summary"][0]["avg_total_tokens"] == 15
+        assert result["summary"][0]["avg_total_tokens"] == 45
         assert result["manifest"]["system_prompt"]
         assert "dataset_sha256" in result["manifest"]
         assert "api_key" not in json.dumps(result["manifest"])
@@ -253,3 +260,122 @@ async def test_restart_keeps_partial_trace_without_replaying_calls(tmp_path):
         assert provider.calls == 2
     finally:
         await restarted.stop()
+
+
+async def test_guessing_correct_citations_without_retrieving_them_fails(tmp_path):
+    class GuessProvider:
+        async def complete(self, model, messages):
+            return json.dumps({"action": "final", "answer": ANSWER}), {}
+
+    service = service_for(tmp_path, GuessProvider())
+    trial = await service.trial("test", CASE, service.models["local"], "rag", 1, 1)
+    assert not trial["passed"]
+    assert not trial["grading"]["checks"]["cited_sources_retrieved"]
+    assert not trial["grading"]["checks"]["cited_evidence_retrieved"]
+
+
+async def test_model_case_facts_exclude_presentation_outcomes(tmp_path):
+    service = service_for(tmp_path)
+    case = {
+        **CASE,
+        "title": "The answer is 15 percent",
+        "summary": "Eligible; zero tax",
+        "category": "certificate",
+        "split": "evaluation",
+    }
+    result = await service.tool({"action": "case_facts"}, case, "rag")
+    assert not {"title", "summary", "category", "split", "template_group"}.intersection(result)
+    assert result["gross_amount_cents"] == 100
+    assert result["documents"] == case["documents"]
+
+
+async def test_cancellation_waits_for_response_and_blocks_following_tool(tmp_path):
+    started, release = asyncio.Event(), asyncio.Event()
+
+    class PendingProvider:
+        async def complete(self, model, messages):
+            started.set()
+            await release.wait()
+            return '{"action":"search_sources","query":"tax"}', {"prompt_tokens": 10, "completion_tokens": 5}
+
+    service = service_for(tmp_path, PendingProvider())
+    tool_calls = []
+
+    async def tool(*args):
+        tool_calls.append(args)
+        return []
+
+    service.tool = tool
+    service.start()
+    try:
+        run = await service.enqueue(
+            RunRequest(case_ids=["case"], model_ids=["local"], configurations=["rag"])
+        )
+        await asyncio.wait_for(started.wait(), 2)
+        pending = service.cancel(run["id"])
+        assert pending["status"] == "running"
+        assert pending["cancellation_requested"]
+        release.set()
+        await asyncio.wait_for(service.queue.join(), 2)
+        saved = service.store.get(run["id"])
+        assert saved["status"] == "cancelled"
+        assert not tool_calls
+        assert saved["trials"][0]["metrics"]["input_tokens"] == 10
+    finally:
+        await service.stop()
+
+
+def test_rubric_mismatch_is_separate_from_execution_error():
+    from tax_benchmark.runner import summaries
+
+    trials = [
+        {
+            "model_id": "m",
+            "configuration": "rag",
+            "status": status,
+            "passed": False,
+            "metrics": {"input_tokens": None, "output_tokens": None},
+        }
+        for status in ("completed", "failed")
+    ]
+    row = summaries(trials)[0]
+    assert row["incorrect"] == 1
+    assert row["errors"] == 1
+    assert row["failed"] == 2
+    assert row["pass_rate"] == 0
+
+
+async def test_wrong_route_fails_after_required_evidence_was_retrieved(tmp_path):
+    class WrongRouteProvider(FinalProvider):
+        async def complete(self, model, messages):
+            content, usage = await super().complete(model, messages)
+            action = json.loads(content)
+            if action["action"] == "final":
+                action["answer"]["relief_route"] = "unrelated_route"
+            return json.dumps(action), usage
+
+    service = service_for(tmp_path, WrongRouteProvider())
+    trial = await service.trial("test", CASE, service.models["local"], "rag", 1, 6)
+    assert trial["status"] == "completed"
+    assert not trial["passed"]
+    assert not trial["grading"]["checks"]["relief_route"]
+    assert trial["grading"]["checks"]["cited_sources_retrieved"]
+    assert trial["grading"]["checks"]["cited_evidence_retrieved"]
+
+
+async def test_decision_tool_delivers_the_text_behind_its_citations(tmp_path):
+    class DecisionProvider:
+        async def complete(self, model, messages):
+            action = (
+                {"action": "evaluate_payment"}
+                if len(messages) == 2
+                else {"action": "final", "answer": ANSWER}
+            )
+            return json.dumps(action), {}
+
+    service = service_for(tmp_path, DecisionProvider())
+    trial = await service.trial("test", CASE, service.models["local"], "sql", 1, 2)
+    assert trial["passed"]
+    result = next(item["result"] for item in trial["trace"] if item["kind"] == "tool")
+    assert result["supporting_sources"][0]["text"] == "Withholding law."
+    assert result["supporting_documents"][0]["text"] == "Synthetic payment evidence."

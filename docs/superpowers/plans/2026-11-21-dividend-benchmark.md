@@ -35,43 +35,48 @@
 
 ### Task 1: Fix contracts and test boundary
 
-- [ ] Write `docs/api-contract.md`, project configuration, and failing API/runner tests.
-- [ ] Run tests and observe missing implementation failures.
-- [ ] Initialize the greenfield Git repository on a feature branch; preserve the user's editor settings.
+- [x] Write `docs/api-contract.md`, project configuration, and failing API/runner tests.
+- [x] Run tests and observe missing implementation failures.
+- [x] Initialize the greenfield Git repository on a feature branch; preserve the user's editor settings.
 
 ### Task 2: Build the source-grounded domain and databases
 
-- [ ] Read official current legal sources and the installed modeling/typeql skills.
-- [ ] Write failing tests for money, certificates, missing facts, and TypeDB/SQL parity.
-- [ ] Implement versioned cases, evidence, separate provisional gold, a SQL control, typed schema, and actual TypeDB functions.
-- [ ] Validate syntax and execute integration tests against a pinned server; record supported legal scope explicitly.
+- [x] Read official current legal sources and the installed modeling/typeql skills.
+- [x] Write failing tests for money, certificates, missing facts, and TypeDB/SQL parity.
+- [x] Implement versioned cases, evidence, separate provisional gold, a SQL control, typed schema, and actual TypeDB functions.
+- [x] Validate syntax and execute integration tests against a pinned server; record supported legal scope explicitly.
 
 ### Task 3: Build the run service
 
-- [ ] Write failing tests for unknown IDs, limits, provider failures, usage, grading, persistence, cancellation, and interrupted restart.
-- [ ] Implement source retrieval, an OpenAI-compatible provider adapter, the common agent loop, isolated tools, and strict gold scoring.
-- [ ] Implement FastAPI endpoints from the contract with structured errors and a bounded queue.
-- [ ] Run focused and full backend tests.
+- [x] Write failing tests for unknown IDs, limits, provider failures, usage, grading, persistence, cancellation, and interrupted restart.
+- [x] Implement source retrieval, an OpenAI-compatible provider adapter, the common agent loop, isolated tools, and strict gold scoring.
+- [x] Implement FastAPI endpoints from the contract with structured errors and a bounded queue.
+- [x] Run focused and full backend tests.
 
 ### Task 4: Build the demonstration and results frontend
 
-- [ ] Read PRODUCT.md and the Impeccable craft floor; record the user-pinned Deloitte world and case-first experience in a surface brief.
-- [ ] Implement case selection, facts/evidence, reference inspection, model comparison, batch controls, result details, errors, and export.
-- [ ] Keep measured metrics empty until a real run supplies them; label all reference figures and synthetic material.
-- [ ] Run TypeScript/build and focused interaction tests.
+- [x] Read PRODUCT.md and the Impeccable craft floor; record the user-pinned Deloitte world and case-first experience in a surface brief.
+- [x] Implement case selection, facts/evidence, reference inspection, model comparison, batch controls, result details, errors, and export.
+- [x] Keep measured metrics empty until a real run supplies them; label all reference figures and synthetic material.
+- [x] Run TypeScript/build and focused interaction tests.
 
 ### Task 5: Integrate local startup and verify
 
-- [ ] Add `.env.example`, Dockerfiles/Compose, startup instructions, and a source/data verification command.
-- [ ] Verify the real API, TypeDB, and browser-facing application together.
-- [ ] Exercise desktop/mobile layouts and the case/run/evidence flow; fix observed failures.
+- [x] Add `.env.example`, Dockerfiles/Compose, startup instructions, and a source/data verification command.
+- [x] Verify the real API, TypeDB, and browser-facing application together.
+- [x] Exercise desktop/mobile layouts and the case/run/evidence flow; fix observed failures.
 
 ### Task 6: Review and hand off
 
-- [ ] Run a fresh whole-application code review and fix material findings with regression evidence.
-- [ ] Run the Impeccable finish review and document the shipped design from the rendered implementation.
-- [ ] Record exact passing checks and remaining external dependencies; provide the local app URL and startup command.
+- [x] Run a fresh whole-application code review and fix material findings with regression evidence.
+- [x] Run the Impeccable finish review and document the shipped design from the rendered implementation.
+- [x] Record exact passing checks and remaining external dependencies; provide the local app URL and startup command.
 
 ## Execution notes
 
 The user approved implementation of the design. Proceed in this session without another approval round. There is no existing Git repository, so initialize a feature branch in this workspace rather than moving the user's files to a new checkout. Exact model choices and access to the supplied design system remain external dependencies; they do not prevent building the local app.
+
+
+### Added user-authorized provider and budget work
+
+Claude native Messages, OpenAI Chat Completions and OpenRouter adapters are covered by mocked contract tests. A dated model catalogue configures explicit models. User authorized a EUR30 total allowance on2026-11-21; persistent reservations guard all chat/embedding calls across both launch paths. Fresh spending review identified ledger separation, provider-reported cost, empty billed responses, embedding checkpoints and rolling freshness; corrections and regressions were verified before any live spend. Optional embedding reported-charge settlement and null cache-write reporting were also corrected. Final checks:136 backend tests including TypeDB,12 frontend tests, production build, source verification and TypeQL syntax passed. No paid calls have occurred; local credentials remain an external prerequisite.

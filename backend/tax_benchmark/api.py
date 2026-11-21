@@ -87,6 +87,10 @@ def create_app(database_path=None, model_definitions=None, provider=None, typedb
     def get_cases():
         return cases
 
+    @app.get("/api/budget")
+    def get_budget():
+        return service.budget.snapshot()
+
     @app.get("/api/cases/{case_id}")
     def get_case(case_id: str):
         return case_or_404(case_id)

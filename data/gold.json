@@ -3,6 +3,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -29,6 +30,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 0,
       "solidarity_surcharge_cents": 0,
       "total_withholding_cents": 0,
@@ -56,6 +58,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "ineligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 50000,
       "solidarity_surcharge_cents": 2750,
       "total_withholding_cents": 52750,
@@ -82,6 +85,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "ineligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -108,6 +112,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -134,6 +139,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -160,6 +166,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "treaty",
       "withholding_tax_cents": 500000,
       "solidarity_surcharge_cents": 0,
       "total_withholding_cents": 500000,
@@ -187,6 +194,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "ineligible",
+      "relief_route": "treaty",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -213,6 +221,7 @@
     "expected": {
       "status": "review_required",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -239,6 +248,7 @@
     "expected": {
       "status": "outside_scope",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": null,
       "solidarity_surcharge_cents": null,
       "total_withholding_cents": null,
@@ -265,6 +275,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "undetermined",
+      "relief_route": "domestic_withholding",
       "withholding_tax_cents": 1200000,
       "solidarity_surcharge_cents": 66000,
       "total_withholding_cents": 1266000,
@@ -289,6 +300,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "undetermined",
+      "relief_route": "domestic_withholding",
       "withholding_tax_cents": 25001,
       "solidarity_surcharge_cents": 1375,
       "total_withholding_cents": 26376,
@@ -313,6 +325,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "undetermined",
+      "relief_route": "domestic_withholding",
       "withholding_tax_cents": 0,
       "solidarity_surcharge_cents": 0,
       "total_withholding_cents": 0,
@@ -337,6 +350,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "undetermined",
+      "relief_route": "domestic_withholding",
       "withholding_tax_cents": 30864195,
       "solidarity_surcharge_cents": 1697530,
       "total_withholding_cents": 32561725,
@@ -361,6 +375,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "undetermined",
+      "relief_route": "domestic_withholding",
       "withholding_tax_cents": 101,
       "solidarity_surcharge_cents": 5,
       "total_withholding_cents": 106,
@@ -385,6 +400,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 1000000,
       "solidarity_surcharge_cents": 55000,
       "total_withholding_cents": 1055000,
@@ -411,6 +427,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "ineligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -437,6 +454,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "ineligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -463,6 +481,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -489,6 +508,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -515,6 +535,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 0,
       "solidarity_surcharge_cents": 0,
       "total_withholding_cents": 0,
@@ -542,6 +563,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -569,6 +591,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -596,6 +619,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -623,6 +647,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -649,6 +674,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "treaty",
       "withholding_tax_cents": 300000,
       "solidarity_surcharge_cents": 0,
       "total_withholding_cents": 300000,
@@ -676,6 +702,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "treaty",
       "withholding_tax_cents": 500000,
       "solidarity_surcharge_cents": 27500,
       "total_withholding_cents": 527500,
@@ -702,6 +729,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "treaty",
       "withholding_tax_cents": 2000000,
       "solidarity_surcharge_cents": 110000,
       "total_withholding_cents": 2110000,
@@ -728,6 +756,7 @@
     "expected": {
       "status": "needs_information",
       "relief_eligibility": "undetermined",
+      "relief_route": "treaty",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -756,6 +785,7 @@
     "expected": {
       "status": "review_required",
       "relief_eligibility": "undetermined",
+      "relief_route": "comprehensive_relief",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -779,6 +809,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "ineligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -805,6 +836,7 @@
     "expected": {
       "status": "needs_information",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": null,
       "solidarity_surcharge_cents": null,
       "total_withholding_cents": null,
@@ -833,6 +865,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -859,6 +892,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -886,6 +920,7 @@
     "expected": {
       "status": "determined",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -913,6 +948,7 @@
     "expected": {
       "status": "needs_information",
       "relief_eligibility": "eligible",
+      "relief_route": "section43b",
       "withholding_tax_cents": null,
       "solidarity_surcharge_cents": null,
       "total_withholding_cents": null,
@@ -941,6 +977,7 @@
     "expected": {
       "status": "needs_information",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -969,6 +1006,7 @@
     "expected": {
       "status": "review_required",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": 2500000,
       "solidarity_surcharge_cents": 137500,
       "total_withholding_cents": 2637500,
@@ -995,6 +1033,7 @@
     "expected": {
       "status": "outside_scope",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": null,
       "solidarity_surcharge_cents": null,
       "total_withholding_cents": null,
@@ -1021,6 +1060,7 @@
     "expected": {
       "status": "outside_scope",
       "relief_eligibility": "undetermined",
+      "relief_route": "section43b",
       "withholding_tax_cents": null,
       "solidarity_surcharge_cents": null,
       "total_withholding_cents": null,

@@ -153,6 +153,8 @@ Build in coherent slices after design approval: source-grounded case and gold co
 
 ## Open dependencies
 
+Implementation review adjustment: related certificate, holding-period, treaty, and other counterfactuals now share construction-template clusters. The corpus still has 10 development and 30 evaluation cases, but whole groups determine the split rather than forcing five evaluation rows per category. Category coverage describes the full corpus; `data/README.md` records the actual groups. Stable case IDs are preserved and split metadata is authoritative.
+
 - Access to the supplied Deloitte design-system reference, an accessible equivalent, or an explicit choice to proceed from public brand guidance.
 - Selected model endpoints/identifiers and credentials, with a live-run budget.
 - Independent legal validation of gold answers before claiming a validated benchmark.

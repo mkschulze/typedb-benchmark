@@ -2,9 +2,12 @@ import math
 import os
 import re
 from collections import Counter
+from datetime import date
+from decimal import Decimal, InvalidOperation
 
 import httpx
 
+from .budget import BudgetError
 from .providers import ModelDefinition
 
 
@@ -13,8 +16,9 @@ def tokens(text: str):
 
 
 class SourceRetriever:
-    def __init__(self, sources: list[dict]):
+    def __init__(self, sources: list[dict], budget=None):
         self.sources = sources
+        self.budget = budget
         self.lexical = [
             Counter(tokens(f"{source['title']} {source.get('locator', '')} {source['text']}"))
             for source in sources
@@ -32,29 +36,50 @@ class SourceRetriever:
             ).base_url
         self.vectors = None
         self.usage_records = []
+        self.on_usage = None
 
     @property
     def mode(self):
         return "hybrid" if self.embedding_url and self.embedding_model else "lexical"
 
     async def embed(self, texts: list[str], purpose: str = "query") -> list[list[float]]:
+        if self.budget is None:
+            raise BudgetError("Embedding requests require the shared experiment budget")
+        try:
+            rate = Decimal(os.environ.get("EMBEDDING_INPUT_PRICE_PER_MILLION", ""))
+            verified = date.fromisoformat(os.environ.get("EMBEDDING_PRICE_DATE", ""))
+        except (InvalidOperation, ValueError):
+            raise BudgetError("Embeddings require a dated input token price") from None
+        if not rate.is_finite() or rate < 0 or not 0 <= (date.today() - verified).days <= 14:
+            raise BudgetError("Embedding prices must be nonnegative and verified within 14 days")
+        token_bound = sum(len(text.encode("utf-8")) + 4096 for text in texts)
+        reservation = self.budget.reserve_usd(Decimal(token_bound) * rate * 2 / 1_000_000, f"embedding:{purpose}")
+        event = {"purpose": purpose, "model": self.embedding_model, "usage": None,
+                 "reservation_id": reservation, "cost_usd": None, "status": "pending"}
+        self.usage_records.append(event)
+        if self.on_usage:
+            self.on_usage(event)
         key = os.environ.get("EMBEDDING_API_KEY")
         headers = {"Authorization": f"Bearer {key}"} if key else {}
-        async with httpx.AsyncClient(timeout=60) as client:
-            response = await client.post(
-                f"{self.embedding_url}/embeddings",
-                headers=headers,
-                json={"model": self.embedding_model, "input": texts},
-            )
-            response.raise_for_status()
-            body = response.json()
-            self.usage_records.append(
-                {
-                    "purpose": purpose,
-                    "model": self.embedding_model,
-                    "usage": body.get("usage") if isinstance(body.get("usage"), dict) else None,
-                }
-            )
+        try:
+            async with httpx.AsyncClient(timeout=60) as client:
+                response = await client.post(
+                    f"{self.embedding_url}/embeddings", headers=headers,
+                    json={"model": self.embedding_model, "input": texts},
+                )
+                response.raise_for_status()
+                body = response.json()
+            usage = body.get("usage") if isinstance(body.get("usage"), dict) else {}
+            count = usage.get("prompt_tokens")
+            cost = Decimal(count) * rate / 1_000_000 if type(count) is int and count >= 0 else None
+            reported = usage.get("cost")
+            reported = Decimal(str(reported)) if type(reported) in (int, float) and math.isfinite(reported) and reported >= 0 else None
+            settlement = max(cost or Decimal(0), reported or Decimal(0)) if cost is not None or reported is not None else None
+            self.budget.settle(reservation, settlement)
+            event.update(usage=usage, cost_usd=float(cost) if cost is not None else None, status="recorded")
+            event["provider_reported_cost_usd"] = float(reported) if reported is not None else None
+            if self.on_usage:
+                self.on_usage(event)
             data = sorted(body["data"], key=lambda item: item["index"])
             if len(data) != len(texts):
                 raise ValueError("Embedding endpoint returned an incorrect vector count")
@@ -67,6 +92,12 @@ class SourceRetriever:
             if len({len(vector) for vector in vectors}) != 1:
                 raise ValueError("Embedding dimensions do not match")
             return vectors
+        except BaseException:
+            self.budget.settle(reservation)
+            event["status"] = "failed"
+            if self.on_usage:
+                self.on_usage(event)
+            raise
 
     async def prepare(self):
         if self.mode == "hybrid" and self.vectors is None:

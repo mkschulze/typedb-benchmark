@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_real_typedb_functions_match_independent_provisional_gold():
     assert (ROOT / "backend/tax_benchmark/typedb_store.py").exists(), "Real TypeDB adapter is missing"
     from tax_benchmark.domain import load_cases, load_gold, sql_answer
+    from tax_benchmark.runner import decision_tool_context, model_case_context
     from tax_benchmark.typedb_store import TypeDBStore
 
     store = TypeDBStore()
@@ -26,6 +27,8 @@ def test_real_typedb_functions_match_independent_provisional_gold():
             assert answer[key] == expected, (case["id"], key, answer[key], expected)
             assert answer[key] == sql_answer(case)[key]
         context = store.context(case)
+        assert model_case_context(context) == model_case_context(case)
+        assert decision_tool_context(answer) == decision_tool_context(sql_answer(case))
         assert context["facts"] == case["facts"]
         assert "answer" not in context and "total_withholding_cents" not in context
         assert context["documents"] == case["documents"]

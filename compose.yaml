@@ -23,10 +23,9 @@ services:
       TYPEDB_DATABASE: dividend_benchmark
       BENCHMARK_DB_PATH: /app/.runtime/benchmark.sqlite3
     volumes:
-      - benchmark-runs:/app/.runtime
+      - ./.runtime:/app/.runtime
     depends_on:
       typedb:
         condition: service_healthy
 volumes:
   typedb-data:
-  benchmark-runs:

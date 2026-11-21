@@ -27,7 +27,7 @@ Synthetic German dividend payments to foreign corporate shareholders, supported 
 - User-confirmed scope: Germany, withholding tax, dividends.
 - User-confirmed interface: FastAPI, React, and the Impeccable skill.
 - The user approved implementation of the design in `docs/superpowers/specs/2026-11-21-german-dividend-benchmark-design.md`.
-- Exact model identifiers, available provider credentials, and a live-run budget remain open. None have been selected by the user.
+- The user approved Claude, OpenAI and OpenRouter providers and a EUR30 total experiment limit. An explicit dated model catalogue and persistent shared budget guard are implemented; usable server-side keys are required for live evaluation.
 - No benchmark has been executed and no accuracy, savings, or speed improvement has been established.
 
 ## Brand Commitments

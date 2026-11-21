@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T19:54:58.821224+00:00",
+  "title": "Design System: Tax Context Benchmark",
+  "extensions": {
+    "colorMeta": {
+      "green": {
+        "role": "primary",
+        "displayName": "Green",
+        "tonalRamp": [
+          "oklch(15% 0.0360 128.3)",
+          "oklch(27% 0.0720 128.3)",
+          "oklch(38% 0.1020 128.3)",
+          "oklch(49% 0.1200 128.3)",
+          "oklch(61% 0.1200 128.3)",
+          "oklch(73% 0.1020 128.3)",
+          "oklch(84% 0.0600 128.3)",
+          "oklch(95% 0.0144 128.3)"
+        ]
+      },
+      "green-dark": {
+        "role": "primary",
+        "displayName": "Green Dark",
+        "tonalRamp": [
+          "oklch(15% 0.0351 131.2)",
+          "oklch(27% 0.0701 131.2)",
+          "oklch(38% 0.0993 131.2)",
+          "oklch(49% 0.1169 131.2)",
+          "oklch(61% 0.1169 131.2)",
+          "oklch(73% 0.0993 131.2)",
+          "oklch(84% 0.0584 131.2)",
+          "oklch(95% 0.0140 131.2)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0025 128.9)",
+          "oklch(27% 0.0050 128.9)",
+          "oklch(38% 0.0071 128.9)",
+          "oklch(49% 0.0084 128.9)",
+          "oklch(61% 0.0084 128.9)",
+          "oklch(73% 0.0071 128.9)",
+          "oklch(84% 0.0042 128.9)",
+          "oklch(95% 0.0010 128.9)"
+        ]
+      },
+      "body-ink": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0019 135.0)",
+          "oklch(27% 0.0039 135.0)",
+          "oklch(38% 0.0055 135.0)",
+          "oklch(49% 0.0064 135.0)",
+          "oklch(61% 0.0064 135.0)",
+          "oklch(73% 0.0055 135.0)",
+          "oklch(84% 0.0032 135.0)",
+          "oklch(95% 0.0008 135.0)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0040 128.8)",
+          "oklch(27% 0.0080 128.8)",
+          "oklch(38% 0.0114 128.8)",
+          "oklch(49% 0.0134 128.8)",
+          "oklch(61% 0.0134 128.8)",
+          "oklch(73% 0.0114 128.8)",
+          "oklch(84% 0.0067 128.8)",
+          "oklch(95% 0.0016 128.8)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.0038 126.4)",
+          "oklch(27% 0.0077 126.4)",
+          "oklch(38% 0.0109 126.4)",
+          "oklch(49% 0.0128 126.4)",
+          "oklch(61% 0.0128 126.4)",
+          "oklch(73% 0.0109 126.4)",
+          "oklch(84% 0.0064 126.4)",
+          "oklch(95% 0.0015 126.4)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0012 121.6)",
+          "oklch(27% 0.0025 121.6)",
+          "oklch(38% 0.0035 121.6)",
+          "oklch(49% 0.0041 121.6)",
+          "oklch(61% 0.0041 121.6)",
+          "oklch(73% 0.0035 121.6)",
+          "oklch(84% 0.0020 121.6)",
+          "oklch(95% 0.0005 121.6)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15% 0.0360 130.3)",
+          "oklch(27% 0.0720 130.3)",
+          "oklch(38% 0.1020 130.3)",
+          "oklch(49% 0.1200 130.3)",
+          "oklch(61% 0.1200 130.3)",
+          "oklch(73% 0.1020 130.3)",
+          "oklch(84% 0.0600 130.3)",
+          "oklch(95% 0.0144 130.3)"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Canvas",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.9)",
+          "oklch(27% 0.0000 89.9)",
+          "oklch(38% 0.0000 89.9)",
+          "oklch(49% 0.0000 89.9)",
+          "oklch(61% 0.0000 89.9)",
+          "oklch(73% 0.0000 89.9)",
+          "oklch(84% 0.0000 89.9)",
+          "oklch(95% 0.0000 89.9)"
+        ]
+      },
+      "header": {
+        "role": "neutral",
+        "displayName": "Header",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.9)",
+          "oklch(27% 0.0000 89.9)",
+          "oklch(38% 0.0000 89.9)",
+          "oklch(49% 0.0000 89.9)",
+          "oklch(61% 0.0000 89.9)",
+          "oklch(73% 0.0000 89.9)",
+          "oklch(84% 0.0000 89.9)",
+          "oklch(95% 0.0000 89.9)"
+        ]
+      },
+      "button-ink": {
+        "role": "neutral",
+        "displayName": "Button Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0134 126.2)",
+          "oklch(27% 0.0267 126.2)",
+          "oklch(38% 0.0379 126.2)",
+          "oklch(49% 0.0446 126.2)",
+          "oklch(61% 0.0446 126.2)",
+          "oklch(73% 0.0379 126.2)",
+          "oklch(84% 0.0223 126.2)",
+          "oklch(95% 0.0053 126.2)"
+        ]
+      },
+      "green-hover": {
+        "role": "primary",
+        "displayName": "Green Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0360 127.1)",
+          "oklch(27% 0.0720 127.1)",
+          "oklch(38% 0.1020 127.1)",
+          "oklch(49% 0.1200 127.1)",
+          "oklch(61% 0.1200 127.1)",
+          "oklch(73% 0.1020 127.1)",
+          "oklch(84% 0.0600 127.1)",
+          "oklch(95% 0.0144 127.1)"
+        ]
+      },
+      "green-active": {
+        "role": "primary",
+        "displayName": "Green Active",
+        "tonalRamp": [
+          "oklch(15% 0.0360 128.0)",
+          "oklch(27% 0.0720 128.0)",
+          "oklch(38% 0.1020 128.0)",
+          "oklch(49% 0.1200 128.0)",
+          "oklch(61% 0.1200 128.0)",
+          "oklch(73% 0.1020 128.0)",
+          "oklch(84% 0.0600 128.0)",
+          "oklch(95% 0.0144 128.0)"
+        ]
+      },
+      "disabled-bg": {
+        "role": "neutral",
+        "displayName": "Disabled Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0037 121.7)",
+          "oklch(27% 0.0075 121.7)",
+          "oklch(38% 0.0106 121.7)",
+          "oklch(49% 0.0124 121.7)",
+          "oklch(61% 0.0124 121.7)",
+          "oklch(73% 0.0106 121.7)",
+          "oklch(84% 0.0062 121.7)",
+          "oklch(95% 0.0015 121.7)"
+        ]
+      },
+      "disabled-ink": {
+        "role": "neutral",
+        "displayName": "Disabled Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0053 127.0)",
+          "oklch(27% 0.0106 127.0)",
+          "oklch(38% 0.0150 127.0)",
+          "oklch(49% 0.0176 127.0)",
+          "oklch(61% 0.0176 127.0)",
+          "oklch(73% 0.0150 127.0)",
+          "oklch(84% 0.0088 127.0)",
+          "oklch(95% 0.0021 127.0)"
+        ]
+      },
+      "badge-neutral-bg": {
+        "role": "neutral",
+        "displayName": "Badge Neutral Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0033 123.5)",
+          "oklch(27% 0.0067 123.5)",
+          "oklch(38% 0.0094 123.5)",
+          "oklch(49% 0.0111 123.5)",
+          "oklch(61% 0.0111 123.5)",
+          "oklch(73% 0.0094 123.5)",
+          "oklch(84% 0.0055 123.5)",
+          "oklch(95% 0.0013 123.5)"
+        ]
+      },
+      "badge-neutral-ink": {
+        "role": "neutral",
+        "displayName": "Badge Neutral Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0089 127.0)",
+          "oklch(27% 0.0177 127.0)",
+          "oklch(38% 0.0251 127.0)",
+          "oklch(49% 0.0296 127.0)",
+          "oklch(61% 0.0296 127.0)",
+          "oklch(73% 0.0251 127.0)",
+          "oklch(84% 0.0148 127.0)",
+          "oklch(95% 0.0035 127.0)"
+        ]
+      },
+      "badge-green-bg": {
+        "role": "neutral",
+        "displayName": "Badge Green Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0092 125.2)",
+          "oklch(27% 0.0183 125.2)",
+          "oklch(38% 0.0260 125.2)",
+          "oklch(49% 0.0306 125.2)",
+          "oklch(61% 0.0306 125.2)",
+          "oklch(73% 0.0260 125.2)",
+          "oklch(84% 0.0153 125.2)",
+          "oklch(95% 0.0037 125.2)"
+        ]
+      },
+      "badge-green-ink": {
+        "role": "neutral",
+        "displayName": "Badge Green Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0322 130.2)",
+          "oklch(27% 0.0644 130.2)",
+          "oklch(38% 0.0912 130.2)",
+          "oklch(49% 0.1073 130.2)",
+          "oklch(61% 0.1073 130.2)",
+          "oklch(73% 0.0912 130.2)",
+          "oklch(84% 0.0536 130.2)",
+          "oklch(95% 0.0129 130.2)"
+        ]
+      },
+      "badge-amber-bg": {
+        "role": "neutral",
+        "displayName": "Badge Amber Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0092 88.4)",
+          "oklch(27% 0.0184 88.4)",
+          "oklch(38% 0.0260 88.4)",
+          "oklch(49% 0.0306 88.4)",
+          "oklch(61% 0.0306 88.4)",
+          "oklch(73% 0.0260 88.4)",
+          "oklch(84% 0.0153 88.4)",
+          "oklch(95% 0.0037 88.4)"
+        ]
+      },
+      "badge-amber-ink": {
+        "role": "neutral",
+        "displayName": "Badge Amber Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0276 81.9)",
+          "oklch(27% 0.0552 81.9)",
+          "oklch(38% 0.0782 81.9)",
+          "oklch(49% 0.0921 81.9)",
+          "oklch(61% 0.0921 81.9)",
+          "oklch(73% 0.0782 81.9)",
+          "oklch(84% 0.0460 81.9)",
+          "oklch(95% 0.0110 81.9)"
+        ]
+      },
+      "badge-red-bg": {
+        "role": "neutral",
+        "displayName": "Badge Red Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0069 34.3)",
+          "oklch(27% 0.0138 34.3)",
+          "oklch(38% 0.0196 34.3)",
+          "oklch(49% 0.0230 34.3)",
+          "oklch(61% 0.0230 34.3)",
+          "oklch(73% 0.0196 34.3)",
+          "oklch(84% 0.0115 34.3)",
+          "oklch(95% 0.0028 34.3)"
+        ]
+      },
+      "badge-red-ink": {
+        "role": "neutral",
+        "displayName": "Badge Red Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0360 31.9)",
+          "oklch(27% 0.0720 31.9)",
+          "oklch(38% 0.1020 31.9)",
+          "oklch(49% 0.1200 31.9)",
+          "oklch(61% 0.1200 31.9)",
+          "oklch(73% 0.1020 31.9)",
+          "oklch(84% 0.0600 31.9)",
+          "oklch(95% 0.0144 31.9)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section heading."
+      },
+      "subheading": {
+        "displayName": "Subheading",
+        "purpose": "Third-level heading."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default paragraph."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Primary and secondary actions."
+      },
+      "badge": {
+        "displayName": "Badge",
+        "purpose": "Short status label."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "JSON and tool trace."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "control-feedback",
+        "value": "160ms ease-out",
+        "purpose": "Button color, background, and border-color transitions; removed for reduced motion."
+      },
+      {
+        "name": "progress-width",
+        "value": "200ms ease-out",
+        "purpose": "Run progress width feedback; removed for reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1180px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "680px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action; disabled when prerequisites are missing.",
+      "html": "<button class=\"ds-primary\">Compare approaches <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h16M14 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-primary{font-family:'Open Sans',sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:45px;padding:11px 20px;border:1px solid transparent;border-radius:2px;font-size:.9rem;font-weight:700;line-height:1.5;cursor:pointer;transition:color 160ms ease-out,background 160ms ease-out,border-color 160ms ease-out;background:var(--green, #86bc25);color:#182108}.ds-primary:hover{background:#9bce3d;color:#101906}.ds-primary:active{background:#76a51f}.ds-primary:disabled{background:#e5e8df;color:#72776c;cursor:not-allowed}.ds-primary:focus-visible{outline:2px solid var(--focus, #537e14);outline-offset:4px;} @media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Bordered secondary action.",
+      "html": "<button class=\"ds-secondary\">Export results</button>",
+      "css": ".ds-secondary{font-family:'Open Sans',sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:45px;padding:11px 20px;border:1px solid transparent;border-radius:2px;font-size:.9rem;font-weight:700;line-height:1.5;cursor:pointer;transition:color 160ms ease-out,background 160ms ease-out,border-color 160ms ease-out;border-color:#939c87;background:#fff;color:var(--ink, #151713)}.ds-secondary:hover{background:#f0f3ea}.ds-secondary:focus-visible{outline:2px solid var(--focus, #537e14);outline-offset:4px;} @media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Text Button",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Inline evidence and contextual action.",
+      "html": "<button class=\"ds-text\">Inspect reference evidence</button>",
+      "css": ".ds-text{font-family:'Open Sans',sans-serif;display:inline-flex;gap:8px;align-items:center;border:0;background:none;color:var(--green-dark, #426714);padding:0;font-size:.88rem;font-weight:700;line-height:1.6;cursor:pointer;transition:color 160ms ease-out}.ds-text:hover{color:#233e04;text-decoration:underline;text-underline-offset:4px}.ds-text:focus-visible{outline:2px solid var(--focus, #537e14);outline-offset:4px;} @media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "button-icon",
+      "description": "Close or inspect with an accessible action label.",
+      "html": "<button class=\"ds-icon\" aria-label=\"Close evidence\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"m6 6 12 12M18 6 6 18\"/></svg></button>",
+      "css": ".ds-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;min-width:36px;height:36px;border:0;background:none;border-radius:2px;color:var(--ink, #151713);cursor:pointer;transition:background 160ms ease-out,color 160ms ease-out}.ds-icon:hover{background:#e9efe1;color:var(--green-dark, #426714)}.ds-icon:disabled{color:#a1a798;background:none}.ds-icon:focus-visible{outline:2px solid var(--focus, #537e14);outline-offset:4px;} @media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Source register search.",
+      "html": "<label class=\"ds-search-label\" for=\"ds-source-search\">Search sources</label><input class=\"ds-search\" id=\"ds-source-search\" type=\"search\" placeholder=\"Search title, locator or text\"/>",
+      "css": ".ds-search-label{font-family:'Open Sans',sans-serif;display:block;margin-bottom:7px;font-size:.77rem;font-weight:700}.ds-search{font-family:'Open Sans',sans-serif;background:#fff;border:1px solid #9ba28f;border-radius:2px;color:var(--ink, #151713);min-height:45px;padding:10px 14px 10px 12px;width:100%;min-width:0;font-size:.89rem;caret-color:var(--green-dark, #426714)}.ds-search:hover{border-color:#5e6a4c}.ds-search::placeholder{color:#747b6c}.ds-search:focus-visible{outline:2px solid var(--focus, #537e14);outline-offset:4px;outline-offset:1px} @media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Visible navigation with an underlined selection.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><button class=\"ds-nav-item ds-selected\" aria-current=\"page\">Demonstration</button><button class=\"ds-nav-item\">Benchmark</button><button class=\"ds-nav-item\">Sources</button></nav>",
+      "css": ".ds-nav{display:flex;gap:30px;background:#111;min-height:80px;padding:0 20px}.ds-nav-item{font-family:'Open Sans',sans-serif;color:#c5c8c0;background:none;border:0;border-bottom:3px solid transparent;padding:2px 0 0;font-size:.94rem;cursor:pointer;transition:color 160ms ease-out}.ds-nav-item:hover{color:#fff}.ds-selected{color:#fff;border-bottom-color:var(--green, #86bc25)}.ds-nav-item:focus-visible{outline:2px solid var(--focus, #537e14);outline-offset:4px;}@media(max-width:680px){.ds-nav{gap:28px;min-height:40px}.ds-nav-item{padding-bottom:12px;font-size:.82rem}} @media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Status Badges",
+      "kind": "chip",
+      "refersTo": "badge-neutral",
+      "description": "Explicit neutral, determined, provisional and failure labels.",
+      "html": "<span class=\"ds-badge\">Synthetic</span> <span class=\"ds-badge ds-green\">Determined</span> <span class=\"ds-badge ds-amber\">Provisional</span> <span class=\"ds-badge ds-red\">Failed</span>",
+      "css": ".ds-badge{font-family:'Open Sans',sans-serif;display:inline-flex;align-items:center;white-space:nowrap;min-height:23px;padding:3px 8px;line-height:1.3;font-size:.69rem;font-weight:700;border-radius:2px;background:#eaede5;color:#5d6553}.ds-green{background:#eaf3dd;color:#426218}.ds-amber{background:#f6edd7;color:#7b5b16}.ds-red{background:#f9e5e0;color:#9e3928} @media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Fact Region",
+      "kind": "card",
+      "refersTo": "case-region",
+      "description": "Quiet rectangular fact container with disclosure rows.",
+      "html": "<section class=\"ds-facts\"><h2 class=\"ds-facts-title\">The dividend case</h2><p class=\"ds-facts-copy\">Synthetic payment and company facts.</p><details class=\"ds-disclosure\"><summary>View all case facts</summary><p>Payment date and dated ownership evidence.</p></details></section>",
+      "css": ".ds-facts{font-family:'Open Sans',sans-serif;background:var(--surface, #f5f6f3);color:var(--ink, #151713);border:1px solid var(--line, #dce0d7);padding:28px 30px 20px}.ds-facts-title{font-size:1.3rem;font-weight:700;letter-spacing:-.025em;line-height:1.4;margin:0}.ds-facts-copy{color:var(--muted, #62665e);font-size:.87rem;line-height:1.7;margin:7px 0 24px}.ds-disclosure{border-top:1px solid var(--line, #dce0d7);padding:15px 0}.ds-disclosure summary{cursor:pointer;color:#414b35;font-size:.84rem;font-weight:700}.ds-disclosure summary::marker{color:#65734e;font-size:.75rem}.ds-disclosure summary:focus-visible{outline:2px solid var(--focus, #537e14);outline-offset:4px;}.ds-disclosure p{font-size:.82rem;line-height:1.7}@media(max-width:680px){.ds-facts{padding:22px 20px 14px}.ds-facts-title{font-size:1.18rem}} @media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Interrupted Run Checkpoint",
+      "kind": "custom",
+      "refersTo": "run-checkpoint",
+      "description": "Partial-record checkpoint beneath shared run feedback; interrupted and cancelled states remain explicitly labeled.",
+      "html": "<section class=\"ds-checkpoint\"><h3>Interrupted trial checkpoint</h3><p>Case: dev-01 \u00b7 Model: configured-model \u00b7 Approach: rag \u00b7 Repetition 1</p><p>Usage may be incomplete. This checkpoint is a partial record, not a completed answer.</p><details><summary>Recorded checkpoint trace</summary><p>No tool trace was saved before the interruption.</p></details></section>",
+      "css": ".ds-checkpoint{font-family:'Open Sans',sans-serif;color:var(--ink, #151713);margin:20px 0;padding-top:18px;border-top:1px solid var(--line, #dce0d7)}.ds-checkpoint h3{font-size:.95rem;font-weight:700;line-height:1.5;margin:0 0 8px}.ds-checkpoint p{color:var(--muted, #62665e);font-size:.8rem;line-height:1.7;margin:0 0 10px;overflow-wrap:anywhere}.ds-checkpoint details{margin-top:14px}.ds-checkpoint summary{cursor:pointer;color:#414b35;font-size:.84rem;font-weight:700}.ds-checkpoint summary::marker{color:#65734e;font-size:.75rem}.ds-checkpoint summary:focus-visible{outline:2px solid var(--focus, #537e14);outline-offset:4px}"
+    },
+    {
+      "name": "Shared Budget Strip",
+      "kind": "custom",
+      "refersTo": "budget-strip",
+      "description": "Shared remaining, allocated and reserved budget; amber paused state, busy loading text, and explicit unavailable status reuse existing visual treatments. Example figures are illustrative runtime data.",
+      "html": "<section class=\"ds-budget\" aria-label=\"Shared experiment budget\" aria-busy=\"false\"><div class=\"ds-budget-heading\"><h2>\u20ac30 experiment limit</h2><span class=\"ds-budget-badge\">New calls paused</span></div><dl class=\"ds-budget-values\"><div><dt>Remaining</dt><dd>\u20ac0.00</dd></div><div><dt>Allocated</dt><dd>\u20ac28.00</dd></div><div><dt>Reserved</dt><dd>\u20ac2.00</dd></div></dl><p class=\"ds-budget-note\">Shared across all providers. USD\u2192EUR estimates include a safety buffer; unknown charges stay reserved.</p></section>",
+      "css": ".ds-budget{font-family:'Open Sans',sans-serif;color:var(--ink, #151713);display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px;background:var(--surface, #f5f6f3);padding:14px 18px;margin-bottom:28px}.ds-budget-heading{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.ds-budget-heading h2{font-size:.88rem;font-weight:700;line-height:1.4;letter-spacing:0;margin:0}.ds-budget-values{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 0 auto;font-size:.8rem}.ds-budget-values>div{display:flex;gap:7px}.ds-budget-values dt{color:var(--muted, #62665e)}.ds-budget-values dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}.ds-budget-note{width:100%;color:var(--muted, #62665e);font-size:.74rem;line-height:1.7;margin:0}.ds-budget-badge{display:inline-flex;align-items:center;white-space:nowrap;min-height:23px;padding:3px 8px;line-height:1.3;font-size:.69rem;font-weight:700;border-radius:2px;background:#f6edd7;color:#7b5b16}@media(max-width:680px){.ds-budget{gap:12px;padding:14px 16px;margin-bottom:24px}.ds-budget-values{width:100%;margin-left:0;gap:8px 18px;font-size:.75rem}.ds-budget-note{font-size:.71rem}.ds-budget-badge{font-size:.64rem;padding-left:6px;padding-right:6px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Evidence Workspace",
+    "overview": "The Evidence Workspace is a restrained, dense working interface: a black navigation band, a white canvas, muted fact regions, and green actions. Typography and fine dividers carry the hierarchy without decorative imagery or elevation.\n\nThe user requested Deloitte design. This record describes the provisional implementation evidenced by frontend/src/styles.css and frontend/src/App.tsx; exact conformance to design.deloitte.com remains unverified because that authority was inaccessible. Open Sans is intentionally retained for the requested brand direction.",
+    "keyCharacteristics": [
+      "Flat surfaces and fine structural dividers.",
+      "Compact Open Sans hierarchy with prominent monetary figures.",
+      "Green actions and explicitly labeled status tones.",
+      "Inline evidence regions and responsive stacked workspaces."
+    ],
+    "rules": [
+      {
+        "name": "The Action Green Rule",
+        "body": "Use bright green for primary actions and selected navigation; use dark green for readable links on light surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The Numeric Clarity Rule",
+        "body": "Use tabular numerals for money, result columns, and recorded usage.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Workspace Rule",
+        "body": "Separate regions with tone, spacing, and fine borders rather than shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do retain the black header, white canvas, and muted fact-region hierarchy.",
+      "Do pair status colors with readable labels.",
+      "Do retain visible keyboard focus and reduced-motion behavior.",
+      "Do stack regions at phone widths and let wide result tables scroll within their container."
+    ],
+    "donts": [
+      "Don't claim exact Deloitte design-system compliance from these provisional tokens.",
+      "Don't use green status alone to communicate an outcome.",
+      "Don't introduce decorative shadows into the flat workspace."
+    ]
+  }
+}

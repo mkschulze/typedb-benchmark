@@ -1,5 +1,9 @@
 import hashlib
 import json
+import os
+import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,7 +26,7 @@ def test_frozen_dataset_has_disjoint_templates_and_separate_gold():
         s: {c["template_group"] for c in cases if c["split"] == s} for s in ("development", "evaluation")
     }
     assert not templates["development"] & templates["evaluation"]
-    assert len({c["category"] for c in cases if c["split"] == "evaluation"}) == 6
+    assert len({c["category"] for c in cases}) == 6
     for case in cases:
         assert "expected" not in case and "answer" not in case
         assert case["review_status"] == gold[case["id"]]["review_status"] == "provisional"
@@ -31,6 +35,60 @@ def test_frozen_dataset_has_disjoint_templates_and_separate_gold():
             assert answer[field] == expected, (case["id"], field, answer[field], expected)
         assert set(answer["source_ids"]) <= {s["id"] for s in sources}
         assert set(answer["evidence_ids"]) <= {d["id"] for d in case["documents"]}
+
+
+def test_gold_grades_the_exact_requested_relief_route():
+    module = domain()
+    gold = module.load_gold()
+    for case in module.load_cases():
+        assert gold[case["id"]]["expected"].get("relief_route") == case["facts"]["requested_route"]
+
+
+def test_counterfactual_certificate_variants_share_one_evaluation_group():
+    cases = {case["id"]: case for case in domain().load_cases()}
+    variants = [
+        cases[id_]
+        for id_ in (
+            "dev-01",
+            "dev-02",
+            "dev-06",
+            "eval-11",
+            "eval-12",
+            "eval-13",
+            "eval-14",
+            "eval-15",
+            "eval-24",
+            "eval-25",
+            "eval-26",
+        )
+    ]
+    assert len({case["template_group"] for case in variants}) == 1
+    assert {case["split"] for case in variants} == {"evaluation"}
+    development = [case for case in cases.values() if case["split"] == "development"]
+    assert {case["template_group"] for case in development} == {"domestic_math", "company_qualification"}
+
+
+def test_source_paths_and_regenerated_fixtures_work_in_a_relocated_checkout(tmp_path):
+    for source in domain().load_sources():
+        assert not Path(source["raw_path"]).is_absolute(), source["id"]
+    relocated = tmp_path / "relocated-checkout"
+    shutil.copytree(ROOT / "data", relocated / "data")
+    shutil.copytree(ROOT / "backend/tax_benchmark", relocated / "backend/tax_benchmark")
+    subprocess.run([sys.executable, str(relocated / "data/build_dataset.py")], cwd=tmp_path, check=True)
+    check = """
+import hashlib
+from tax_benchmark.domain import ROOT, load_sources
+for source in load_sources():
+    from pathlib import Path
+    assert not Path(source['raw_path']).is_absolute()
+    assert hashlib.sha256((ROOT/source['raw_path']).read_bytes()).hexdigest() == source['sha256']
+"""
+    subprocess.run(
+        [sys.executable, "-c", check],
+        cwd=tmp_path,
+        check=True,
+        env={**os.environ, "PYTHONPATH": str(relocated / "backend")},
+    )
 
 
 def test_certificate_changes_payment_but_not_entitlement():
