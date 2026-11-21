@@ -1,0 +1,356 @@
+{
+  "kind": "exploratory_crewai_pilot",
+  "analysis_date": "2026-11-22",
+  "run_id": "421770f9-ba10-43a0-9c02-2adc2ab3b867",
+  "status": "completed",
+  "case_ids": [
+    "dev-01",
+    "dev-03",
+    "dev-05",
+    "dev-07"
+  ],
+  "attempts": 48,
+  "summary": [
+    {
+      "model_id": "openai-sol",
+      "configuration": "typedb_context",
+      "trials": 4,
+      "passed": 2,
+      "failed": 2,
+      "errors": 0,
+      "incorrect": 2,
+      "cancelled": 0,
+      "pass_rate": 0.5,
+      "avg_wall_time_ms": 13526.841855520615,
+      "avg_input_tokens": 14710.25,
+      "avg_output_tokens": 588.75,
+      "avg_total_tokens": 15299
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "sql",
+      "trials": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "incorrect": 0,
+      "cancelled": 0,
+      "pass_rate": 1.0,
+      "avg_wall_time_ms": 11492.867256281897,
+      "avg_input_tokens": 17130.5,
+      "avg_output_tokens": 1721.5,
+      "avg_total_tokens": 18852
+    },
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "rag",
+      "trials": 4,
+      "passed": 0,
+      "failed": 4,
+      "errors": 0,
+      "incorrect": 4,
+      "cancelled": 0,
+      "pass_rate": 0.0,
+      "avg_wall_time_ms": 33755.11494604871,
+      "avg_input_tokens": 16666.5,
+      "avg_output_tokens": 3624.25,
+      "avg_total_tokens": 20290.75
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "typedb_functions",
+      "trials": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "incorrect": 0,
+      "cancelled": 0,
+      "pass_rate": 1.0,
+      "avg_wall_time_ms": 8657.823440997163,
+      "avg_input_tokens": 12105,
+      "avg_output_tokens": 1396,
+      "avg_total_tokens": 13501
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "typedb_context",
+      "trials": 4,
+      "passed": 1,
+      "failed": 3,
+      "errors": 1,
+      "incorrect": 2,
+      "cancelled": 0,
+      "pass_rate": 0.25,
+      "avg_wall_time_ms": 18286.736216716236,
+      "avg_input_tokens": 15228,
+      "avg_output_tokens": 3248.75,
+      "avg_total_tokens": 18476.75
+    },
+    {
+      "model_id": "openai-sol",
+      "configuration": "typedb_functions",
+      "trials": 4,
+      "passed": 3,
+      "failed": 1,
+      "errors": 0,
+      "incorrect": 1,
+      "cancelled": 0,
+      "pass_rate": 0.75,
+      "avg_wall_time_ms": 8886.524139990797,
+      "avg_input_tokens": 8431.25,
+      "avg_output_tokens": 449.5,
+      "avg_total_tokens": 8880.75
+    },
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "sql",
+      "trials": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "incorrect": 0,
+      "cancelled": 0,
+      "pass_rate": 1.0,
+      "avg_wall_time_ms": 14516.204704559641,
+      "avg_input_tokens": 13742.75,
+      "avg_output_tokens": 1338.5,
+      "avg_total_tokens": 15081.25
+    },
+    {
+      "model_id": "openai-sol",
+      "configuration": "rag",
+      "trials": 4,
+      "passed": 2,
+      "failed": 2,
+      "errors": 0,
+      "incorrect": 2,
+      "cancelled": 0,
+      "pass_rate": 0.5,
+      "avg_wall_time_ms": 12141.105300746858,
+      "avg_input_tokens": 12959.75,
+      "avg_output_tokens": 566.75,
+      "avg_total_tokens": 13526.5
+    },
+    {
+      "model_id": "openai-sol",
+      "configuration": "sql",
+      "trials": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "incorrect": 0,
+      "cancelled": 0,
+      "pass_rate": 1.0,
+      "avg_wall_time_ms": 8625.588669761783,
+      "avg_input_tokens": 7787.75,
+      "avg_output_tokens": 438,
+      "avg_total_tokens": 8225.75
+    },
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "typedb_functions",
+      "trials": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "incorrect": 0,
+      "cancelled": 0,
+      "pass_rate": 1.0,
+      "avg_wall_time_ms": 12759.618937765481,
+      "avg_input_tokens": 12696,
+      "avg_output_tokens": 1159.75,
+      "avg_total_tokens": 13855.75
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "rag",
+      "trials": 4,
+      "passed": 0,
+      "failed": 4,
+      "errors": 3,
+      "incorrect": 1,
+      "cancelled": 0,
+      "pass_rate": 0.0,
+      "avg_wall_time_ms": 19819.331320759375,
+      "avg_input_tokens": 14663,
+      "avg_output_tokens": 3483.25,
+      "avg_total_tokens": 18146.25
+    },
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "typedb_context",
+      "trials": 4,
+      "passed": 0,
+      "failed": 4,
+      "errors": 0,
+      "incorrect": 4,
+      "cancelled": 0,
+      "pass_rate": 0.0,
+      "avg_wall_time_ms": 27050.792972993804,
+      "avg_input_tokens": 14413.5,
+      "avg_output_tokens": 2830.25,
+      "avg_total_tokens": 17243.75
+    }
+  ],
+  "comparisons": [
+    {
+      "model_id": "claude-sonnet",
+      "baseline": "rag",
+      "configuration": "sql",
+      "difference": 1,
+      "ci95": [
+        1,
+        1
+      ],
+      "paired_trials": 4,
+      "clusters": 4,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "claude-sonnet",
+      "baseline": "rag",
+      "configuration": "typedb_context",
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "paired_trials": 4,
+      "clusters": 4,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "claude-sonnet",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "difference": 1,
+      "ci95": [
+        1,
+        1
+      ],
+      "paired_trials": 4,
+      "clusters": 4,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openai-sol",
+      "baseline": "rag",
+      "configuration": "sql",
+      "difference": 0.5,
+      "ci95": [
+        0,
+        1
+      ],
+      "paired_trials": 4,
+      "clusters": 4,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openai-sol",
+      "baseline": "rag",
+      "configuration": "typedb_context",
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "paired_trials": 4,
+      "clusters": 4,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openai-sol",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "difference": 0.25,
+      "ci95": [
+        0,
+        0.75
+      ],
+      "paired_trials": 4,
+      "clusters": 4,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "sql",
+      "difference": 1,
+      "ci95": [
+        1,
+        1
+      ],
+      "paired_trials": 4,
+      "clusters": 4,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_context",
+      "difference": 0.25,
+      "ci95": [
+        0,
+        0.75
+      ],
+      "paired_trials": 4,
+      "clusters": 4,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "difference": 1,
+      "ci95": [
+        1,
+        1
+      ],
+      "paired_trials": 4,
+      "clusters": 4,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    }
+  ],
+  "frozen_inputs": {
+    "dataset_sha256": "7ead35f4474c4597a15d8168fb3c5092441f9082f97be3f720e9ad406fde5c0e",
+    "sources_sha256": "672ecb6bedbfdaad16d544c12f0e1b381c9f3fcf832db6c22a4002d974494b4a",
+    "gold_sha256": "1f78c8c817f5bee3cb7f8455a9a1d12ab79ae971c0fe04cfbe135c14f11ad4b9"
+  },
+  "harness": {
+    "id": "crewai",
+    "framework": "crewai",
+    "version": "1.15.44",
+    "max_model_calls": 6,
+    "settings": {
+      "framework": "crewai",
+      "agent_count": 1,
+      "process": "sequential",
+      "allow_delegation": false,
+      "memory": false,
+      "cache": false,
+      "planning": false,
+      "max_retry_limit": 0,
+      "respect_context_window": false,
+      "use_better_compaction": false,
+      "tracing": false,
+      "protocol": "Host JSON actions translated to CrewAI ReAct; unchanged system prompt plus framework tool history"
+    }
+  },
+  "limitations": [
+    "Four previously used cases, one repetition; exploratory framework pilot, not a held-out general accuracy estimate.",
+    "Reference tax decisions remain provisional pending independent legal review.",
+    "Framework prompts and OpenRouter upstream routing differ; no universal framework advantage is inferred."
+  ],
+  "raw_export": {
+    "local_path": ".runtime/crewai-48-export.json"
+  }
+}

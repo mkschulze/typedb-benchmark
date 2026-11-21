@@ -60,7 +60,7 @@ A provider request has an absolute90-second deadline in addition to transport ti
 
 The finite follow-up coordinator is started with `.venv/bin/python -m tax_benchmark.workflow --plan /absolute/path/plan.json`. It waits for the approved direct run and all other queued/running work to finish, verifies the approved image and frozen inputs, then submits the keyed CrewAI pilot. Its state and audit paths are specified in that plan. Setting `enabled` to false stops the follow-up without cancelling the current user run; cancelling the direct run in the UI also prevents the follow-up. Budget exhaustion or interrupted jobs are preserved, without automatic replay.
 
-The current local sequence is the user's360-trial direct batch followed by a48-trial CrewAI pilot, within the same EUR30 allowance. The independently saved48-trial direct pilot is available under `results/`; it is exploratory and uses cases previously involved in output-contract validation. Its paired within-model results show mixed efficiency gains, not a universal token-saving claim.
+The initial360-trial direct matrix and48-trial CrewAI pilot completed on2026-11-22 (Europe/Berlin); their summaries are saved under `results/`, alongside the earlier exploratory48-trial direct pilot. A separate180-trial direct comparison tests `rag` against `typedb_schema` over the same30 evaluation cases and three models, within the same EUR30 allowance. Pilot cases were previously involved in output-contract validation; all results remain exploratory. Mixed within-model efficiency gains do not establish universal token savings or an exclusive TypeDB advantage.
 
 ## Legal and experimental scope
 
