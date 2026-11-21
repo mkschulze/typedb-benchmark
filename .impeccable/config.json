@@ -1,0 +1,55 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "open sans",
+        "files": [
+          "frontend/src/styles.css"
+        ],
+        "createdAt": "2026-11-21T19:57:38.269Z",
+        "reason": "Agent: Open Sans is the intentional font for the user-requested Deloitte brand direction, documented in DESIGN.md and README.md with public Deloitte brand evidence."
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "data/raw/bzst-exemption.html",
+          "data/raw/bzst-refund.html",
+          "data/raw/estg-43a.html",
+          "data/raw/estg-43b.html",
+          "data/raw/estg-44.html",
+          "data/raw/estg-44a9.html",
+          "data/raw/estg-50c.html",
+          "data/raw/estg-50d3.html",
+          "data/raw/estg-annex2.html",
+          "data/raw/kstg-32.html",
+          "data/raw/solzg-3.html",
+          "data/raw/solzg-4.html"
+        ],
+        "createdAt": "2026-11-21T19:57:47.838Z",
+        "reason": "Agent: these exact files are unmodified official legal-source response snapshots, preserved byte-for-byte with SHA-256 provenance in data/sources.json and data/README.md. Their original typography/headings are evidence, not application UI."
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "data/raw/estg-43a.html",
+          "data/raw/estg-43b.html",
+          "data/raw/estg-44.html",
+          "data/raw/estg-44a9.html",
+          "data/raw/estg-50c.html",
+          "data/raw/estg-50d3.html",
+          "data/raw/estg-annex2.html",
+          "data/raw/kstg-32.html",
+          "data/raw/solzg-3.html",
+          "data/raw/solzg-4.html"
+        ],
+        "createdAt": "2026-11-21T19:57:47.856Z",
+        "reason": "Agent: these exact files are unmodified official legal-source response snapshots, preserved byte-for-byte with SHA-256 provenance in data/sources.json and data/README.md. Their original typography/headings are evidence, not application UI."
+      }
+    ]
+  }
+}
