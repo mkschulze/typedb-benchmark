@@ -9,6 +9,8 @@ __pycache__/
 node_modules/
 frontend/dist/
 frontend/test-results/
+frontend/*.tsbuildinfo
+.vscode/
 .DS_Store
 .superpowers/
 .impeccable/questions/

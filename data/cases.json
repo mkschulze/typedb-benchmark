@@ -1,0 +1,3740 @@
+[
+  {
+    "id": "dev-01",
+    "title": "Eligible parent; no exemption certificate",
+    "summary": "Eligible parent; no exemption certificate. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "certificates",
+    "split": "development",
+    "template_group": "dev-plain-absent",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-01-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-01-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-01-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-01-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-01-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-01-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "dev-02",
+    "title": "Eligible parent; issued exemption certificate",
+    "summary": "Eligible parent; issued exemption certificate. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "certificates",
+    "split": "development",
+    "template_group": "dev-plain-issued",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-02-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-02-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-02-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-02-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-02-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-02-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "dev-02-certificate",
+        "title": "Synthetic BZSt exemption certificate",
+        "kind": "bzst_exemption",
+        "route": "section43b",
+        "issued_at": "2026-01-15",
+        "available_at": "2026-01-15",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-12-31",
+        "payer_id": "dev-02-payer",
+        "recipient_id": "dev-02-recipient",
+        "revoked": false,
+        "text": "Synthetic document only. BZSt exemption; route section43b; issued 2026-01-15; available 2026-01-15; valid 2026-01-01 through 2026-12-31 inclusive; payer dev-02-payer; recipient dev-02-recipient; revoked False."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "dev-03",
+    "title": "Explicit restriction; both statutory prongs proved",
+    "summary": "Explicit restriction; both statutory prongs proved. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "missing_review",
+    "split": "development",
+    "template_group": "dev-proven-restriction",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 200000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-03-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-03-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": false,
+      "economic_link": false,
+      "listed_exception": false,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-03-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 200000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-03-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-03-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: False. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: False; material economic link: False. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-03-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "dev-04",
+    "title": "Five percent parent; §43b route only",
+    "summary": "Five percent parent; §43b route only. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "eu_eligibility",
+    "split": "development",
+    "template_group": "dev-five-percent",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-04-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-04-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 500,
+      "resolution_holding_basis_points": 500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-04-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-04-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 500 basis points; at the distribution resolution it is 500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-04-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-04-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "dev-05",
+    "title": "Holding period will finish after payment",
+    "summary": "Holding period will finish after payment. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "eu_eligibility",
+    "split": "development",
+    "template_group": "dev-holding-forward",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-05-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-05-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2026-02-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-05-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-05-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2026-02-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-05-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-05-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "dev-06",
+    "title": "Residence evidence is not BZSt exemption",
+    "summary": "Residence evidence is not BZSt exemption. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "certificates",
+    "split": "development",
+    "template_group": "dev-residence-only",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-06-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-06-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-06-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-06-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-06-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-06-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "dev-06-residence",
+        "title": "Dutch residence document",
+        "kind": "residence",
+        "text": "Tax residence in the Netherlands confirmed. This is not a German BZSt exemption certificate.",
+        "issued_at": "2026-01-01"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "dev-07",
+    "title": "Treaty five percent certificate",
+    "summary": "Treaty five percent certificate. Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "category": "treaty_relief",
+    "split": "development",
+    "template_group": "dev-treaty-issued",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-07-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-07-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "treaty",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-07-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-07-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-07-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-07-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "dev-07-certificate",
+        "title": "Synthetic BZSt exemption certificate",
+        "kind": "bzst_exemption",
+        "route": "treaty",
+        "issued_at": "2026-01-15",
+        "available_at": "2026-01-15",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-12-31",
+        "payer_id": "dev-07-payer",
+        "recipient_id": "dev-07-recipient",
+        "revoked": false,
+        "text": "Synthetic document only. BZSt exemption; route treaty; issued 2026-01-15; available 2026-01-15; valid 2026-01-01 through 2026-12-31 inclusive; payer dev-07-payer; recipient dev-07-recipient; revoked False."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "dba-nl-2026",
+      "dba-nl-register",
+      "solzg-5",
+      "estg-50d3"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "dev-08",
+    "title": "Treaty claimant is not the beneficial owner",
+    "summary": "Treaty claimant is not the beneficial owner. Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "category": "treaty_relief",
+    "split": "development",
+    "template_group": "dev-treaty-owner-denial",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-08-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-08-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "treaty",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": false,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2026-04-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-08-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-08-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2026-04-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-08-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-08-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "dba-nl-2026",
+      "dba-nl-register",
+      "solzg-5",
+      "estg-50d3"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "dev-09",
+    "title": "Unresolved substance facts",
+    "summary": "Unresolved substance facts. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "missing_review",
+    "split": "development",
+    "template_group": "dev-unresolved-abuse",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-09-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-09-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": null,
+      "main_purpose_exception": null,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-09-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-09-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-09-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: None. Proof that no main purpose was tax advantage: None. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-09-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "dev-10",
+    "title": "Individual recipient outside scope",
+    "summary": "Individual recipient outside scope. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "missing_review",
+    "split": "development",
+    "template_group": "dev-individual",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "dev-10-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "dev-10-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "individual",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "dev-10-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL individual; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "dev-10-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "dev-10-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "dev-10-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-01",
+    "title": "Domestic withholding on €48,000",
+    "summary": "Domestic withholding on €48,000. Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "category": "base_math",
+    "split": "evaluation",
+    "template_group": "eval-domestic-manufacturing",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "gross_amount_cents": 4800000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-01-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-01-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "domestic_withholding",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-01-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 4800000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-01-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-01-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-01-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-02",
+    "title": "Surcharge fractional cent is discarded",
+    "summary": "Surcharge fractional cent is discarded. Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "category": "base_math",
+    "split": "evaluation",
+    "template_group": "eval-domestic-cent-rounding",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "gross_amount_cents": 100004,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-02-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-02-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "domestic_withholding",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-02-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 100004 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-02-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-02-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-02-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-03",
+    "title": "Zero cash distribution",
+    "summary": "Zero cash distribution. Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "category": "base_math",
+    "split": "evaluation",
+    "template_group": "eval-domestic-zero",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "gross_amount_cents": 0,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-03-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-03-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "domestic_withholding",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-03-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 0 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-03-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-03-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-03-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-04",
+    "title": "Large exact cash dividend",
+    "summary": "Large exact cash dividend. Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "category": "base_math",
+    "split": "evaluation",
+    "template_group": "eval-domestic-large",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "gross_amount_cents": 123456780,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-04-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-04-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "domestic_withholding",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-04-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 123456780 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-04-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-04-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-04-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-05",
+    "title": "Small dividend; withholding versus remittance",
+    "summary": "Small dividend; withholding versus remittance. Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "category": "base_math",
+    "split": "evaluation",
+    "template_group": "eval-domestic-small",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Calculate domestic withholding at payment only; no exemption certificate exists. Do not assess substantive relief or refunds.",
+    "gross_amount_cents": 404,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-05-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-05-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "domestic_withholding",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-05-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 404 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-05-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-05-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-05-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-06",
+    "title": "Ten percent statutory boundary",
+    "summary": "Ten percent statutory boundary. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "eu_eligibility",
+    "split": "evaluation",
+    "template_group": "eval-eu-threshold",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 4000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-06-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-06-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 1000,
+      "resolution_holding_basis_points": 1000,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-06-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 4000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-06-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 1000 basis points; at the distribution resolution it is 1000 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-06-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-06-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-07",
+    "title": "9.99 percent at both relevant dates",
+    "summary": "9.99 percent at both relevant dates. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "eu_eligibility",
+    "split": "evaluation",
+    "template_group": "eval-eu-below-boundary",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-07-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-07-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 999,
+      "resolution_holding_basis_points": 999,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-07-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-07-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 999 basis points; at the distribution resolution it is 999 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-07-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-07-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-08",
+    "title": "Corporate recipient exempt from Dutch profit tax",
+    "summary": "Corporate recipient exempt from Dutch profit tax. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "eu_eligibility",
+    "split": "evaluation",
+    "template_group": "eval-eu-tax-exempt",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-08-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-08-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": false,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-08-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-08-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-08-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-08-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-09",
+    "title": "Twelve months completed after payment; now evidenced",
+    "summary": "Twelve months completed after payment; now evidenced. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "eu_eligibility",
+    "split": "evaluation",
+    "template_group": "eval-eu-later-completion",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-09-01? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-09-01",
+    "payer": {
+      "id": "eval-09-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-09-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2025-08-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-09-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-09-01",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-09-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-09-01",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2025-08-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-09-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-09-01",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-09-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-09-01",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-10",
+    "title": "Interrupted holding resets the qualifying start",
+    "summary": "Interrupted holding resets the qualifying start. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "eu_eligibility",
+    "split": "evaluation",
+    "template_group": "eval-eu-interruption",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-10-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-10-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2026-04-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-10-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-10-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2026-04-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-10-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-10-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-10-interruption",
+        "title": "Earlier holding ended",
+        "kind": "ownership_record",
+        "text": "Earlier holding ended 2026-03-01. A new uninterrupted holding began 2026-04-01. Do not aggregate separated periods."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-11",
+    "title": "Certificate expires on the payment day",
+    "summary": "Certificate expires on the payment day. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "certificates",
+    "split": "evaluation",
+    "template_group": "eval-cert-inclusive-end",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-11-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-11-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-11-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-11-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-11-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-11-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-11-certificate",
+        "title": "Synthetic BZSt exemption certificate",
+        "kind": "bzst_exemption",
+        "route": "section43b",
+        "issued_at": "2026-01-15",
+        "available_at": "2026-01-15",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-06-30",
+        "payer_id": "eval-11-payer",
+        "recipient_id": "eval-11-recipient",
+        "revoked": false,
+        "text": "Synthetic document only. BZSt exemption; route section43b; issued 2026-01-15; available 2026-01-15; valid 2026-01-01 through 2026-06-30 inclusive; payer eval-11-payer; recipient eval-11-recipient; revoked False."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-12",
+    "title": "Certificate expired one day before payment",
+    "summary": "Certificate expired one day before payment. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "certificates",
+    "split": "evaluation",
+    "template_group": "eval-cert-expired",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-12-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-12-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-12-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-12-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-12-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-12-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-12-certificate",
+        "title": "Synthetic BZSt exemption certificate",
+        "kind": "bzst_exemption",
+        "route": "section43b",
+        "issued_at": "2026-01-15",
+        "available_at": "2026-01-15",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-06-29",
+        "payer_id": "eval-12-payer",
+        "recipient_id": "eval-12-recipient",
+        "revoked": false,
+        "text": "Synthetic document only. BZSt exemption; route section43b; issued 2026-01-15; available 2026-01-15; valid 2026-01-01 through 2026-06-29 inclusive; payer eval-12-payer; recipient eval-12-recipient; revoked False."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-13",
+    "title": "Certificate issued after payment",
+    "summary": "Certificate issued after payment. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "certificates",
+    "split": "evaluation",
+    "template_group": "eval-cert-retroactive",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-07-15? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-07-15",
+    "payer": {
+      "id": "eval-13-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-13-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-13-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-07-15",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-13-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-07-15",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-13-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-07-15",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-13-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-07-15",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-13-certificate",
+        "title": "Synthetic BZSt exemption certificate",
+        "kind": "bzst_exemption",
+        "route": "section43b",
+        "issued_at": "2026-07-01",
+        "available_at": "2026-07-01",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-12-31",
+        "payer_id": "eval-13-payer",
+        "recipient_id": "eval-13-recipient",
+        "revoked": false,
+        "text": "Synthetic document only. BZSt exemption; route section43b; issued 2026-07-01; available 2026-07-01; valid 2026-01-01 through 2026-12-31 inclusive; payer eval-13-payer; recipient eval-13-recipient; revoked False."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-14",
+    "title": "Certificate names another payer",
+    "summary": "Certificate names another payer. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "certificates",
+    "split": "evaluation",
+    "template_group": "eval-cert-wrong-payer",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-14-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-14-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-14-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-14-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-14-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-14-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-14-certificate",
+        "title": "Synthetic BZSt exemption certificate",
+        "kind": "bzst_exemption",
+        "route": "section43b",
+        "issued_at": "2026-01-15",
+        "available_at": "2026-01-15",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-12-31",
+        "payer_id": "other-gmbh",
+        "recipient_id": "eval-14-recipient",
+        "revoked": false,
+        "text": "Synthetic document only. BZSt exemption; route section43b; issued 2026-01-15; available 2026-01-15; valid 2026-01-01 through 2026-12-31 inclusive; payer other-gmbh; recipient eval-14-recipient; revoked False."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-15",
+    "title": "Application pending at payment",
+    "summary": "Application pending at payment. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "certificates",
+    "split": "evaluation",
+    "template_group": "eval-cert-application",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-15-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-15-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-15-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-15-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-15-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-15-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-15-application",
+        "title": "BZSt application receipt",
+        "kind": "application",
+        "text": "Application received on 2026-06-01; no decision has been issued. Complete inventory confirms no BZSt exemption at payment.",
+        "issued_at": "2026-06-01"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-16",
+    "title": "Treaty 365-day inclusive boundary; surcharge reduced first",
+    "summary": "Treaty 365-day inclusive boundary; surcharge reduced first. Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "category": "treaty_relief",
+    "split": "evaluation",
+    "template_group": "eval-treaty-365-boundary",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "gross_amount_cents": 6000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-16-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-16-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "treaty",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 1000,
+      "resolution_holding_basis_points": 1000,
+      "ownership_since": "2025-07-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-16-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 6000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-16-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 1000 basis points; at the distribution resolution it is 1000 basis points. Current uninterrupted qualifying holding began 2025-07-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-16-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-16-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-16-certificate",
+        "title": "Synthetic BZSt exemption certificate",
+        "kind": "bzst_exemption",
+        "route": "treaty",
+        "issued_at": "2026-01-15",
+        "available_at": "2026-01-15",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-12-31",
+        "payer_id": "eval-16-payer",
+        "recipient_id": "eval-16-recipient",
+        "revoked": false,
+        "text": "Synthetic document only. BZSt exemption; route treaty; issued 2026-01-15; available 2026-01-15; valid 2026-01-01 through 2026-12-31 inclusive; payer eval-16-payer; recipient eval-16-recipient; revoked False."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "dba-nl-2026",
+      "dba-nl-register",
+      "solzg-5",
+      "estg-50d3"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-17",
+    "title": "Treaty fifteen percent; nine percent portfolio",
+    "summary": "Treaty fifteen percent; nine percent portfolio. Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "category": "treaty_relief",
+    "split": "evaluation",
+    "template_group": "eval-treaty-fifteen",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "gross_amount_cents": 2000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-17-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-17-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "treaty",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 900,
+      "resolution_holding_basis_points": 900,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-17-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 2000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-17-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 900 basis points; at the distribution resolution it is 900 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-17-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-17-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "dba-nl-2026",
+      "dba-nl-register",
+      "solzg-5",
+      "estg-50d3"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-18",
+    "title": "Treaty purpose exception without payment exemption",
+    "summary": "Treaty purpose exception without payment exemption. Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "category": "treaty_relief",
+    "split": "evaluation",
+    "template_group": "eval-treaty-proven-purpose-exception",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "gross_amount_cents": 8000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-18-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-18-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "treaty",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": false,
+      "economic_link": false,
+      "listed_exception": false,
+      "main_purpose_exception": true,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-18-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 8000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-18-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-18-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: False. Proof that no main purpose was tax advantage: True. Direct owners would be entitled: False; material economic link: False. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-18-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "dba-nl-2026",
+      "dba-nl-register",
+      "solzg-5",
+      "estg-50d3"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-19",
+    "title": "Treaty beneficial ownership unconfirmed",
+    "summary": "Treaty beneficial ownership unconfirmed. Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "category": "treaty_relief",
+    "split": "evaluation",
+    "template_group": "eval-treaty-owner-unknown",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only ordinary Netherlands treaty Article 10 relief and withholding at payment under the 2026 consolidated treaty. Refund figures are conditional on a timely valid application, remittance and tax certificate. Do not decide §43b or other domestic refund routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-19-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-19-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "treaty",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": null,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-19-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-19-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-19-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-19-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "dba-nl-2026",
+      "dba-nl-register",
+      "solzg-5",
+      "estg-50d3"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-20",
+    "title": "Request for exhaustive best relief route",
+    "summary": "Request for exhaustive best relief route. Assess all possible dividend relief routes; do not assume a named route exhausts §44a(9), KStG §32 or treaty relief.",
+    "category": "treaty_relief",
+    "split": "evaluation",
+    "template_group": "eval-comprehensive-routes",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess all possible dividend relief routes; do not assume a named route exhausts §44a(9), KStG §32 or treaty relief.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-20-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-20-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "comprehensive_relief",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 500,
+      "resolution_holding_basis_points": 500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-20-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-20-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 500 basis points; at the distribution resolution it is 500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-20-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-20-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption",
+      "dba-nl-2026",
+      "dba-nl-register",
+      "solzg-5",
+      "estg-44a9",
+      "kstg-32"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-21",
+    "title": "Current ownership supersedes old cap table",
+    "summary": "Current ownership supersedes old cap table. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "dates_stale",
+    "split": "evaluation",
+    "template_group": "eval-ownership-superseded",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-21-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-21-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 500,
+      "resolution_holding_basis_points": 500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-21-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-21-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 500 basis points; at the distribution resolution it is 500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-21-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-21-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-21-stale",
+        "title": "Superseded 2024 ownership note",
+        "kind": "stale_record",
+        "recorded_at": "2024-01-01",
+        "text": "Old cap table showed 25%. Superseded by dated current ownership record showing 5% at resolution and payment."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-22",
+    "title": "Information cutoff predates payment",
+    "summary": "Information cutoff predates payment. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "dates_stale",
+    "split": "evaluation",
+    "template_group": "eval-cutoff-before-payment",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-01? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-01",
+    "payer": {
+      "id": "eval-22-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-22-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-22-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-01",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-22-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-01",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-22-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-01",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-22-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-01",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-23",
+    "title": "Holding completion lies beyond knowledge cutoff",
+    "summary": "Holding completion lies beyond knowledge cutoff. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "dates_stale",
+    "split": "evaluation",
+    "template_group": "eval-cutoff-holding",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-09-01? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-09-01",
+    "payer": {
+      "id": "eval-23-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-23-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2025-10-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-23-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-09-01",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-23-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-09-01",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2025-10-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-23-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-09-01",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-23-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-09-01",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-24",
+    "title": "Certificate not available to payer until July",
+    "summary": "Certificate not available to payer until July. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "dates_stale",
+    "split": "evaluation",
+    "template_group": "eval-document-delivery",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-07-10? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-07-10",
+    "payer": {
+      "id": "eval-24-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-24-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-24-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-07-10",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-24-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-07-10",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-24-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-07-10",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-24-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-07-10",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-24-certificate",
+        "title": "Synthetic BZSt exemption certificate",
+        "kind": "bzst_exemption",
+        "route": "section43b",
+        "issued_at": "2026-01-15",
+        "available_at": "2026-07-03",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-12-31",
+        "payer_id": "eval-24-payer",
+        "recipient_id": "eval-24-recipient",
+        "revoked": false,
+        "text": "Synthetic document only. BZSt exemption; route section43b; issued 2026-01-15; available 2026-07-03; valid 2026-01-01 through 2026-12-31 inclusive; payer eval-24-payer; recipient eval-24-recipient; revoked False."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-25",
+    "title": "Certificate revoked before payment",
+    "summary": "Certificate revoked before payment. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "dates_stale",
+    "split": "evaluation",
+    "template_group": "eval-document-revocation",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-25-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-25-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-25-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-25-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-25-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-25-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      },
+      {
+        "id": "eval-25-certificate",
+        "title": "Synthetic BZSt exemption certificate",
+        "kind": "bzst_exemption",
+        "route": "section43b",
+        "issued_at": "2026-01-15",
+        "available_at": "2026-01-15",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-12-31",
+        "payer_id": "eval-25-payer",
+        "recipient_id": "eval-25-recipient",
+        "revoked": true,
+        "text": "Synthetic document only. BZSt exemption; route section43b; issued 2026-01-15; available 2026-01-15; valid 2026-01-01 through 2026-12-31 inclusive; payer eval-25-payer; recipient eval-25-recipient; revoked True."
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-26",
+    "title": "Certificate inventory is explicitly unknown",
+    "summary": "Certificate inventory is explicitly unknown. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "missing_review",
+    "split": "evaluation",
+    "template_group": "eval-missing-inventory",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-26-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-26-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": null,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-26-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-26-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-26-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-26-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: None. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-27",
+    "title": "Qualifying legal form not established",
+    "summary": "Qualifying legal form not established. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "missing_review",
+    "split": "evaluation",
+    "template_group": "eval-missing-form",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-27-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-27-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": null,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-27-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-27-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-27-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-27-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-28",
+    "title": "Anti-abuse conditions require legal review",
+    "summary": "Anti-abuse conditions require legal review. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "missing_review",
+    "split": "evaluation",
+    "template_group": "eval-review-abuse",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-28-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-28-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": false,
+      "economic_link": null,
+      "listed_exception": false,
+      "main_purpose_exception": null,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-28-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-28-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-28-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: False. Proof that no main purpose was tax advantage: None. Direct owners would be entitled: False; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-28-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-29",
+    "title": "Swiss recipient outside first jurisdiction",
+    "summary": "Swiss recipient outside first jurisdiction. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "missing_review",
+    "split": "evaluation",
+    "template_group": "eval-outside-jurisdiction",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-29-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-29-recipient",
+      "name": "Delta Industries BV",
+      "country": "CH",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "corporation",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-29-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a CH corporation; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-29-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-29-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-29-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  },
+  {
+    "id": "eval-30",
+    "title": "Investment fund outside ordinary corporate scope",
+    "summary": "Investment fund outside ordinary corporate scope. Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "category": "missing_review",
+    "split": "evaluation",
+    "template_group": "eval-outside-fund",
+    "question": "What must the payer withhold on 2026-06-30, and what is the status of relief as known on 2026-06-30? Assess only the §43b route and withholding at payment. Refund figures are the potential relief under that route, assuming tax was remitted, a timely valid application and required tax certificate; do not decide other treaty/§44a(9)/KStG §32 routes.",
+    "gross_amount_cents": 10000000,
+    "payment_date": "2026-06-30",
+    "knowledge_date": "2026-06-30",
+    "payer": {
+      "id": "eval-30-payer",
+      "name": "Rhein Components GmbH",
+      "country": "DE",
+      "legal_form": "GmbH"
+    },
+    "recipient": {
+      "id": "eval-30-recipient",
+      "name": "Delta Industries BV",
+      "country": "NL",
+      "legal_form": "BV"
+    },
+    "facts": {
+      "requested_route": "section43b",
+      "distribution_kind": "ordinary_cash_dividend",
+      "recipient_kind": "fund",
+      "payer_unlimited_taxable": true,
+      "recipient_eu_resident": true,
+      "recipient_qualifying_form": true,
+      "recipient_subject_to_tax": true,
+      "beneficial_owner": true,
+      "permanent_establishment_attribution": false,
+      "direct_holding_basis_points": 2500,
+      "resolution_holding_basis_points": 2500,
+      "ownership_since": "2024-01-01",
+      "ownership_continuous": true,
+      "owners_entitled": null,
+      "economic_link": null,
+      "listed_exception": true,
+      "main_purpose_exception": false,
+      "ao42_concern": false,
+      "certificate_inventory_complete": true,
+      "records_conflict": false
+    },
+    "documents": [
+      {
+        "id": "eval-30-payment",
+        "title": "Synthetic payment and company record",
+        "recorded_at": "2026-06-30",
+        "text": "Synthetic case: German GmbH pays ordinary_cash_dividend of 10000000 euro cents on 2026-06-30. Recipient is a NL fund; German permanent establishment attribution: False. Company form, residence, tax status and all qualification values are explicitly specified in facts.",
+        "kind": "company_record"
+      },
+      {
+        "id": "eval-30-ownership",
+        "title": "Dated synthetic ownership evidence",
+        "recorded_at": "2026-06-30",
+        "text": "At payment direct participation is 2500 basis points; at the distribution resolution it is 2500 basis points. Current uninterrupted qualifying holding began 2024-01-01; continuous: True. Use the dated current record over superseded notes.",
+        "kind": "ownership_record"
+      },
+      {
+        "id": "eval-30-abuse",
+        "title": "Synthetic statutory exception facts",
+        "recorded_at": "2026-06-30",
+        "text": "Main class of shares significantly and regularly traded on recognized exchange: True. Proof that no main purpose was tax advantage: False. Direct owners would be entitled: None; material economic link: None. Separate AO §42 concern: False. Unknown evidence does not prove abuse.",
+        "kind": "anti_abuse_record"
+      },
+      {
+        "id": "eval-30-inventory",
+        "title": "Certificate inventory statement",
+        "recorded_at": "2026-06-30",
+        "text": "Inventory complete for this recipient and payer at payment: True. Documents not listed are absent only when completeness is true. A residence document or application is not an issued BZSt exemption.",
+        "kind": "inventory"
+      }
+    ],
+    "source_ids": [
+      "estg-43a",
+      "estg-44",
+      "estg-50c",
+      "solzg-3",
+      "solzg-4",
+      "bzst-refund",
+      "implementation-rules",
+      "estg-43b",
+      "estg-annex2",
+      "estg-50d3",
+      "bzst-exemption"
+    ],
+    "review_status": "provisional"
+  }
+]

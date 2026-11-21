@@ -1,0 +1,32 @@
+services:
+  typedb:
+    image: typedb/typedb:3.15.0
+    ports:
+      - "127.0.0.1:1730:1729"
+      - "127.0.0.1:8002:8000"
+    volumes:
+      - typedb-data:/var/lib/typedb/data
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/1729'"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8001:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      TYPEDB_ADDRESS: typedb:1729
+      TYPEDB_DATABASE: dividend_benchmark
+      BENCHMARK_DB_PATH: /app/.runtime/benchmark.sqlite3
+    volumes:
+      - benchmark-runs:/app/.runtime
+    depends_on:
+      typedb:
+        condition: service_healthy
+volumes:
+  typedb-data:
+  benchmark-runs:

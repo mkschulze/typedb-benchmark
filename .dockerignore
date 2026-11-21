@@ -1,0 +1,12 @@
+.git
+.venv
+.env
+.runtime
+.vscode
+.agents
+.impeccable
+frontend/node_modules
+frontend/dist
+frontend/test-results
+**/__pycache__
+tests

@@ -1,0 +1,65 @@
+define
+attribute case_id, value string;
+attribute record_payload, value string;
+attribute source_id, value string;
+attribute evidence_id, value string;
+attribute evidence_payload, value string;
+attribute gross_cents, value integer;
+attribute payment_day, value datetime;
+attribute knowledge_day, value datetime;
+attribute payer_id, value string;
+attribute recipient_id, value string;
+attribute payer_country, value string;
+attribute payer_form, value string;
+attribute recipient_country, value string;
+attribute requested_route, value string;
+attribute distribution_kind, value string;
+attribute recipient_kind, value string;
+attribute payer_unlimited_taxable, value string @values("yes", "no", "unknown");
+attribute recipient_eu_resident, value string @values("yes", "no", "unknown");
+attribute recipient_qualifying_form, value string @values("yes", "no", "unknown");
+attribute recipient_subject_to_tax, value string @values("yes", "no", "unknown");
+attribute beneficial_owner, value string @values("yes", "no", "unknown");
+attribute permanent_establishment_attribution, value string @values("yes", "no", "unknown");
+attribute direct_holding_basis_points, value integer;
+attribute resolution_holding_basis_points, value integer;
+attribute ownership_since, value datetime;
+attribute ownership_continuous, value string @values("yes", "no", "unknown");
+attribute owners_entitled, value string @values("yes", "no", "unknown");
+attribute economic_link, value string @values("yes", "no", "unknown");
+attribute listed_exception, value string @values("yes", "no", "unknown");
+attribute main_purpose_exception, value string @values("yes", "no", "unknown");
+attribute ao42_concern, value string @values("yes", "no", "unknown");
+attribute certificate_inventory_complete, value string @values("yes", "no", "unknown");
+attribute records_conflict, value string @values("yes", "no", "unknown");
+attribute certificate_route, value string;
+attribute certificate_issue_day, value datetime;
+attribute certificate_available_day, value datetime;
+attribute certificate_start_day, value datetime;
+attribute certificate_end_day, value datetime;
+attribute certificate_payer_id, value string;
+attribute certificate_recipient_id, value string;
+attribute certificate_revoked, value boolean;
+
+entity dividend_case,
+ owns case_id @key, owns record_payload @card(1), owns source_id @card(1..),
+ owns gross_cents @card(1), owns payment_day @card(1), owns knowledge_day @card(1),
+ owns payer_id @card(1), owns recipient_id @card(1),
+ owns payer_country @card(1), owns payer_form @card(1), owns recipient_country @card(1),
+ owns requested_route @card(1), owns distribution_kind @card(1), owns recipient_kind @card(1),
+ owns payer_unlimited_taxable @card(1), owns recipient_eu_resident @card(1),
+ owns recipient_qualifying_form @card(1), owns recipient_subject_to_tax @card(1),
+ owns beneficial_owner @card(1), owns permanent_establishment_attribution @card(1),
+ owns direct_holding_basis_points @card(1), owns resolution_holding_basis_points @card(1),
+ owns ownership_since, owns ownership_continuous @card(1), owns owners_entitled @card(1),
+ owns economic_link @card(1), owns listed_exception @card(1), owns main_purpose_exception @card(1),
+ owns ao42_concern @card(1), owns certificate_inventory_complete @card(1), owns records_conflict @card(1),
+ plays case_document:case_record;
+entity evidence_document,
+ owns evidence_id @key, owns evidence_payload @card(1), plays case_document:document;
+entity exemption_certificate, sub evidence_document,
+ owns certificate_route @card(1), owns certificate_issue_day @card(1),
+ owns certificate_available_day @card(1), owns certificate_start_day @card(1),
+ owns certificate_end_day @card(1), owns certificate_payer_id @card(1),
+ owns certificate_recipient_id @card(1), owns certificate_revoked @card(1);
+relation case_document, relates case_record @card(1), relates document @card(1);

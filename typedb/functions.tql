@@ -1,0 +1,223 @@
+define
+fun scope_supported($c: dividend_case) -> boolean:
+ match
+  $c has payer_country "DE", has payer_form "GmbH", has recipient_country "NL",
+     has recipient_kind "corporation", has distribution_kind "ordinary_cash_dividend",
+     has permanent_establishment_attribution "no", has payment_day $p;
+  $p >= 2026-01-01T00:00:00; $p <= 2026-11-21T00:00:00;
+ return check;
+
+fun certificate_at_payment($c: dividend_case) -> boolean:
+ match
+  $c has payer_id $payer, has recipient_id $recipient, has requested_route $route,
+     has payment_day $payment, has knowledge_day $knowledge;
+  case_document (case_record: $c, document: $doc);
+  $doc isa exemption_certificate, has certificate_route == $route,
+     has certificate_payer_id == $payer, has certificate_recipient_id == $recipient,
+     has certificate_issue_day $issued, has certificate_available_day $available,
+     has certificate_start_day $start, has certificate_end_day $expiry,
+     has certificate_revoked false;
+  $issued <= $payment; $issued <= $knowledge; $available <= $payment;
+  $start <= $payment; $expiry >= $payment;
+  { $c has requested_route "section43b"; } or {
+   $c has requested_route "treaty", has direct_holding_basis_points $direct;
+   $direct >= 1000;
+  };
+ return check;
+
+fun abuse_clear($c: dividend_case) -> boolean:
+ match
+  $c has ao42_concern "no";
+  { $c has listed_exception "yes"; } or { $c has main_purpose_exception "yes"; }
+  or { $c has owners_entitled "yes"; } or { $c has economic_link "yes"; };
+ return check;
+
+fun abuse_denied($c: dividend_case) -> boolean:
+ match
+  $c has listed_exception "no", has main_purpose_exception "no",
+     has owners_entitled "no", has economic_link "no", has ao42_concern "no";
+ return check;
+
+fun missing_qualification($c: dividend_case) -> { string }:
+ match
+  $c has requested_route $route;
+  {
+   $c has payer_unlimited_taxable "unknown";
+   let $field = "payer_unlimited_taxable";
+  } or {
+   $c has recipient_eu_resident "unknown";
+   let $field = "recipient_eu_resident";
+  } or {
+   $route == "section43b"; $c has recipient_qualifying_form "unknown";
+   let $field = "recipient_qualifying_form";
+  } or {
+   $route == "section43b"; $c has recipient_subject_to_tax "unknown";
+   let $field = "recipient_subject_to_tax";
+  } or {
+   { $route == "section43b"; } or { $route == "treaty"; };
+   $c has direct_holding_basis_points -1; let $field = "direct_holding_basis_points";
+  } or {
+   $route == "section43b"; $c has resolution_holding_basis_points -1;
+   let $field = "resolution_holding_basis_points";
+  } or {
+   { $route == "section43b"; } or { $route == "treaty"; };
+   not { $c has ownership_since $start; }; let $field = "ownership_since";
+  } or {
+   $route == "section43b"; $c has ownership_continuous "unknown";
+   let $field = "ownership_continuous";
+  } or {
+   $route == "treaty"; $c has beneficial_owner "unknown";
+   let $field = "beneficial_owner";
+  };
+ return { $field };
+
+fun qualification_missing($c: dividend_case) -> boolean:
+ match let $field in missing_qualification($c);
+ return check;
+
+fun qualification_failed($c: dividend_case) -> boolean:
+ match
+  $c has requested_route $route;
+  { $c has payer_unlimited_taxable "no"; } or { $c has recipient_eu_resident "no"; }
+  or {
+   $route == "section43b";
+   { $c has recipient_qualifying_form "no"; } or { $c has recipient_subject_to_tax "no"; }
+   or { $c has direct_holding_basis_points $direct, has resolution_holding_basis_points $resolution;
+        $direct < 1000; $resolution < 1000; };
+  } or { $route == "treaty"; $c has beneficial_owner "no"; };
+ return check;
+
+fun holding_at_payment($c: dividend_case) -> boolean:
+ match
+  $c has ownership_since $start, has payment_day $payment;
+  let $anniversary = $start + P1Y; $anniversary <= $payment;
+ return check;
+
+fun holding_completed($c: dividend_case) -> boolean:
+ match
+  $c has ownership_since $start, has knowledge_day $knowledge;
+  let $anniversary = $start + P1Y; $anniversary <= $knowledge;
+ return check;
+
+fun treaty_five_percent($c: dividend_case) -> boolean:
+ match
+  $c has direct_holding_basis_points $direct, has ownership_since $start, has payment_day $payment;
+  $direct >= 1000;
+  let $completion = $start + P364D; $completion <= $payment;
+ return check;
+
+# Priority is expressed by mutually exclusive stages; there are no per-case outcome records.
+fun preliminary_code($c: dividend_case) -> { integer }:
+ match
+  $c has requested_route $route, has gross_cents $gross,
+     has payment_day $payment, has knowledge_day $knowledge;
+  let $scope in scope_supported($c);
+  {
+   $scope == false; let $code = 8;
+  } or {
+   $scope == true; $knowledge < $payment; let $code = 10;
+  } or {
+   $scope == true; $knowledge >= $payment;
+   { $gross % 4 != 0; } or { $c has ownership_continuous "no"; };
+   let $code = 11;
+  } or {
+   $scope == true; $knowledge >= $payment; $gross % 4 == 0;
+   not { $c has ownership_continuous "no"; };
+   {
+    $route == "domestic_withholding"; let $code = 0;
+   } or {
+    $route != "domestic_withholding";
+    { $route == "comprehensive_relief"; }
+    or { $c has records_conflict "yes"; }
+    or { $c has ao42_concern "yes"; };
+    let $code = 7;
+   } or {
+    $route != "domestic_withholding"; $route != "comprehensive_relief";
+    not { $c has records_conflict "yes"; }; not { $c has ao42_concern "yes"; };
+    let $missing in qualification_missing($c);
+    {
+     $missing == true; let $code = 6;
+    } or {
+     $missing == false;
+     let $failed in qualification_failed($c);
+     let $denied in abuse_denied($c);
+     let $clear in abuse_clear($c);
+     {
+      { $failed == true; } or { $denied == true; }; let $code = 3;
+     } or {
+      $failed == false; $denied == false; $clear == false; let $code = 7;
+     } or {
+      $failed == false; $denied == false; $clear == true; let $code = -1;
+     };
+    };
+   };
+  };
+ return { $code };
+
+fun decision_code($c: dividend_case) -> { integer }:
+ match
+  let $pre in preliminary_code($c);
+  {
+   $pre != -1; let $code = $pre;
+  } or {
+   $pre == -1; $c has requested_route $route;
+   let $certificate in certificate_at_payment($c);
+   let $holding in holding_completed($c);
+   let $held_at_payment in holding_at_payment($c);
+   {
+    $route == "section43b"; $holding == false; let $code = 4;
+   } or {
+    { $route == "treaty"; } or { $route == "section43b"; $holding == true; };
+    {
+     not { $c has certificate_inventory_complete "yes"; }; $certificate == false; let $code = 9;
+    } or {
+     { $c has certificate_inventory_complete "yes"; } or { $certificate == true; };
+     {
+      $route == "section43b"; $held_at_payment == false; let $code = 5;
+     } or {
+      { $route == "treaty"; } or { $route == "section43b"; $held_at_payment == true; };
+      { $certificate == true; let $code = 2; } or { $certificate == false; let $code = 1; };
+     };
+    };
+   };
+  };
+ return { $code };
+
+fun relief_cap($c: dividend_case) -> { integer }:
+ match
+  $c has requested_route $route, has gross_cents $gross;
+  {
+   $route != "treaty"; let $cap = 0;
+  } or {
+   $route == "treaty"; let $five in treaty_five_percent($c);
+   { $five == true; let $cap = floor($gross * 5 / 100.0dec); }
+   or { $five == false; let $cap = floor($gross * 15 / 100.0dec); };
+  };
+ return { $cap };
+
+# Unknown amounts are omitted in TypeQL; the adapter emits JSON null, never a Python tax fallback.
+fun payment_amounts($c: dividend_case) -> { integer, integer, integer, integer }:
+ match
+  let $code in decision_code($c); $code != 8; $code != 9; $code != 10; $code != 11;
+  $c has gross_cents $gross;
+  {
+   $code == 2; let $tax in relief_cap($c); let $surcharge = 0;
+  } or {
+   $code != 2; let $tax = floor($gross / 4.0dec); let $surcharge = floor($tax * 55 / 1000.0dec);
+  };
+  let $total = $tax + $surcharge;
+  let $net = $gross - $total;
+ return { $tax, $surcharge, $total, $net };
+
+fun refund_amount($c: dividend_case) -> { integer }:
+ match
+  let $code in decision_code($c);
+  {
+   { $code == 2; } or { $code == 3; }; let $refund = 0;
+  } or {
+   { $code == 1; } or { $code == 5; };
+   $c has gross_cents $gross;
+   let $tax = floor($gross / 4.0dec); let $surcharge = floor($tax * 55 / 1000.0dec);
+   let $cap in relief_cap($c); let $refund = $tax + $surcharge - $cap;
+  };
+ return { $refund };

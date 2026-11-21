@@ -1,0 +1,1046 @@
+{
+  "dev-01": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 2637500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "dev-01-payment",
+      "dev-01-inventory",
+      "dev-01-ownership",
+      "dev-01-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "dev-02": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 0,
+      "solidarity_surcharge_cents": 0,
+      "total_withholding_cents": 0,
+      "net_payment_cents": 10000000,
+      "refund_amount_cents": 0,
+      "refund_status": "not_needed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "dev-02-payment",
+      "dev-02-inventory",
+      "dev-02-ownership",
+      "dev-02-abuse",
+      "dev-02-certificate"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "dev-03": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "ineligible",
+      "withholding_tax_cents": 50000,
+      "solidarity_surcharge_cents": 2750,
+      "total_withholding_cents": 52750,
+      "net_payment_cents": 147250,
+      "refund_amount_cents": 0,
+      "refund_status": "unavailable_under_requested_route",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "dev-03-payment",
+      "dev-03-inventory",
+      "dev-03-ownership",
+      "dev-03-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "dev-04": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "ineligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 0,
+      "refund_status": "unavailable_under_requested_route",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "dev-04-payment",
+      "dev-04-inventory",
+      "dev-04-ownership",
+      "dev-04-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "dev-05": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": null,
+      "refund_status": "conditional_on_holding_completion",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "dev-05-payment",
+      "dev-05-inventory",
+      "dev-05-ownership",
+      "dev-05-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "dev-06": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 2637500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "dev-06-payment",
+      "dev-06-inventory",
+      "dev-06-ownership",
+      "dev-06-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "dev-07": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 500000,
+      "solidarity_surcharge_cents": 0,
+      "total_withholding_cents": 500000,
+      "net_payment_cents": 9500000,
+      "refund_amount_cents": 0,
+      "refund_status": "not_needed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "dba-nl-2026",
+      "estg-50c",
+      "solzg-5"
+    ],
+    "required_evidence_ids": [
+      "dev-07-payment",
+      "dev-07-inventory",
+      "dev-07-ownership",
+      "dev-07-abuse",
+      "dev-07-certificate"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "dev-08": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "ineligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 0,
+      "refund_status": "unavailable_under_requested_route",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "dba-nl-2026",
+      "estg-50c",
+      "solzg-5"
+    ],
+    "required_evidence_ids": [
+      "dev-08-payment",
+      "dev-08-inventory",
+      "dev-08-ownership",
+      "dev-08-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "dev-09": {
+    "expected": {
+      "status": "review_required",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": null,
+      "refund_status": "requires_review",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "dev-09-payment",
+      "dev-09-inventory",
+      "dev-09-ownership",
+      "dev-09-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "dev-10": {
+    "expected": {
+      "status": "outside_scope",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": null,
+      "solidarity_surcharge_cents": null,
+      "total_withholding_cents": null,
+      "net_payment_cents": null,
+      "refund_amount_cents": null,
+      "refund_status": "not_assessed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "dev-10-payment",
+      "dev-10-inventory",
+      "dev-10-ownership",
+      "dev-10-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-01": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 1200000,
+      "solidarity_surcharge_cents": 66000,
+      "total_withholding_cents": 1266000,
+      "net_payment_cents": 3534000,
+      "refund_amount_cents": null,
+      "refund_status": "not_assessed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43a",
+      "estg-44",
+      "solzg-4"
+    ],
+    "required_evidence_ids": [
+      "eval-01-payment",
+      "eval-01-inventory"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-02": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 25001,
+      "solidarity_surcharge_cents": 1375,
+      "total_withholding_cents": 26376,
+      "net_payment_cents": 73628,
+      "refund_amount_cents": null,
+      "refund_status": "not_assessed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43a",
+      "estg-44",
+      "solzg-4"
+    ],
+    "required_evidence_ids": [
+      "eval-02-payment",
+      "eval-02-inventory"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-03": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 0,
+      "solidarity_surcharge_cents": 0,
+      "total_withholding_cents": 0,
+      "net_payment_cents": 0,
+      "refund_amount_cents": null,
+      "refund_status": "not_assessed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43a",
+      "estg-44",
+      "solzg-4"
+    ],
+    "required_evidence_ids": [
+      "eval-03-payment",
+      "eval-03-inventory"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-04": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 30864195,
+      "solidarity_surcharge_cents": 1697530,
+      "total_withholding_cents": 32561725,
+      "net_payment_cents": 90895055,
+      "refund_amount_cents": null,
+      "refund_status": "not_assessed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43a",
+      "estg-44",
+      "solzg-4"
+    ],
+    "required_evidence_ids": [
+      "eval-04-payment",
+      "eval-04-inventory"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-05": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 101,
+      "solidarity_surcharge_cents": 5,
+      "total_withholding_cents": 106,
+      "net_payment_cents": 298,
+      "refund_amount_cents": null,
+      "refund_status": "not_assessed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43a",
+      "estg-44",
+      "solzg-4"
+    ],
+    "required_evidence_ids": [
+      "eval-05-payment",
+      "eval-05-inventory"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-06": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 1000000,
+      "solidarity_surcharge_cents": 55000,
+      "total_withholding_cents": 1055000,
+      "net_payment_cents": 2945000,
+      "refund_amount_cents": 1055000,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-06-payment",
+      "eval-06-inventory",
+      "eval-06-ownership",
+      "eval-06-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-07": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "ineligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 0,
+      "refund_status": "unavailable_under_requested_route",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-07-payment",
+      "eval-07-inventory",
+      "eval-07-ownership",
+      "eval-07-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-08": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "ineligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 0,
+      "refund_status": "unavailable_under_requested_route",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-08-payment",
+      "eval-08-inventory",
+      "eval-08-ownership",
+      "eval-08-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-09": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 2637500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-09-payment",
+      "eval-09-inventory",
+      "eval-09-ownership",
+      "eval-09-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-10": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": null,
+      "refund_status": "conditional_on_holding_completion",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-10-payment",
+      "eval-10-inventory",
+      "eval-10-ownership",
+      "eval-10-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-11": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 0,
+      "solidarity_surcharge_cents": 0,
+      "total_withholding_cents": 0,
+      "net_payment_cents": 10000000,
+      "refund_amount_cents": 0,
+      "refund_status": "not_needed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-11-payment",
+      "eval-11-inventory",
+      "eval-11-ownership",
+      "eval-11-abuse",
+      "eval-11-certificate"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-12": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 2637500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-12-payment",
+      "eval-12-inventory",
+      "eval-12-ownership",
+      "eval-12-abuse",
+      "eval-12-certificate"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-13": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 2637500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-13-payment",
+      "eval-13-inventory",
+      "eval-13-ownership",
+      "eval-13-abuse",
+      "eval-13-certificate"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-14": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 2637500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-14-payment",
+      "eval-14-inventory",
+      "eval-14-ownership",
+      "eval-14-abuse",
+      "eval-14-certificate"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-15": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 2637500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-15-payment",
+      "eval-15-inventory",
+      "eval-15-ownership",
+      "eval-15-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-16": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 300000,
+      "solidarity_surcharge_cents": 0,
+      "total_withholding_cents": 300000,
+      "net_payment_cents": 5700000,
+      "refund_amount_cents": 0,
+      "refund_status": "not_needed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "dba-nl-2026",
+      "estg-50c",
+      "solzg-5"
+    ],
+    "required_evidence_ids": [
+      "eval-16-payment",
+      "eval-16-inventory",
+      "eval-16-ownership",
+      "eval-16-abuse",
+      "eval-16-certificate"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-17": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 500000,
+      "solidarity_surcharge_cents": 27500,
+      "total_withholding_cents": 527500,
+      "net_payment_cents": 1472500,
+      "refund_amount_cents": 227500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "dba-nl-2026",
+      "estg-50c",
+      "solzg-5"
+    ],
+    "required_evidence_ids": [
+      "eval-17-payment",
+      "eval-17-inventory",
+      "eval-17-ownership",
+      "eval-17-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-18": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2000000,
+      "solidarity_surcharge_cents": 110000,
+      "total_withholding_cents": 2110000,
+      "net_payment_cents": 5890000,
+      "refund_amount_cents": 1710000,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "dba-nl-2026",
+      "estg-50c",
+      "solzg-5"
+    ],
+    "required_evidence_ids": [
+      "eval-18-payment",
+      "eval-18-inventory",
+      "eval-18-ownership",
+      "eval-18-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-19": {
+    "expected": {
+      "status": "needs_information",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": null,
+      "refund_status": "undetermined",
+      "missing_facts": [
+        "beneficial_owner"
+      ]
+    },
+    "required_source_ids": [
+      "dba-nl-2026",
+      "estg-50c",
+      "solzg-5"
+    ],
+    "required_evidence_ids": [
+      "eval-19-payment",
+      "eval-19-inventory",
+      "eval-19-ownership",
+      "eval-19-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-20": {
+    "expected": {
+      "status": "review_required",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": null,
+      "refund_status": "requires_review",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-44a9",
+      "kstg-32"
+    ],
+    "required_evidence_ids": [
+      "eval-20-payment",
+      "eval-20-inventory"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-21": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "ineligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 0,
+      "refund_status": "unavailable_under_requested_route",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-21-payment",
+      "eval-21-inventory",
+      "eval-21-ownership",
+      "eval-21-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-22": {
+    "expected": {
+      "status": "needs_information",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": null,
+      "solidarity_surcharge_cents": null,
+      "total_withholding_cents": null,
+      "net_payment_cents": null,
+      "refund_amount_cents": null,
+      "refund_status": "undetermined",
+      "missing_facts": [
+        "payment_time_facts"
+      ]
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-22-payment",
+      "eval-22-inventory",
+      "eval-22-ownership",
+      "eval-22-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-23": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": null,
+      "refund_status": "conditional_on_holding_completion",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-23-payment",
+      "eval-23-inventory",
+      "eval-23-ownership",
+      "eval-23-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-24": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 2637500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-24-payment",
+      "eval-24-inventory",
+      "eval-24-ownership",
+      "eval-24-abuse",
+      "eval-24-certificate"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-25": {
+    "expected": {
+      "status": "determined",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": 2637500,
+      "refund_status": "potential_on_application",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-25-payment",
+      "eval-25-inventory",
+      "eval-25-ownership",
+      "eval-25-abuse",
+      "eval-25-certificate"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-26": {
+    "expected": {
+      "status": "needs_information",
+      "relief_eligibility": "eligible",
+      "withholding_tax_cents": null,
+      "solidarity_surcharge_cents": null,
+      "total_withholding_cents": null,
+      "net_payment_cents": null,
+      "refund_amount_cents": null,
+      "refund_status": "undetermined",
+      "missing_facts": [
+        "certificate_inventory_complete"
+      ]
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-26-payment",
+      "eval-26-inventory",
+      "eval-26-ownership",
+      "eval-26-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-27": {
+    "expected": {
+      "status": "needs_information",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": null,
+      "refund_status": "undetermined",
+      "missing_facts": [
+        "recipient_qualifying_form"
+      ]
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-27-payment",
+      "eval-27-inventory",
+      "eval-27-ownership",
+      "eval-27-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-28": {
+    "expected": {
+      "status": "review_required",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": 2500000,
+      "solidarity_surcharge_cents": 137500,
+      "total_withholding_cents": 2637500,
+      "net_payment_cents": 7362500,
+      "refund_amount_cents": null,
+      "refund_status": "requires_review",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-28-payment",
+      "eval-28-inventory",
+      "eval-28-ownership",
+      "eval-28-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-29": {
+    "expected": {
+      "status": "outside_scope",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": null,
+      "solidarity_surcharge_cents": null,
+      "total_withholding_cents": null,
+      "net_payment_cents": null,
+      "refund_amount_cents": null,
+      "refund_status": "not_assessed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-29-payment",
+      "eval-29-inventory",
+      "eval-29-ownership",
+      "eval-29-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  },
+  "eval-30": {
+    "expected": {
+      "status": "outside_scope",
+      "relief_eligibility": "undetermined",
+      "withholding_tax_cents": null,
+      "solidarity_surcharge_cents": null,
+      "total_withholding_cents": null,
+      "net_payment_cents": null,
+      "refund_amount_cents": null,
+      "refund_status": "not_assessed",
+      "missing_facts": []
+    },
+    "required_source_ids": [
+      "estg-43b",
+      "estg-50c",
+      "estg-50d3"
+    ],
+    "required_evidence_ids": [
+      "eval-30-payment",
+      "eval-30-inventory",
+      "eval-30-ownership",
+      "eval-30-abuse"
+    ],
+    "review_status": "provisional",
+    "authorship": "Manually specified scenario rubric and arithmetic; not derived from reference, SQL or TypeDB outputs. Independent legal approval pending."
+  }
+}

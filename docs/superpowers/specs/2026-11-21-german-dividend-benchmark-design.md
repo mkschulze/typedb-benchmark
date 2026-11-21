@@ -1,6 +1,6 @@
 # German Dividend Withholding Tax Benchmark Design
 
-Status: draft for review. Country, dividend scope, FastAPI, React, Impeccable, Deloitte design, and a client demonstration as the entry point are user-confirmed. The experiment, first treaty, dataset size, and implementation details below are proposed builder decisions.
+Status: approved for implementation by the user on 21 November 2026. Country, dividend scope, FastAPI, React, Impeccable, Deloitte design, and a client demonstration as the entry point are user-confirmed. The experiment, first treaty, dataset size, and implementation details below are builder decisions approved with this design; legal gold and exact Deloitte-system conformance still require their stated external validation.
 
 ## Purpose and success
 

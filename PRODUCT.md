@@ -26,7 +26,7 @@ Synthetic German dividend payments to foreign corporate shareholders, supported 
 
 - User-confirmed scope: Germany, withholding tax, dividends.
 - User-confirmed interface: FastAPI, React, and the Impeccable skill.
-- Proposed experiment and implementation details remain a draft in `docs/superpowers/specs/2026-11-21-german-dividend-benchmark-design.md`.
+- The user approved implementation of the design in `docs/superpowers/specs/2026-11-21-german-dividend-benchmark-design.md`.
 - Exact model identifiers, available provider credentials, and a live-run budget remain open. None have been selected by the user.
 - No benchmark has been executed and no accuracy, savings, or speed improvement has been established.
 
@@ -39,7 +39,8 @@ The user requested Deloitte design and supplied https://design.deloitte.com/ as 
 - Inspiration: https://www.databricks.com/blog/genie-genie-ontology-delivers-16-accuracy-less-half-tokens
 - Legal source starting points: EStG §§ 43a, 43b, 44, 50c, and 50d; SolzG 1995; official BZSt guidance.
 - Installed TypeDB skill provenance: `.agents/skills/typedb-skills-source.json`.
-- The workspace has no application code or measured results yet.
+- The implemented FastAPI and React application includes a case-led reference walkthrough, comparison and batch-run controls, inline evidence, source provenance, and real TypeDB/SQL decision tools. The corpus contains 40 synthetic cases and 16 preserved source snapshots.
+- Backend, TypeDB integration, and frontend interaction checks exercise the implementation. No real-model comparison has been executed; no measured accuracy or savings claim is available.
 
 ## Product Principles
 

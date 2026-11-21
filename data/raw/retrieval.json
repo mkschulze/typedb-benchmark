@@ -1,0 +1,107 @@
+[
+  {
+    "id": "estg-43a",
+    "url": "https://www.gesetze-im-internet.de/estg/__43a.html",
+    "raw_path": "data/raw/estg-43a.html",
+    "retrieved_at": "2026-11-21T19:17:16.133118+00:00",
+    "sha256": "25cdf208dc378a1c3685a2318f5304fb342b2c73aedd89f7ca952cf13ed03687"
+  },
+  {
+    "id": "estg-43b",
+    "url": "https://www.gesetze-im-internet.de/estg/__43b.html",
+    "raw_path": "data/raw/estg-43b.html",
+    "retrieved_at": "2026-11-21T19:17:16.134499+00:00",
+    "sha256": "7fc716c919b01466e54c4b19e389d5f1b7240340bb758206ba763be5612457d3"
+  },
+  {
+    "id": "estg-annex2",
+    "url": "https://www.gesetze-im-internet.de/estg/anlage_2.html",
+    "raw_path": "data/raw/estg-annex2.html",
+    "retrieved_at": "2026-11-21T19:17:16.119651+00:00",
+    "sha256": "f63071eaeffc3c8760de4ae10f01427ae0fc68d32f12d89a920ac01fd3afb2b5"
+  },
+  {
+    "id": "estg-44",
+    "url": "https://www.gesetze-im-internet.de/estg/__44.html",
+    "raw_path": "data/raw/estg-44.html",
+    "retrieved_at": "2026-11-21T19:17:16.130979+00:00",
+    "sha256": "c031d39ffcda719f204213fdd59982e8c250af64f5e070dbf6b3f43481834e8c"
+  },
+  {
+    "id": "estg-50c",
+    "url": "https://www.gesetze-im-internet.de/estg/__50c.html",
+    "raw_path": "data/raw/estg-50c.html",
+    "retrieved_at": "2026-11-21T19:17:16.125352+00:00",
+    "sha256": "0bddf86f831b727c144a7ecb6791cc3e5529bfb8f707ee4715c4dc95c6d2458a"
+  },
+  {
+    "id": "estg-50d3",
+    "url": "https://www.gesetze-im-internet.de/estg/__50d.html",
+    "raw_path": "data/raw/estg-50d3.html",
+    "retrieved_at": "2026-11-21T19:17:16.131174+00:00",
+    "sha256": "fd1ee264c4c5e8fc80f1663de4ea010fc7793242c574622dad8a2c05d7fb345a"
+  },
+  {
+    "id": "estg-44a9",
+    "url": "https://www.gesetze-im-internet.de/estg/__44a.html",
+    "raw_path": "data/raw/estg-44a9.html",
+    "retrieved_at": "2026-11-21T19:17:16.124043+00:00",
+    "sha256": "1589436abec915a0d49be85ff82d5319831789eb3873a391c983fef6726cf72d"
+  },
+  {
+    "id": "kstg-32",
+    "url": "https://www.gesetze-im-internet.de/kstg_1977/__32.html",
+    "raw_path": "data/raw/kstg-32.html",
+    "retrieved_at": "2026-11-21T19:17:16.130569+00:00",
+    "sha256": "e75ea33878af56c9b8fb062b5bf35c192e7f1060f5c93add93f160a98318d820"
+  },
+  {
+    "id": "solzg-3",
+    "url": "https://www.gesetze-im-internet.de/solzg_1995/__3.html",
+    "raw_path": "data/raw/solzg-3.html",
+    "retrieved_at": "2026-11-21T19:17:16.228467+00:00",
+    "sha256": "259b2be21d91f243556ad6059a7d0d88011408d3d0c63204b06148b12929f1b6"
+  },
+  {
+    "id": "solzg-4",
+    "url": "https://www.gesetze-im-internet.de/solzg_1995/__4.html",
+    "raw_path": "data/raw/solzg-4.html",
+    "retrieved_at": "2026-11-21T19:17:16.232761+00:00",
+    "sha256": "dd28933ed36da19cae72de5a054f9edbea5c5919cb2aeac6efc257afe9fab058"
+  },
+  {
+    "id": "solzg-5",
+    "url": "https://www.gesetze-im-internet.de/solzg_1995/__5.html",
+    "raw_path": "data/raw/solzg-5.html",
+    "retrieved_at": "2026-11-21T19:17:16.228414+00:00",
+    "sha256": "b415b4349ffc6d195d7f211ed0e535e7366c32a7f79a4968cbb948dacfc11e52"
+  },
+  {
+    "id": "bzst-exemption",
+    "url": "https://online.portal.bzst.de/SharedDocs/Leistungsbeschreibung/DE/freistellung_abzugsteuer_kapitalertraege.html",
+    "raw_path": "data/raw/bzst-exemption.html",
+    "retrieved_at": "2026-11-21T19:17:16.323706+00:00",
+    "sha256": "6956183cc405e1fd2551c6b8658a36dc662a565e50c1b3494adb7779a5c9f6ef"
+  },
+  {
+    "id": "bzst-refund",
+    "url": "https://online.portal.bzst.de/SharedDocs/Leistungsbeschreibung/DE/erstattung_abzugsteuer_kapitalertraege_50c_estg.html",
+    "raw_path": "data/raw/bzst-refund.html",
+    "retrieved_at": "2026-11-21T19:17:16.323245+00:00",
+    "sha256": "0c1d7c8c81109be26d38cb759ffe99e0832164a4f5e5f62566d4f34065c319dd"
+  },
+  {
+    "id": "dba-nl-2026",
+    "url": "https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Steuern/Internationales_Steuerrecht/Staatenbezogene_Informationen/Laender_A_Z/Niederlande/2026-05-18-Niederlande-Abkommen-DBA-Bekanntmachung.pdf?__blob=publicationFile&v=2",
+    "raw_path": "data/raw/dba-nl-2026.pdf",
+    "retrieved_at": "2026-11-21T19:17:16.356252+00:00",
+    "sha256": "7967c0245c14ef07bdc4bc85b5a1ce76652057e010d382db328591d7e0e90acc"
+  },
+  {
+    "id": "dba-nl-register",
+    "url": "https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Steuern/Internationales_Steuerrecht/Staatenbezogene_Informationen/Laender_A_Z/Niederlande/2012-12-10-Niederlande-Abkommen-DBA.html",
+    "raw_path": "data/raw/dba-nl-register.html",
+    "retrieved_at": "2026-11-21T19:17:16.255470+00:00",
+    "sha256": "1c96e162c413e760864071086cc65dc1d6058d67d84a0708938c2d678af542a7"
+  }
+]
