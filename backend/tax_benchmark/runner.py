@@ -40,6 +40,8 @@ withholding_tax_cents, solidarity_surcharge_cents, total_withholding_cents, net_
 refund_status (potential_on_application/conditional_on_holding_completion/not_needed/
 unavailable_under_requested_route/undetermined/requires_review/not_assessed), refund_amount_cents,
 missing_facts (array of case fact field names), source_ids (array), evidence_ids (array), reasoning.
+relief_route is the assessed route's code: copy facts.requested_route from case_facts,
+or the relief_route code from evaluate_payment. Put descriptive route wording in reasoning.
 Unknown amounts must be null. Cite source and evidence IDs actually supporting the answer.
 Only cite passages/documents returned by tools, including supporting text attached to a decision result.
 """
