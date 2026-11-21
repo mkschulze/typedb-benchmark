@@ -14,6 +14,11 @@ CONFIGURATIONS = [
         "description": "Structured relationships and evidence, without decision functions.",
     },
     {
+        "id": "typedb_schema",
+        "name": "TypeDB + schema",
+        "description": "The same facts and sources, with the structural TypeDB schema in the model context; no decision functions.",
+    },
+    {
         "id": "typedb_functions",
         "name": "TypeDB + functions",
         "description": "Structured context with executable decision logic.",
@@ -62,7 +67,7 @@ class RunRequest(BaseModel):
 
     case_ids: list[str] = Field(min_length=1, max_length=100)
     model_ids: list[str] = Field(min_length=1, max_length=10)
-    configurations: list[str] = Field(min_length=1, max_length=4)
+    configurations: list[str] = Field(min_length=1, max_length=len(CONFIGURATIONS))
     repetitions: int = Field(default=1, ge=1, le=5, strict=True)
     max_steps: int = Field(default=6, ge=1, le=12, strict=True)
 

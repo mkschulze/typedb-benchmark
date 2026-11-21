@@ -16,6 +16,7 @@ let budgetSnapshot = { limit_eur: 30, spent_eur: 5, reserved_eur: 2, committed_e
 let budgetUnavailable = false;
 let cancelledRun: Run = run;
 let crewaiAvailable = true;
+let schemaApproach = false;
 let harnessesUnavailable = false;
 let savedRuns: Run[] = [];
 let caseSnapshot = payment;
@@ -34,7 +35,7 @@ beforeEach(() => {
   createdRun = run; polledRun = run; cancelledRun = run;
   budgetSnapshot = { limit_eur: 30, spent_eur: 5, reserved_eur: 2, committed_eur: 7, remaining_eur: 23, blocked: false };
   budgetUnavailable = false;
-  crewaiAvailable = true; harnessesUnavailable = false; savedRuns = [];
+  crewaiAvailable = true; schemaApproach = false; harnessesUnavailable = false; savedRuns = [];
   caseSnapshot = payment;
   vi.stubGlobal('fetch', vi.fn(async (path: string, options?: RequestInit) => {
     const url = String(path);
@@ -49,7 +50,7 @@ beforeEach(() => {
       '/api/health': { status: 'ok', typedb: { available: true }, legal_review: 'provisional' },
       '/api/cases': [caseSnapshot],
       '/api/models': [{ id: 'local', name: 'Local model', configured, provider: 'OpenAI-compatible' }],
-      '/api/configurations': [{ id: 'rag', name: 'Retrieval baseline', description: 'Source retrieval.' }, { id: 'sql', name: 'SQL control', description: 'Equivalent structured rules.' }],
+      '/api/configurations': [{ id: 'rag', name: 'Retrieval baseline', description: 'Source retrieval.' }, { id: 'sql', name: 'SQL control', description: 'Equivalent structured rules.' }, ...(schemaApproach ? [{ id: 'typedb_schema', name: 'TypeDB + schema', description: 'Schema in the model context, without decision functions.' }] : [])],
       '/api/sources': [{ id: 'estg-50c', title: 'EStG §50c', locator: 'Section 50c', url: 'https://www.gesetze-im-internet.de/estg/__50c.html', text: 'A source summary about the exemption procedure.', retrieved_at: '2026-11-21', sha256: 'abc123' }],
       '/api/runs': savedRuns,
       [`/api/cases/${caseSnapshot.id}/reference`]: { answer, kind: 'reference', review_status: 'provisional' },
@@ -63,6 +64,20 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 
 describe('language selection', () => {
+  it('shows the separate schema approach in both languages and submits its exact ID', async () => {
+    schemaApproach = true;
+    window.localStorage.setItem('tax-benchmark-language', 'de');
+    const user = userEvent.setup();
+    render(<App />);
+    expect(await screen.findByRole('checkbox', { name: 'TypeDB + Schema' })).toBeTruthy();
+    expect(screen.getByText('Dieselben Fakten und Quellen mit dem strukturellen TypeDB-Schema im Modellkontext; ohne Entscheidungsfunktionen.')).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: 'English' }));
+    expect(screen.getByRole('checkbox', { name: 'TypeDB + schema' })).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: 'Compare approaches' }));
+    const post = vi.mocked(fetch).mock.calls.find(([, options]) => options?.method === 'POST');
+    expect(JSON.parse(String(post?.[1]?.body)).configurations).toEqual(['rag', 'sql', 'typedb_schema']);
+  });
+
   it('defaults to German and presents translated cases, reference reasoning and source summaries', async () => {
     window.localStorage.removeItem('tax-benchmark-language');
     caseSnapshot = { ...payment, id: 'dev-01' };

@@ -118,7 +118,7 @@ const german: Record<string, string> = {
   'German dividend withholding tax': 'Deutscher Steuerabzug auf Dividenden',
   'Benchmark workspace': 'Benchmark-Arbeitsbereich',
   'Source register': 'Quellenverzeichnis',
-  'One dividend. Four approaches. Follow the facts behind the answer.': 'Eine Dividende. Vier Ansätze. Verfolgen Sie die Fakten hinter der Antwort.',
+  'One dividend. Five approaches. Follow the facts behind the answer.': 'Eine Dividende. Fünf Ansätze. Verfolgen Sie die Fakten hinter der Antwort.',
   'Run reproducible comparisons across cases, models and approaches.': 'Vergleichen Sie Fälle, Modelle und Ansätze in reproduzierbaren Läufen.',
   'The official legal material behind every approach, preserved in a shared source snapshot.': 'Die amtlichen Rechtsquellen aller Ansätze, in einem gemeinsamen Quellenstand festgehalten.',
   'connected': 'verbunden',
@@ -253,6 +253,7 @@ const german: Record<string, string> = {
 const configurationCopy: Record<string, { name: string; description: string }> = {
   rag: { name: 'Quellenrecherche', description: 'Das Modell durchsucht dieselben Dokumente und Fallunterlagen.' },
   typedb_context: { name: 'TypeDB-Kontext', description: 'Strukturierte Beziehungen und Belege ohne Entscheidungsfunktionen.' },
+  typedb_schema: { name: 'TypeDB + Schema', description: 'Dieselben Fakten und Quellen mit dem strukturellen TypeDB-Schema im Modellkontext; ohne Entscheidungsfunktionen.' },
   typedb_functions: { name: 'TypeDB + Funktionen', description: 'Strukturierter Kontext mit ausführbarer Entscheidungslogik.' },
   sql: { name: 'SQL-Kontrolle', description: 'Gleichwertige kuratierte Fakten und Entscheidungslogik über SQL.' },
 };

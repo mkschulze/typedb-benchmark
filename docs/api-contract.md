@@ -25,7 +25,7 @@ Domain module interface:
 - `GET /cases`: all public case objects. `GET /cases/{id}`: one public case, 404 if absent.
 - `GET /cases/{id}/reference`: `{"answer":<tax answer>, "kind":"reference", "review_status":"provisional"}`.
 - `GET /sources`: source objects. `GET /models`: list of `{id, name, configured, provider}`.
-- `GET /configurations`: `[{id, name, description}]`; IDs: `rag`, `typedb_context`, `typedb_functions`, `sql`.
+- `GET /configurations`: `[{id, name, description}]`; IDs: `rag`, `typedb_context`, `typedb_schema`, `typedb_functions`, `sql`.
 - `GET /runs`: newest-first run objects. `GET /runs/{id}`: persisted run and trials.
 - `GET /runs/{id}/export`: JSON download of manifest, states, trials, and aggregate metrics.
 
@@ -63,10 +63,12 @@ Cost fields: trial `metrics.cost_usd` is retained as a catalogue estimate alias 
 
 ## Harnesses, retries and explicit recovery
 
-`GET /api/harnesses` returns `id`, `name`, `available`, `description` and optional version fields. `RunRequest.harness` is `direct` (default/legacy) or `crewai`; this is independent of the four configurations. A missing pinned CrewAI dependency returns503 before work. Manifests record framework settings, version and absolute provider deadline; `model_request` trace events preserve portable messages and removed framework metadata keys.
+`GET /api/harnesses` returns `id`, `name`, `available`, `description` and optional version fields. `RunRequest.harness` is `direct` (default/legacy) or `crewai`; this is independent of the five configurations. A missing pinned CrewAI dependency returns503 before work. Manifests record framework settings, version and absolute provider deadline; `model_request` trace events preserve portable messages and removed framework metadata keys.
 
 An optional `request_key` (1–100 letters/digits/`_.:-`) makes creation idempotent. The same canonical request returns its original run, including terminal states; a different body with that key returns409. SQLite enforces uniqueness. No replay occurs on a retry.
 
 `POST /api/runs/{id}/resume` explicitly continues an interrupted run only after verifying its frozen case/source/gold/prompt inputs and configured services. An unresolved checkpoint is retained as a failed execution attempt with unknown aggregate usage and full fee reservation; the original checkpoint is copied into `continuations`. Existing trial keys are skipped. Cancellation/failed setup is not automatically resumed. `/api/health.worker.available` reports the local consumer's liveness.
 
 Language is a frontend presentation preference. No locale field is sent to the benchmark runner or model provider.
+
+`typedb_schema` supplies the structural `typedb/schema.tql` in the system message, with the same tools as `rag`/`typedb_context`; `evaluate_payment` stays unavailable. Runs selecting this approach include `manifest.schema_context` with `path`, exact `text`, UTF-8 `sha256` and the effective `system_prompt`. Explicit continuation also verifies that snapshot. Other configurations and historical manifests retain their existing semantics. Up to five configurations may be selected; the 1,800-trial cap is unchanged.

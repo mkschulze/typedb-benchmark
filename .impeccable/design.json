@@ -476,7 +476,7 @@
     {
       "name": "Agent Harness Selector",
       "kind": "input",
-      "description": "Run-level Direct/CrewAI select, independent of the four approaches; capability-disabled options, active-run locking, stable payload IDs, and legacy Direct fallback.",
+      "description": "Run-level Direct/CrewAI select, independent of the five approaches; capability-disabled options, active-run locking, stable payload IDs, and legacy Direct fallback.",
       "html": "<div class=\"ds-harness\"><label for=\"ds-harness-select\">Agenten-Framework</label><select id=\"ds-harness-select\" aria-describedby=\"ds-harness-description\"><option value=\"direct\" selected>Direkter Agent</option><option value=\"crewai\" disabled>CrewAI — nicht verfügbar</option></select><p id=\"ds-harness-description\">Direkter Agent mit Werkzeugaufrufen.</p></div>",
       "css": ".ds-harness{font-family:'Open Sans',sans-serif;color:var(--ink,#151713)}.ds-harness label{display:block;font-weight:700;font-size:.83rem;margin-bottom:9px;line-height:1.5}.ds-harness select{font:inherit;font-size:.89rem;background:#fff;border:1px solid #9ba28f;border-radius:2px;color:var(--ink,#151713);min-height:45px;padding:10px 32px 10px 12px;width:100%;min-width:0;text-overflow:ellipsis}.ds-harness select:hover{border-color:#5e6a4c}.ds-harness select:focus-visible{outline:2px solid var(--focus,#537e14);outline-offset:1px}.ds-harness select:disabled{border-color:#c9cec2;color:#70766a;background:#f5f6f2}.ds-harness p{margin:9px 0 0;color:var(--muted,#62665e);font-size:.76rem;line-height:1.7}@media(max-width:680px){.ds-harness label{font-size:.79rem;margin-bottom:7px}.ds-harness select{min-height:46px}}"
     }

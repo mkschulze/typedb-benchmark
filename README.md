@@ -1,6 +1,6 @@
 # Tax Context Benchmark
 
-A FastAPI + React application for demonstrating German dividend withholding and testing how structured context changes an LLM's answers. The first screen explains a synthetic German GmbH → Dutch corporate shareholder payment. A separate view runs the same model across source retrieval, TypeDB context, TypeDB with decision functions, and a SQL control.
+A FastAPI + React application for demonstrating German dividend withholding and testing how structured context changes an LLM's answers. The first screen explains a synthetic German GmbH → Dutch corporate shareholder payment. A separate view runs the same model across source retrieval, TypeDB context, TypeDB with schema in the model context, TypeDB with decision functions, and a SQL control.
 
 All 40 cases and their expected answers are **provisional pending independent legal review**. The application ships with no invented accuracy, token, latency, or savings figures. A reference walkthrough is a deterministic worked example, not an LLM benchmark result.
 
@@ -50,7 +50,9 @@ Optional `EMBEDDING_BASE_URL`, `EMBEDDING_MODEL`, `EMBEDDING_API_KEY`, `EMBEDDIN
 
 The DE/EN header switch defaults to German and remembers the browser selection. Interface labels, synthetic case displays, source summaries and deterministic reference explanations are translated for presentation. Original evidence bodies, model reasoning, record identifiers and raw exports remain available in their original form. Language selection never changes benchmark prompts, cases or grading.
 
-Choose **Direct agent** or **CrewAI** separately from the four data/tool approaches. CrewAI1.15.44 uses a real single Agent/Task/Crew, with memory, delegation, tool caching, planning and framework retries disabled. Its JSON-action bridge routes every model/tool call through the same host limits, evidence tracking and EUR30 ledger. Final-answer validation and bounded repair are shared. Actual provider messages, effective settings and framework version are recorded. Provider reasoning effort currently stays at its default; output is capped at2048 tokens per call in the recorded pilot.
+The **TypeDB + schema** approach (`typedb_schema`) supplies the complete structural `typedb/schema.tql` in the LLM system context, with the same facts and source tools as the retrieval baseline. It excludes executable functions and computed decisions. The manifest freezes the exact schema text, SHA-256 and effective system prompt; actual provider messages remain traced and budgeted. The historical `typedb_context` approach remains a facts-only parity control. Schema exposure is implemented for both harnesses; its benefit requires new measured results.
+
+Choose **Direct agent** or **CrewAI** separately from the five data/tool approaches. CrewAI1.15.44 uses a real single Agent/Task/Crew, with memory, delegation, tool caching, planning and framework retries disabled. Its JSON-action bridge routes every model/tool call through the same host limits, evidence tracking and EUR30 ledger. Final-answer validation and bounded repair are shared. Actual provider messages, effective settings and framework version are recorded. Provider reasoning effort currently stays at its default; output is capped at2048 tokens per call in the recorded pilot.
 
 `./dev.sh` and the Docker image install the optional orchestration dependency. For a manual installation use `uv sync --extra orchestration`. Without it the API exposes CrewAI as unavailable, with no direct-agent fallback carrying a CrewAI label.
 

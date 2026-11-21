@@ -9,6 +9,7 @@ import sqlite3
 import time
 import uuid
 from collections import defaultdict
+from pathlib import Path
 from statistics import mean
 
 from pydantic import ValidationError
@@ -258,6 +259,7 @@ class RunService:
         self.sources = {source["id"]: source for source in sources}
         self.gold = gold
         self.models = {model.id: model for model in models}
+        self.schema_text = (Path(__file__).resolve().parents[2] / "typedb/schema.tql").read_bytes().decode("utf-8")
         self.typedb = typedb
         self.sql_evaluator = sql_evaluator
         self.provider = provider or ChatProvider()
@@ -284,11 +286,20 @@ class RunService:
             except asyncio.CancelledError:
                 pass
 
+    def system_prompt(self, configuration, max_steps):
+        available = "case_facts, search_sources, read_source"
+        if configuration in {"typedb_functions", "sql"}:
+            available += ", evaluate_payment"
+        prompt = SYSTEM_PROMPT + f'\nAvailable actions: {available}. Max turns including final answer: {max_steps}.'
+        if configuration == "typedb_schema":
+            prompt += "\n\nTypeDB schema (structural context, not legal evidence):\n```typeql\n" + self.schema_text + "\n```"
+        return prompt
+
     def manifest(self, request):
         versions = {}
         for package in ("fastapi", "httpx", "pydantic", "typedb-driver"):
             versions[package] = importlib.metadata.version(package)
-        return {
+        manifest = {
             "dataset_sha256": fingerprint(list(self.cases.values())),
             "sources_sha256": fingerprint(list(self.sources.values())),
             "gold_sha256": fingerprint(self.gold),
@@ -339,6 +350,15 @@ class RunService:
             "scoring_denominator": "All attempted trials, including invalid answers and execution failures",
             "created_at": utc_now(),
         }
+        if "typedb_schema" in request.configurations:
+            manifest["schema_context"] = {
+                "configuration": "typedb_schema",
+                "path": "typedb/schema.tql",
+                "text": self.schema_text,
+                "sha256": hashlib.sha256(self.schema_text.encode("utf-8")).hexdigest(),
+                "system_prompt": self.system_prompt("typedb_schema", request.max_steps),
+            }
+        return manifest
 
     def prior_request(self, request):
         prior = self.store.get_request_key(request.request_key) if request.request_key else None
@@ -386,8 +406,8 @@ class RunService:
         if set(request.model_ids) - self.models.keys() or set(request.case_ids) - self.cases.keys():
             raise RunRecoveryConflict("The interrupted run references unavailable models or cases")
         current = self.manifest(request)
-        for field in ("dataset_sha256", "sources_sha256", "gold_sha256", "system_prompt"):
-            if run["manifest"].get(field) != current[field]:
+        for field in ("dataset_sha256", "sources_sha256", "gold_sha256", "system_prompt", "schema_context"):
+            if run["manifest"].get(field) != current.get(field):
                 raise RunRecoveryConflict("The frozen inputs changed; start a separately identified experiment")
         active = run.pop("active_trial", None)
         checkpoint_before_recovery = json.loads(json.dumps(active)) if active else None
@@ -601,8 +621,7 @@ class RunService:
         allowed_tools = {'case_facts', 'search_sources', 'read_source'}
         if configuration in {'typedb_functions', 'sql'}:
             allowed_tools.add('evaluate_payment')
-        available = ', '.join(name for name in ('case_facts', 'search_sources', 'read_source', 'evaluate_payment') if name in allowed_tools)
-        prompt = SYSTEM_PROMPT + f'\nAvailable actions: {available}. Max turns including final answer: {max_steps}.'
+        prompt = self.system_prompt(configuration, max_steps)
         question = {key: case[key] for key in ('question', 'payment_date', 'knowledge_date')}
         question = {'case_id': case['id'], **question}
         messages = [{'role': 'system', 'content': prompt}, {'role': 'user', 'content': json.dumps(question)}]

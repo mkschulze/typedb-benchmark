@@ -186,12 +186,12 @@ details > summary::marker { color: #65734e; font-size: .75rem; }
 .approach-explainer { margin: 34px 0 0; padding-top: 2px; }
 .approach-explainer > h2 { font-size: 1.06rem; }
 .approach-explainer > p { margin-top: 5px; font-size: .85rem; color: var(--muted); }
-.approach-list { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 28px; margin-top: 21px; }
+.approach-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 23px 28px; margin-top: 21px; }
 .approach-list > div { padding: 16px 0 0; position: relative; border-top: 1px solid var(--line); }
 .approach-list h3 { font-size: .88rem; }
 .approach-list p { margin-top: 7px; font-size: .77rem; color: var(--muted); line-height: 1.7; }
 .approach-mark { position: absolute; top: -1px; width: 32px; height: 2px; background: #67735a; }
-.approach-mark.typedb_context { background: #6f8f47; }
+.approach-mark.typedb_context, .approach-mark.typedb_schema { background: #6f8f47; }
 .approach-mark.typedb_functions { background: #527b1d; }
 .approach-mark.sql { background: #333b29; }
 
