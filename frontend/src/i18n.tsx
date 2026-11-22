@@ -4,7 +4,8 @@ import contentDe from './locales/content.de.json';
 import type { Configuration, DividendCase, Harness, HarnessId, Source } from './types';
 
 type Language = 'de' | 'en';
-const storageKey = 'tax-benchmark-language';
+// renamed when the default became English, so the previously auto-saved 'de' is ignored
+const storageKey = 'tax-benchmark-lang';
 const german: Record<string, string> = {
   'Agent harness': 'Agenten-Framework',
   'Direct agent': 'Direkter Agent',
@@ -13,15 +14,12 @@ const german: Record<string, string> = {
   'Shared JSON-action agent loop; fresh state per trial.': 'Gemeinsame Agentenschleife mit JSON-Aktionen; neuer Zustand für jeden Einzelversuch.',
   'Single agent; memory, delegation, caching and planning disabled.': 'Ein Agent; Gedächtnis, Delegation, Cache und Planung deaktiviert.',
   ' — unavailable': ' — nicht verfügbar',
-  'Shared experiment budget': 'Gemeinsames Versuchsbudget',
-  'experiment limit': 'Budgetlimit',
-  'New calls paused': 'Neue Aufrufe pausiert',
-  'Remaining': 'Verbleibend',
+  'Experiment costs': 'Versuchskosten',
   'Allocated': 'Angerechnet',
   'Reserved': 'Reserviert',
   'Shared across all providers. USD→EUR estimates include a safety buffer; unknown charges stay reserved.': 'Gilt für alle Anbieter. USD→EUR-Schätzungen enthalten einen Sicherheitspuffer; unbekannte Kosten bleiben reserviert.',
-  'Loading experiment budget…': 'Versuchsbudget wird geladen…',
-  'Budget status unavailable. The server still checks the limit before model calls.': 'Budgetstatus nicht verfügbar. Der Server prüft die Grenze weiterhin vor jedem Modellaufruf.',
+  'Loading experiment costs…': 'Versuchskosten werden geladen…',
+  'Cost status unavailable.': 'Kostenstatus nicht verfügbar.',
   'Unknown': 'Unbekannt',
   'Yes': 'Ja',
   'No': 'Nein',
@@ -217,7 +215,6 @@ const german: Record<string, string> = {
   'Could not refresh this run.': 'Dieser Lauf konnte nicht aktualisiert werden.',
   'Request failed ({status}). Please retry.': 'Anfrage fehlgeschlagen ({status}). Bitte versuchen Sie es erneut.',
   'TypeDB is unavailable. Start the database and retry.': 'TypeDB ist nicht verfügbar. Starten Sie die Datenbank und versuchen Sie es erneut.',
-  'Experiment budget stopped this run: limit reached.': 'Das Versuchsbudget hat diesen Lauf gestoppt: Grenze erreicht.',
   'Failed to fetch': 'Verbindung fehlgeschlagen. Bitte versuchen Sie es erneut.',
   'NetworkError when attempting to fetch resource.': 'Verbindung fehlgeschlagen. Bitte versuchen Sie es erneut.',
   'Retrieval baseline': 'Retrieval-Basislinie',
@@ -239,7 +236,6 @@ const german: Record<string, string> = {
   'Protocol 14 April 2025 and consolidated text 2026': 'Protokoll vom 14. April 2025 und konsolidierte Fassung 2026',
   'Local implementation scope; linked primary law, not an official legal text': 'Lokaler Umsetzungsumfang; verknüpftes Primärrecht, kein amtlicher Gesetzestext',
   'Retrieved current official text; application to 2026 fixtures provisional pending independent legal review. No inferred historical version changes.': 'Aktueller amtlicher Text abgerufen; die Anwendung auf die Fälle von 2026 bleibt bis zu einer unabhängigen rechtlichen Prüfung vorläufig. Historische Fassungsänderungen werden nicht unterstellt.',
-  'The shared experiment budget cannot cover another paid request': 'Das gemeinsame Versuchsbudget reicht für keinen weiteren kostenpflichtigen Aufruf.',
   'Run setup failed. Check the configured services; completed trials are preserved.': 'Der Lauf konnte nicht eingerichtet werden. Prüfen Sie die konfigurierten Dienste; abgeschlossene Einzelversuche bleiben erhalten.',
   'The local run queue is full; wait for a run to finish': 'Die lokale Warteschlange ist voll. Warten Sie, bis ein Lauf beendet ist.',
   'Answer cites an unknown source ID': 'Die Antwort zitiert eine unbekannte Quellen-ID.',
@@ -272,7 +268,7 @@ const extraLabels: Record<string, string> = {
 };
 
 function storedLanguage(): Language {
-  try { return window.localStorage.getItem(storageKey) === 'en' ? 'en' : 'de'; } catch { return 'de'; }
+  try { return window.localStorage.getItem(storageKey) === 'de' ? 'de' : 'en'; } catch { return 'en'; }
 }
 
 function useLanguageValue() {

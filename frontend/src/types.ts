@@ -49,6 +49,5 @@ export interface RunRequest {
 }
 export interface Health { status: string; typedb: Record<string, unknown>; legal_review: string }
 export interface Budget {
-  limit_eur: number; spent_eur: number; reserved_eur: number;
-  committed_eur: number; remaining_eur: number; blocked: boolean;
+  spent_eur: number; reserved_eur: number; committed_eur: number;
 }

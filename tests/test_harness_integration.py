@@ -4,9 +4,7 @@ import json
 import pytest
 from fastapi.testclient import TestClient
 from tax_benchmark.api import create_app
-from tax_benchmark.budget import ExperimentBudget
 from tax_benchmark.models import RunRequest
-from tax_benchmark.storage import RunStore
 from test_budget_integration import priced
 from test_runner import ANSWER, CASE, service_for
 
@@ -48,11 +46,11 @@ async def test_crewai_cannot_make_more_paid_calls_than_request_cap(tmp_path):
     assert trial['metrics']['input_tokens']==20
 
 
-async def test_crewai_uses_same_total_budget_gate_before_network(tmp_path):
+async def test_crewai_uses_same_budget_gate_before_network(tmp_path):
     provider=SequenceProvider()
     service=service_for(tmp_path,provider)
     priced(service)
-    service.budget=ExperimentBudget(RunStore(tmp_path/'zero.sqlite'),limit_eur=0)
+    service.models['local']=service.models['local'].model_copy(update={'price_date':'2000-01-01'})
     service.enforce_budget=True
     trial=await service.trial('missing',CASE,service.models['local'],'rag',1,3,harness='crewai')
     assert trial['status']=='interrupted'

@@ -73,5 +73,4 @@ async def test_embedding_reported_cost_above_reservation_blocks_more_spending(mo
     retriever=SourceRetriever([],budget=budget)
     await retriever.embed(['source'])
     assert budget.snapshot()['spent_eur'] > 0.5
-    assert budget.snapshot()['blocked']
     assert retriever.usage_records[0]['provider_reported_cost_usd']==0.5

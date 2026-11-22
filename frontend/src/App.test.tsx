@@ -12,7 +12,7 @@ let configured = true;
 let rejectRun = false;
 let createdRun: Run = run;
 let polledRun: Run = run;
-let budgetSnapshot = { limit_eur: 30, spent_eur: 5, reserved_eur: 2, committed_eur: 7, remaining_eur: 23, blocked: false };
+let budgetSnapshot = { spent_eur: 5, reserved_eur: 2, committed_eur: 7 };
 let budgetUnavailable = false;
 let cancelledRun: Run = run;
 let crewaiAvailable = true;
@@ -29,11 +29,11 @@ beforeEach(() => {
     removeItem: (key: string) => preferences.delete(key),
     clear: () => preferences.clear(),
   });
-  window.localStorage.setItem('tax-benchmark-language', 'en');
+  window.localStorage.setItem('tax-benchmark-lang', 'en');
   configured = true;
   rejectRun = false;
   createdRun = run; polledRun = run; cancelledRun = run;
-  budgetSnapshot = { limit_eur: 30, spent_eur: 5, reserved_eur: 2, committed_eur: 7, remaining_eur: 23, blocked: false };
+  budgetSnapshot = { spent_eur: 5, reserved_eur: 2, committed_eur: 7 };
   budgetUnavailable = false;
   crewaiAvailable = true; schemaApproach = false; harnessesUnavailable = false; savedRuns = [];
   caseSnapshot = payment;
@@ -66,7 +66,7 @@ afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 describe('language selection', () => {
   it('shows the separate schema approach in both languages and submits its exact ID', async () => {
     schemaApproach = true;
-    window.localStorage.setItem('tax-benchmark-language', 'de');
+    window.localStorage.setItem('tax-benchmark-lang', 'de');
     const user = userEvent.setup();
     render(<App />);
     expect(await screen.findByRole('checkbox', { name: 'TypeDB + Schema' })).toBeTruthy();
@@ -78,8 +78,16 @@ describe('language selection', () => {
     expect(JSON.parse(String(post?.[1]?.body)).configurations).toEqual(['rag', 'sql', 'typedb_schema']);
   });
 
-  it('defaults to German and presents translated cases, reference reasoning and source summaries', async () => {
-    window.localStorage.removeItem('tax-benchmark-language');
+  it('defaults to English when no language is saved', async () => {
+    window.localStorage.removeItem('tax-benchmark-lang');
+    render(<App />);
+    expect(await screen.findByRole('heading', { name: 'Reference walkthrough' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'English' }).getAttribute('aria-pressed')).toBe('true');
+    expect(document.documentElement.lang).toBe('en');
+  });
+
+  it('presents translated cases, reference reasoning and source summaries in German', async () => {
+    window.localStorage.setItem('tax-benchmark-lang', 'de');
     caseSnapshot = { ...payment, id: 'dev-01' };
     const user = userEvent.setup();
     render(<App />);
@@ -90,7 +98,7 @@ describe('language selection', () => {
     expect(screen.getAllByText('30. Juni 2026')).toHaveLength(2);
     expect(screen.getByRole('button', { name: 'Deutsch' }).getAttribute('aria-pressed')).toBe('true');
     expect(document.documentElement.lang).toBe('de');
-    expect(window.localStorage.getItem('tax-benchmark-language')).toBe('de');
+    expect(window.localStorage.getItem('tax-benchmark-lang')).toBe('de');
     await user.click(screen.getByRole('button', { name: 'Referenzbelege prüfen' }));
     const evidence = screen.getByRole('dialog', { name: 'Belege und Antwort' });
     expect(within(evidence).getByText(contentDe.sources['estg-50c'].text)).toBeTruthy();
@@ -102,7 +110,7 @@ describe('language selection', () => {
   });
 
   it('switches in place and restores the persisted language after remounting', async () => {
-    window.localStorage.removeItem('tax-benchmark-language');
+    window.localStorage.setItem('tax-benchmark-lang', 'de');
     const user = userEvent.setup();
     const mounted = render(<App />);
     await screen.findByRole('heading', { name: 'Beispielauswertung' });
@@ -110,7 +118,7 @@ describe('language selection', () => {
     await user.click(screen.getByRole('button', { name: 'English' }));
     expect(screen.getByRole('heading', { name: 'German dividend withholding tax' })).toBeTruthy();
     expect((screen.getByRole('combobox', { name: 'Agent harness' }) as HTMLSelectElement).value).toBe('crewai');
-    expect(window.localStorage.getItem('tax-benchmark-language')).toBe('en');
+    expect(window.localStorage.getItem('tax-benchmark-lang')).toBe('en');
     expect(document.documentElement.lang).toBe('en');
     mounted.unmount();
     render(<App />);
@@ -118,11 +126,11 @@ describe('language selection', () => {
     expect(screen.getByRole('button', { name: 'English' }).getAttribute('aria-pressed')).toBe('true');
     await user.click(screen.getByRole('button', { name: 'Deutsch' }));
     expect(screen.getByRole('heading', { name: 'Beispielauswertung' })).toBeTruthy();
-    expect(window.localStorage.getItem('tax-benchmark-language')).toBe('de');
+    expect(window.localStorage.getItem('tax-benchmark-lang')).toBe('de');
   });
 
   it.each(['Demonstration', 'Benchmark'])('keeps the %s harness payload unchanged in German', async (page) => {
-    window.localStorage.removeItem('tax-benchmark-language');
+    window.localStorage.setItem('tax-benchmark-lang', 'de');
     createdRun = { ...run, request: { harness: 'crewai' } };
     const user = userEvent.setup();
     render(<App />);
@@ -145,17 +153,17 @@ describe('language selection', () => {
     expect(within(evidence).getByText(/read_source/)).toBeTruthy();
   });
 
-  it('keeps German controls usable when saved preferences cannot be read or written', async () => {
+  it('keeps language controls usable when saved preferences cannot be read or written', async () => {
     vi.stubGlobal('localStorage', { getItem: () => { throw new Error('blocked'); }, setItem: () => { throw new Error('blocked'); } });
     const user = userEvent.setup();
     render(<App />);
-    await screen.findByRole('heading', { name: 'Beispielauswertung' });
-    await user.click(screen.getByRole('button', { name: 'English' }));
-    expect(screen.getByRole('heading', { name: 'Reference walkthrough' })).toBeTruthy();
+    await screen.findByRole('heading', { name: 'Reference walkthrough' });
+    await user.click(screen.getByRole('button', { name: 'Deutsch' }));
+    expect(screen.getByRole('heading', { name: 'Beispielauswertung' })).toBeTruthy();
   });
 
   it('formats recorded German metrics and preserves structured embedding usage as an original record', async () => {
-    window.localStorage.removeItem('tax-benchmark-language');
+    window.localStorage.setItem('tax-benchmark-lang', 'de');
     createdRun = { ...run, trials: [{ ...run.trials[0], metrics: { ...run.trials[0].metrics, cached_tokens: 1000, estimated_cost_usd: 0.012345, provider_reported_cost_usd: 0.02, embedding_usage: [{ model: 'embed-1', tokens: 12 }] } }] } as unknown as Run;
     const user = userEvent.setup();
     render(<App />);
@@ -177,14 +185,13 @@ describe('language selection', () => {
 });
 
 describe('the demonstration', () => {
-  it('shows one provider-shared budget and refreshes it during active polling and terminal interruption', async () => {
+  it('shows provider-shared costs and refreshes them during active polling and terminal interruption', async () => {
     createdRun = { ...run, status: 'running', completed_trials: 0, trials: [] };
     polledRun = createdRun;
     const user = userEvent.setup();
     render(<App />);
-    expect(await screen.findByText('€30 experiment limit')).toBeTruthy();
-    const budget = screen.getByRole('region', { name: 'Shared experiment budget' });
-    expect(within(budget).getByText('€23.00')).toBeTruthy();
+    const budget = await screen.findByRole('region', { name: 'Experiment costs' });
+    expect(await within(budget).findByText('€5.00')).toBeTruthy();
     expect(within(budget).getByText('Allocated')).toBeTruthy();
     expect(within(budget).getByText(/Shared across all providers/)).toBeTruthy();
     expect(within(budget).getByText(/estimates include a safety buffer/)).toBeTruthy();
@@ -192,21 +199,20 @@ describe('the demonstration', () => {
     await screen.findByText('Example GmbH');
     await user.click(screen.getByRole('button', { name: 'Compare approaches' }));
     await screen.findByRole('heading', { name: 'Measured comparison' });
-    budgetSnapshot = { ...budgetSnapshot, spent_eur: 6, reserved_eur: 4, committed_eur: 10, remaining_eur: 20 };
-    await waitFor(() => expect(within(budget).getByText('€20.00')).toBeTruthy(), { timeout: 3500 });
-    budgetSnapshot = { ...budgetSnapshot, spent_eur: 7, reserved_eur: 23, committed_eur: 30, remaining_eur: 0, blocked: true };
-    polledRun = { ...createdRun, status: 'interrupted', error: 'Experiment budget stopped this run: limit reached.' };
-    expect(await screen.findByText('Experiment budget stopped this run: limit reached.', {}, { timeout: 3500 })).toBeTruthy();
-    await waitFor(() => expect(within(budget).getByText('€0.00')).toBeTruthy());
-    expect(within(budget).getByText('New calls paused')).toBeTruthy();
-    expect((screen.getByRole('button', { name: 'Compare approaches' }) as HTMLButtonElement).disabled).toBe(true);
+    budgetSnapshot = { spent_eur: 6, reserved_eur: 4, committed_eur: 10 };
+    await waitFor(() => expect(within(budget).getByText('€6.00')).toBeTruthy(), { timeout: 3500 });
+    budgetSnapshot = { spent_eur: 7, reserved_eur: 23, committed_eur: 30 };
+    const stopped = 'Experiment budget stopped this run: Paid model prices must be verified within the last 14 days';
+    polledRun = { ...createdRun, status: 'interrupted', error: stopped };
+    expect(await screen.findByText(stopped, {}, { timeout: 3500 })).toBeTruthy();
+    await waitFor(() => expect(within(budget).getByText('€23.00')).toBeTruthy());
   }, 8000);
 
-  it('keeps the reference workspace available when the budget endpoint fails', async () => {
+  it('keeps the reference workspace available when the cost endpoint fails', async () => {
     budgetUnavailable = true;
     render(<App />);
     expect(await screen.findByRole('heading', { name: 'Reference walkthrough' })).toBeTruthy();
-    expect(await screen.findByText('Budget status unavailable. The server still checks the limit before model calls.')).toBeTruthy();
+    expect(await screen.findByText('Cost status unavailable.')).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Inspect reference evidence' })).toBeTruthy();
   });
 

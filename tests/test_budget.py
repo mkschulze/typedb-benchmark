@@ -32,34 +32,31 @@ def priced_model(**kwargs):
     )
 
 
-def test_all_providers_and_restarts_share_the_initial_cap(tmp_path):
-    budget = budget_for(tmp_path, limit_eur=Decimal("20"))
+def test_all_providers_and_restarts_share_one_uncapped_ledger(tmp_path):
+    budget = budget_for(tmp_path)
     first = budget.reserve_usd(Decimal("10"), "provider-a")
     budget.settle(first, Decimal("6"))
-    restarted = budget_for(tmp_path, limit_eur=Decimal("30"))
-    restarted.reserve_usd(Decimal("14"), "provider-b")
-
-    with pytest.raises(BudgetError):
-        budget.reserve_usd(Decimal("0.000001"), "provider-c")
+    restarted = budget_for(tmp_path)
+    restarted.reserve_usd(Decimal("1000"), "provider-b")
 
     snapshot = restarted.snapshot()
-    assert snapshot["limit_eur"] == 20
     assert snapshot["spent_eur"] == 6
-    assert snapshot["reserved_eur"] == 14
-    assert snapshot["remaining_eur"] == 0
+    assert snapshot["reserved_eur"] == 1000
+    assert "limit_eur" not in snapshot and "blocked" not in snapshot
 
 
-def test_initial_configuration_cannot_exceed_the_authorized_30_eur(tmp_path):
-    with pytest.raises(BudgetError):
-        budget_for(tmp_path, limit_eur=Decimal("999"))
-
-
-def test_a_persisted_cap_above_the_authorized_limit_is_rejected(tmp_path):
-    budget = budget_for(tmp_path)
-    with budget.store.connection() as connection:
-        connection.execute("UPDATE experiment_budget SET limit_units=31000000000 WHERE id=1")
-    with pytest.raises(BudgetError):
-        budget_for(tmp_path)
+def test_a_ledger_created_with_the_former_cap_columns_still_works(tmp_path):
+    store = RunStore(tmp_path / "runs.sqlite")
+    with store.connection() as connection:
+        connection.execute(
+            "CREATE TABLE experiment_budget (id INTEGER PRIMARY KEY CHECK(id=1), limit_units INTEGER NOT NULL, "
+            "usd_per_eur TEXT NOT NULL, safety_multiplier TEXT NOT NULL, blocked INTEGER NOT NULL DEFAULT 0)"
+        )
+        connection.execute("INSERT INTO experiment_budget VALUES (1, 0, '2', '1', 1)")
+    budget = ExperimentBudget(store)
+    assert budget.usd_per_eur == 2
+    budget.reserve_usd(Decimal("10"), "after-cap-removal")
+    assert budget.snapshot()["reserved_eur"] == 5
 
 
 def test_fx_and_safety_apply_to_reservations_and_settled_spending(tmp_path):
@@ -75,10 +72,9 @@ def test_fx_and_safety_apply_to_reservations_and_settled_spending(tmp_path):
     snapshot = budget.snapshot()
     assert snapshot["spent_eur"] == 5.2
     assert snapshot["reserved_eur"] == 0
-    assert snapshot["remaining_eur"] == 24.8
 
 
-def test_default_exchange_rate_and_margin_protect_the_euro_cap(tmp_path):
+def test_default_exchange_rate_and_margin_apply_to_recorded_costs(tmp_path):
     budget = ExperimentBudget(RunStore(tmp_path / "runs.sqlite"))
     reservation = budget.reserve_usd(Decimal("10.99"), "paid")
     assert budget.snapshot()["reserved_eur"] == 13
@@ -92,8 +88,6 @@ def test_unreported_spending_keeps_its_bound_after_a_restart(tmp_path):
     budget.settle(reservation)
     restarted = budget_for(tmp_path)
 
-    with pytest.raises(BudgetError):
-        restarted.reserve_usd(Decimal("0.01"), "next")
     assert restarted.snapshot()["reserved_eur"] == 30
     assert restarted.snapshot()["unreported_reservations"] == 1
 
@@ -101,36 +95,26 @@ def test_unreported_spending_keeps_its_bound_after_a_restart(tmp_path):
 def test_a_crashed_request_keeps_its_reservation(tmp_path):
     budget_for(tmp_path).reserve_usd(Decimal("30"), "crashed")
     restarted = budget_for(tmp_path)
-    with pytest.raises(BudgetError):
-        restarted.reserve_usd(Decimal("1"), "next")
     assert restarted.snapshot()["pending_reservations"] == 1
 
 
-def test_concurrent_reservations_cannot_exceed_the_shared_cap(tmp_path):
+def test_concurrent_reservations_are_all_recorded(tmp_path):
     budgets = [budget_for(tmp_path) for _ in range(12)]
 
-    def reserve(budget):
-        try:
-            return budget.reserve_usd(Decimal("10"), "parallel")
-        except BudgetError:
-            return None
-
     with ThreadPoolExecutor(max_workers=12) as executor:
-        reservations = list(executor.map(reserve, budgets))
+        reservations = list(executor.map(lambda budget: budget.reserve_usd(Decimal("10"), "parallel"), budgets))
 
-    assert sum(item is not None for item in reservations) == 3
-    assert budgets[0].snapshot()["committed_eur"] == 30
+    assert len(set(reservations)) == 12
+    assert budgets[0].snapshot()["committed_eur"] == 120
 
 
-def test_actual_spend_exceeding_a_reservation_permanently_blocks_new_calls(tmp_path):
+def test_actual_spend_exceeding_a_reservation_is_recorded_without_blocking(tmp_path):
     budget = budget_for(tmp_path)
     reservation = budget.reserve_usd(Decimal("1"), "underestimated")
     budget.settle(reservation, Decimal("2"))
 
     assert budget.snapshot()["spent_eur"] == 2
-    assert budget.snapshot()["blocked"]
-    with pytest.raises(BudgetError):
-        budget_for(tmp_path).reserve_usd(Decimal("0.01"), "next")
+    budget_for(tmp_path).reserve_usd(Decimal("0.01"), "next")
 
 
 def test_settlement_is_idempotent_and_cannot_rewrite_recorded_spending(tmp_path):
@@ -156,7 +140,7 @@ def test_invalid_money_cannot_create_or_release_reservations(tmp_path, amount):
 
 
 def test_positive_subunit_reservations_are_rounded_up(tmp_path):
-    budget = budget_for(tmp_path, limit_eur=Decimal("0.000001"))
+    budget = budget_for(tmp_path)
     budget.reserve_usd(Decimal("0.00000000000000001"), "tiny")
     assert budget.snapshot()["reserved_eur"] > 0
 

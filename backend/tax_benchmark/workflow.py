@@ -256,7 +256,7 @@ class Coordinator:
                 return self.save("completed" if crew["status"] == "completed" else "stopped",
                                  reason=f"CrewAI ended: {crew['status']}; no automatic replay",
                                  crew_export_path=str(raw), crew_summary_path=str(summary), crew_status=crew["status"])
-            return self.save("monitoring", reason="CrewAI is running; shared budget remains enforced")
+            return self.save("monitoring", reason="CrewAI is running; costs remain recorded")
         baseline = self.store.get(self.plan["wait_for_run_id"])
         if not baseline:
             return self.save("stopped", reason="The required direct run is missing")
@@ -299,9 +299,6 @@ class Coordinator:
                     {item.get("id") for item in models if item.get("configured") is True})
             ):
                 raise WorkflowError("CrewAI, TypeDB, or a selected model is not ready")
-            budget = self.budget.snapshot()
-            if budget["blocked"] or budget["remaining_eur"] <= 0:
-                return self.save("stopped", reason="The shared experiment budget blocks the CrewAI pilot")
             if any(run.get("status") in {"queued", "running"} for run in self.runs()):
                 return self.save(reason="Waiting for all queued and running jobs before enqueue")
             self.save("enqueueing", reason="Enqueueing the approved pilot with its stable request_key")

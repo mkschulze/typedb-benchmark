@@ -7,7 +7,6 @@ from tax_benchmark.budget import ExperimentBudget
 from tax_benchmark.models import RunRequest
 from tax_benchmark.providers import ProviderError
 from tax_benchmark.runner import measured_cost, usage_totals
-from tax_benchmark.storage import RunStore
 from test_runner import CASE, service_for
 
 
@@ -20,13 +19,13 @@ def priced(service):
     return model
 
 
-async def test_total_cap_stops_before_network_and_excludes_unattempted_trials(tmp_path):
+async def test_budget_error_stops_before_network_and_excludes_unattempted_trials(tmp_path):
     class NeverCall:
         async def complete(self, model, messages):
             pytest.fail('Budget guard must run before a paid request')
     service = service_for(tmp_path, NeverCall())
     priced(service)
-    service.budget = ExperimentBudget(RunStore(tmp_path / 'zero.sqlite'), limit_eur=0)
+    service.models['local'] = service.models['local'].model_copy(update={'price_date': '2000-01-01'})
     service.enforce_budget = True
     service.start()
     try:
