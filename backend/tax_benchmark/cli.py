@@ -51,12 +51,22 @@ def main():
         "verify", help="Verify source hashes, case splits and provisional rubric consistency"
     )
     subparsers.add_parser("seed", help="Load the dedicated benchmark database in TypeDB")
+    summary = subparsers.add_parser("summarize", help="Summarize a run export (GET /api/runs/{id}/export)")
+    summary.add_argument("export", type=Path)
+    summary.add_argument("--baseline", default="rag")
     server = subparsers.add_parser("serve", help="Start FastAPI and serve the built React frontend")
     server.add_argument("--host", default="127.0.0.1")
     server.add_argument("--port", type=int, default=8001)
     args = parser.parse_args()
     if args.command == "verify":
         print(json.dumps(verify_dataset(), indent=2))
+    elif args.command == "summarize":
+        from .report import summarize
+
+        raw = args.export.read_bytes()
+        result = summarize(json.loads(raw), args.baseline)
+        result["raw_export"] = {"path": str(args.export), "sha256": hashlib.sha256(raw).hexdigest()}
+        print(json.dumps(result, indent=2, ensure_ascii=False))
     elif args.command == "seed":
         from .domain import load_cases
         from .typedb_store import TypeDBStore
