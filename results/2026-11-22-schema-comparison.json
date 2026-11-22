@@ -1,0 +1,225 @@
+{
+  "kind": "exploratory_completed_schema_comparison",
+  "analysis_date": "2026-11-22",
+  "run_id": "a48892eb-c03a-4230-81ee-35bf5200fce5",
+  "status": "completed",
+  "case_count": 30,
+  "attempts": 180,
+  "repetitions": 1,
+  "rows": [
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "typedb_schema",
+      "trials": 30,
+      "passed": 2,
+      "failed": 28,
+      "errors": 4,
+      "incorrect": 24,
+      "cancelled": 0,
+      "pass_rate": 0.06666666666666667,
+      "avg_wall_time_ms": 27944.002364742726,
+      "avg_input_tokens": 22067.633333333335,
+      "avg_output_tokens": 2647,
+      "avg_total_tokens": 24714.633333333335,
+      "decision_fields_pass": 17,
+      "errors_by_message": {
+        "No valid final answer within the 6-turn budget": 4
+      }
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "typedb_schema",
+      "trials": 30,
+      "passed": 1,
+      "failed": 29,
+      "errors": 15,
+      "incorrect": 14,
+      "cancelled": 0,
+      "pass_rate": 0.03333333333333333,
+      "avg_wall_time_ms": 21894.147447062034,
+      "avg_input_tokens": 16129.4,
+      "avg_output_tokens": 3443.1,
+      "avg_total_tokens": 19572.5,
+      "decision_fields_pass": 9,
+      "errors_by_message": {
+        "Model endpoint returned no text content": 15
+      }
+    },
+    {
+      "model_id": "openai-sol",
+      "configuration": "typedb_schema",
+      "trials": 30,
+      "passed": 17,
+      "failed": 13,
+      "errors": 0,
+      "incorrect": 13,
+      "cancelled": 0,
+      "pass_rate": 0.5666666666666667,
+      "avg_wall_time_ms": 17141.614107515972,
+      "avg_input_tokens": 22520.366666666665,
+      "avg_output_tokens": 607.9666666666667,
+      "avg_total_tokens": 23128.333333333332,
+      "decision_fields_pass": 22,
+      "errors_by_message": {}
+    },
+    {
+      "model_id": "claude-sonnet",
+      "configuration": "rag",
+      "trials": 30,
+      "passed": 0,
+      "failed": 30,
+      "errors": 9,
+      "incorrect": 21,
+      "cancelled": 0,
+      "pass_rate": 0.0,
+      "avg_wall_time_ms": 31624.805572167195,
+      "avg_input_tokens": 14627.733333333334,
+      "avg_output_tokens": 2870.0333333333333,
+      "avg_total_tokens": 17497.766666666666,
+      "decision_fields_pass": 13,
+      "errors_by_message": {
+        "No valid final answer within the 6-turn budget": 9
+      }
+    },
+    {
+      "model_id": "openai-sol",
+      "configuration": "rag",
+      "trials": 30,
+      "passed": 15,
+      "failed": 15,
+      "errors": 0,
+      "incorrect": 15,
+      "cancelled": 0,
+      "pass_rate": 0.5,
+      "avg_wall_time_ms": 16830.165689038888,
+      "avg_input_tokens": 17383.266666666666,
+      "avg_output_tokens": 576.3333333333334,
+      "avg_total_tokens": 17959.6,
+      "decision_fields_pass": 21,
+      "errors_by_message": {}
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "rag",
+      "trials": 30,
+      "passed": 3,
+      "failed": 27,
+      "errors": 13,
+      "incorrect": 14,
+      "cancelled": 0,
+      "pass_rate": 0.1,
+      "avg_wall_time_ms": 23276.366921541437,
+      "avg_input_tokens": 12576.266666666666,
+      "avg_output_tokens": 3728.866666666667,
+      "avg_total_tokens": 16305.133333333333,
+      "decision_fields_pass": 10,
+      "errors_by_message": {
+        "No valid final answer within the 6-turn budget": 3,
+        "Model endpoint returned no text content": 10
+      }
+    }
+  ],
+  "efficiency_paired": [
+    {
+      "model_id": "claude-sonnet",
+      "baseline": "rag",
+      "configuration": "typedb_schema",
+      "fully_measured_pairs": 30,
+      "mean_baseline_total_tokens": 17497.766666666666,
+      "mean_schema_total_tokens": 24714.633333333335,
+      "token_reduction_fraction": -0.41244501679261947,
+      "wall_time_reduction_fraction": 0.11638974978122629
+    },
+    {
+      "model_id": "openai-sol",
+      "baseline": "rag",
+      "configuration": "typedb_schema",
+      "fully_measured_pairs": 30,
+      "mean_baseline_total_tokens": 17959.6,
+      "mean_schema_total_tokens": 23128.333333333332,
+      "token_reduction_fraction": -0.2877977980207429,
+      "wall_time_reduction_fraction": -0.018505368528838995
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_schema",
+      "fully_measured_pairs": 30,
+      "mean_baseline_total_tokens": 16305.133333333333,
+      "mean_schema_total_tokens": 19572.5,
+      "token_reduction_fraction": -0.20038883460014634,
+      "wall_time_reduction_fraction": 0.05938295607465305
+    }
+  ],
+  "comparisons": [
+    {
+      "model_id": "claude-sonnet",
+      "baseline": "rag",
+      "configuration": "typedb_schema",
+      "difference": 0.06666666666666667,
+      "ci95": [
+        0,
+        0.17857142857142858
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openai-sol",
+      "baseline": "rag",
+      "configuration": "typedb_schema",
+      "difference": 0.06666666666666667,
+      "ci95": [
+        0,
+        0.2222222222222222
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_schema",
+      "difference": -0.06666666666666667,
+      "ci95": [
+        -0.2,
+        0.11764705882352941
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    }
+  ],
+  "frozen_inputs": {
+    "dataset_sha256": "7ead35f4474c4597a15d8168fb3c5092441f9082f97be3f720e9ad406fde5c0e",
+    "sources_sha256": "672ecb6bedbfdaad16d544c12f0e1b381c9f3fcf832db6c22a4002d974494b4a",
+    "gold_sha256": "1f78c8c817f5bee3cb7f8455a9a1d12ab79ae971c0fe04cfbe135c14f11ad4b9",
+    "schema_path": "typedb/schema.tql",
+    "schema_sha256": "22fb7cb8be3bddf10677899fadce238bfffe07af37347d6100b545155b3fe050",
+    "schema_system_prompt_sha256": "185a98f3433730a54f18870f32c8345d91caf654515c424c8b989c237112aa40"
+  },
+  "raw_export": {
+    "local_path": ".runtime/schema-180-export.json",
+    "sha256": "02384b2b6e8e682fa7ba154e358b2ed1a37b916d3cbded98a39903ee2589d392"
+  },
+  "interpretation": {
+    "schema_exposed_to_llm": true,
+    "context_design": "typedb_schema adds the complete structural typedb/schema.tql to the system context, with the same facts and source tools as rag; no executable functions or computed decisions.",
+    "benefit_observed": "No clear schema benefit: paired differences are +2 cases (Claude, OpenAI) and -2 cases (DeepSeek), with every 95% interval including zero. Schema context raised mean total tokens per trial for all three models.",
+    "same_arm_repeat": "The rag arm repeats the 360-trial run's cases and models: Claude 0 vs 0, OpenAI 15 vs 16 (1 case differs), DeepSeek 3 vs 4 (5 cases differ). Run-to-run variation is the same size as the schema differences.",
+    "strict_pass": "All expected decision fields, amounts and evidence checks must pass; execution failures count as failures.",
+    "limitations": [
+      "30 synthetic evaluation cases, one repetition per model and arm; template-cluster bootstrap does not establish population-wide accuracy.",
+      "Some evaluation cases were used in earlier exploratory pilots and output-contract calibration.",
+      "Reference legal decisions are provisional, without independent legal review.",
+      "DeepSeek has many empty-content errors (25 of 60 trials); native model effort defaults and OpenRouter routing variation remain confounders.",
+      "Model catalogue differs from the 360-trial run only by cache-write price ceilings and an explicit OpenAI default service tier.",
+      "No exclusive TypeDB advantage has been demonstrated; curated decision logic (functions or SQL) remains the only arm with a large observed effect."
+    ]
+  }
+}

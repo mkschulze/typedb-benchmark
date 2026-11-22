@@ -65,7 +65,7 @@
 - [x] Finish native OpenAI direct cohort; preserve all direct traces and hashes.
 - [x] Review financial/adapter integration and resolve material findings before CrewAI spending.
 - [x] Run development CrewAI smoke for all three models.
-- [ ] After the user-approved360-trial direct batch completes, run the48-trial CrewAI pilot within the remaining budget.
+- [x] After the user-approved360-trial direct batch completes, run the48-trial CrewAI pilot within the remaining budget.
 - [x] Save raw exports and derived results with calibration/effort/routing limitations; update stale no-live-run documentation.
 
 

@@ -22,7 +22,7 @@
     "id": "openrouter-deepseek", "name": "DeepSeek V4.1 Flash", "provider": "OpenRouter",
     "model": "deepseek/deepseek-v4.1-flash-1017", "protocol": "openai",
     "base_url": "https://openrouter.ai/api/v1", "api_key_env": "OPENROUTER_API_KEY",
-    "send_temperature": true, "json_mode": true, "max_output_tokens": 2048,
+    "send_temperature": true, "json_mode": true, "max_output_tokens": 8192,
     "input_price_per_million": 0.3, "output_price_per_million": 1.2,
     "cached_input_price_per_million": 0.006, "price_date": "2026-11-21"
   }

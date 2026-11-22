@@ -1,0 +1,240 @@
+{
+  "kind": "exploratory_deepseek_output_cap_rerun",
+  "analysis_date": "2026-11-22",
+  "run_id": "18f286cf-64c9-4bcd-9fe7-d84ab94d2ce1",
+  "status": "completed",
+  "case_count": 30,
+  "attempts": 150,
+  "repetitions": 1,
+  "max_output_tokens": 8192,
+  "rows": [
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "typedb_functions",
+      "trials": 30,
+      "passed": 21,
+      "failed": 9,
+      "errors": 0,
+      "incorrect": 9,
+      "cancelled": 0,
+      "pass_rate": 0.7,
+      "avg_wall_time_ms": 18739.31349707612,
+      "avg_input_tokens": 10790.866666666667,
+      "avg_output_tokens": 2649.0333333333333,
+      "avg_total_tokens": 13439.9,
+      "decision_fields_pass": 25,
+      "errors_by_message": {}
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "sql",
+      "trials": 30,
+      "passed": 23,
+      "failed": 7,
+      "errors": 3,
+      "incorrect": 4,
+      "cancelled": 0,
+      "pass_rate": 0.7666666666666667,
+      "avg_wall_time_ms": 22101.167083364755,
+      "avg_input_tokens": 12337.2,
+      "avg_output_tokens": 3425.733333333333,
+      "avg_total_tokens": 15762.933333333332,
+      "decision_fields_pass": 25,
+      "errors_by_message": {
+        "Model endpoint returned no text content": 3
+      }
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "rag",
+      "trials": 30,
+      "passed": 5,
+      "failed": 25,
+      "errors": 1,
+      "incorrect": 24,
+      "cancelled": 0,
+      "pass_rate": 0.16666666666666666,
+      "avg_wall_time_ms": 24829.247272798482,
+      "avg_input_tokens": 11052.033333333333,
+      "avg_output_tokens": 3920.8333333333335,
+      "avg_total_tokens": 14972.866666666667,
+      "decision_fields_pass": 17,
+      "errors_by_message": {
+        "Model endpoint returned no text content": 1
+      }
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "typedb_context",
+      "trials": 30,
+      "passed": 4,
+      "failed": 26,
+      "errors": 1,
+      "incorrect": 25,
+      "cancelled": 0,
+      "pass_rate": 0.13333333333333333,
+      "avg_wall_time_ms": 28964.002210398514,
+      "avg_input_tokens": 11849.466666666667,
+      "avg_output_tokens": 4650.833333333333,
+      "avg_total_tokens": 16500.3,
+      "decision_fields_pass": 17,
+      "errors_by_message": {
+        "Model endpoint returned no text content": 1
+      }
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "configuration": "typedb_schema",
+      "trials": 30,
+      "passed": 6,
+      "failed": 24,
+      "errors": 2,
+      "incorrect": 22,
+      "cancelled": 0,
+      "pass_rate": 0.2,
+      "avg_wall_time_ms": 31118.801889840204,
+      "avg_input_tokens": 15161.633333333333,
+      "avg_output_tokens": 4915.166666666667,
+      "avg_total_tokens": 20076.8,
+      "decision_fields_pass": 17,
+      "errors_by_message": {
+        "Model endpoint returned no text content": 2
+      }
+    }
+  ],
+  "efficiency_paired": [
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_context",
+      "fully_measured_pairs": 30,
+      "mean_baseline_total_tokens": 14972.866666666667,
+      "mean_context_total_tokens": 16500.3,
+      "token_reduction_fraction": -0.1020134198305378,
+      "wall_time_reduction_fraction": -0.16652759917252236
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_schema",
+      "fully_measured_pairs": 30,
+      "mean_baseline_total_tokens": 14972.866666666667,
+      "mean_schema_total_tokens": 20076.8,
+      "token_reduction_fraction": -0.3408788341577875,
+      "wall_time_reduction_fraction": -0.25331233556694244
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "fully_measured_pairs": 30,
+      "mean_baseline_total_tokens": 14972.866666666667,
+      "mean_functions_total_tokens": 13439.9,
+      "token_reduction_fraction": 0.1023829772076601,
+      "wall_time_reduction_fraction": 0.24527258957198228
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "sql",
+      "fully_measured_pairs": 30,
+      "mean_baseline_total_tokens": 14972.866666666667,
+      "mean_sql_total_tokens": 15762.933333333332,
+      "token_reduction_fraction": -0.05276655995511881,
+      "wall_time_reduction_fraction": 0.10987365663809134
+    }
+  ],
+  "comparisons": [
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "sql",
+      "difference": 0.6,
+      "ci95": [
+        0.21428571428571427,
+        0.8035714285714286
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_context",
+      "difference": -0.03333333333333333,
+      "ci95": [
+        -0.2222222222222222,
+        0.05128205128205128
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_functions",
+      "difference": 0.5333333333333333,
+      "ci95": [
+        0.15384615384615385,
+        0.75
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    },
+    {
+      "model_id": "openrouter-deepseek",
+      "baseline": "rag",
+      "configuration": "typedb_schema",
+      "difference": 0.03333333333333333,
+      "ci95": [
+        -0.11538461538461539,
+        0.125
+      ],
+      "paired_trials": 30,
+      "clusters": 8,
+      "method": "paired template-cluster bootstrap; 1000 replicates; seed 42",
+      "review_status": "provisional"
+    }
+  ],
+  "frozen_inputs": {
+    "dataset_sha256": "7ead35f4474c4597a15d8168fb3c5092441f9082f97be3f720e9ad406fde5c0e",
+    "sources_sha256": "672ecb6bedbfdaad16d544c12f0e1b381c9f3fcf832db6c22a4002d974494b4a",
+    "gold_sha256": "1f78c8c817f5bee3cb7f8455a9a1d12ab79ae971c0fe04cfbe135c14f11ad4b9",
+    "schema_sha256": "22fb7cb8be3bddf10677899fadce238bfffe07af37347d6100b545155b3fe050"
+  },
+  "raw_export": {
+    "local_path": ".runtime/deepseek-cap8192-150-export.json",
+    "sha256": "ba43fb8317920e280d9dce9676a63ac643835d95ac223851f05c3dbd92601d59"
+  },
+  "interpretation": {
+    "cause_addressed": "At max_output_tokens 2048, every DeepSeek 'no text content' error had finish_reason length with all completion tokens spent on reasoning (67 of 180 DeepSeek trials: 42 in the 360-trial run, 25 in the 180-trial run). This run raises only DeepSeek's cap to 8192; prompts, cases, tools and grading are unchanged.",
+    "errors_after": "7 empty-content errors remain in 150 trials: 5 from the SiliconFlow upstream stopping at 1639 tokens regardless of the requested cap, 2 exhausting 8192 reasoning tokens.",
+    "benefit_observed": "Curated decision logic still gives the only large gain (functions +16, sql +18 cases over rag). TypeDB context (-1) and schema (+1) remain within noise of rag.",
+    "strict_pass": "All expected decision fields, amounts and evidence checks must pass; execution failures count as failures.",
+    "limitations": [
+      "30 synthetic evaluation cases, one repetition; template-cluster bootstrap does not establish population-wide accuracy.",
+      "Some evaluation cases were used in earlier exploratory pilots and output-contract calibration.",
+      "Reference legal decisions are provisional, without independent legal review.",
+      "DeepSeek's cap now differs from Claude and OpenAI (2048); compare arms within DeepSeek, not output-cap-sensitive metrics across models.",
+      "OpenRouter upstream routing varies per call and is not pinned; SiliconFlow's own output limit still causes failures."
+    ]
+  },
+  "previous_cap_2048_passed_of_30": {
+    "d04c2bdf-8231-4e98-a28c-221ae4e48d59": {
+      "typedb_context": 2,
+      "rag": 4,
+      "typedb_functions": 19,
+      "sql": 22
+    },
+    "a48892eb-c03a-4230-81ee-35bf5200fce5": {
+      "typedb_schema": 1,
+      "rag": 3
+    }
+  }
+}
