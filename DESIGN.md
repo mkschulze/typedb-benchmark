@@ -263,9 +263,9 @@ Evidence opens next to the answer in document order, before the approach explain
 
 ### Shared Budget Strip
 
-A quiet, flat surface region displays the shared experiment limit with Remaining, Allocated, and Reserved values. The current €30 limit is runtime data, not a visual token. The strip uses the existing fact-surface color, (14px 18px) padding, (28px) bottom margin, and wrapping flex rows with (8px 28px) gaps. Its compact heading is (.88rem), bold, without tracking; values use (.8rem) text with bold tabular numerals. A full-width muted note (.74rem) explains the shared provider budget, USD→EUR estimate safety buffer, and continued reservation of unknown charges.
+A quiet, flat surface region headed “Experiment costs” displays Allocated and Reserved values. There is no spending limit. The strip uses the existing fact-surface color, (14px 18px) padding, (28px) bottom margin, and wrapping flex rows with (8px 28px) gaps. Its compact heading is (.88rem), bold, without tracking; values use (.8rem) text with bold tabular numerals. A full-width muted note (.74rem) explains the shared provider budget, USD→EUR estimate safety buffer, and continued reservation of unknown charges.
 
-Blocked budgets add the existing amber badge labeled “New calls paused”. Loading uses “Loading experiment budget…” and marks the labeled region busy. An unavailable budget replaces values with explicit status text explaining that the server still checks the limit before model calls. These states use existing typography and semantic treatments rather than new colors or decorative indicators.
+Loading uses “Loading experiment costs…” and marks the labeled region busy. An unavailable cost endpoint replaces values with “Cost status unavailable.” These states use existing typography and semantic treatments rather than new colors or decorative indicators.
 
 At the existing phone breakpoint (680px), padding becomes (14px 16px), bottom margin (24px), and strip gap (12px). The values row occupies full width with no automatic left margin, (8px 18px) gaps, and (.75rem) text; the note becomes (.71rem). Values and heading content wrap naturally.
 
