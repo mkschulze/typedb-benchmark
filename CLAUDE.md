@@ -23,6 +23,7 @@ npm --prefix frontend run dev              # :5173, proxies /api to :8001
 
 uv run tax-benchmark verify                # source checksums, split isolation, reference engine vs gold
 uv run tax-benchmark seed                  # idempotent TypeDB seed
+uv run tax-benchmark summarize export.json # run export -> measured part of a results/*.json file
 typeql-check < typedb/schema.tql           # also typedb/functions.tql
 ```
 
@@ -50,6 +51,6 @@ Prior results depend on the existing prompts staying byte-for-byte identical (ch
 
 ## Results and data conventions
 
-- `results/*.json` are hand-curated derived summaries (rows, paired efficiency, bootstrap comparisons, frozen input hashes, interpretation and limitations) of completed runs; full raw exports (`/api/runs/{id}/export`) stay in the gitignored `.runtime/`. In those summaries, `decision_fields_pass` means every non-evidence check passed, and a check missing from a trial counts as failed.
+- `results/*.json` summarize completed runs. `tax-benchmark summarize` (`report.py`) generates the measured part (rows, paired efficiency, bootstrap comparisons, frozen input hashes); interpretation and limitations are written by hand. Full raw exports (`/api/runs/{id}/export`) stay in the gitignored `.runtime/`. In those summaries, `decision_fields_pass` means every non-evidence check passed, and a check missing from a trial counts as failed.
 - `data/raw/` holds original source bytes; `sources.json` SHA-256 values cover them. The `split` field is authoritative; `dev-`/`eval-` ID prefixes are historical. Template groups never cross splits.
 - `request_key` makes run creation idempotent; reusing a key with a different payload returns 409.
